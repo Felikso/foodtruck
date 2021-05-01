@@ -1,0 +1,23 @@
+[
+    {
+        "name" : "PIEROGI MYŚLIWSKIE",
+        "quantity": "5 szt.",
+        "price": "11,00",
+        "description": "pieczarki, kiełbasa, jałowec + okrasa, natka",
+        "image": "images/pierogi-mysliwskie.png"
+    },
+    {
+        "name" : "PIEROGI MYŚLIWSKIE",
+        "quantity": "5 szt.",
+        "price": "11,00",
+        "description": "pieczarki, kiełbasa, jałowec + okrasa, natka",
+        "image": "images/pierogi-mysliwskie.png"
+    },
+    {
+        "name" : "PIEROGI MYŚLIWSKIE",
+        "quantity": "5 szt.",
+        "price": "11,00",
+        "description": "pieczarki, kiełbasa, jałowec + okrasa, natka",
+        "image": "images/pierogi-mysliwskie.png"
+    }
+]
