@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { Button } from "../../Button"
+import { Button } from "../../Button/index"
 import Video from '../../../assets/videos/pierogi1.mp4'
 
 

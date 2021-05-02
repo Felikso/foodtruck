@@ -2,12 +2,11 @@ import React, { useRef } from 'react';
 
 import { useHasBeenVisible } from '../hooks/useVisibility';
 import Layout from "../components/Layout/index.js"
-import Seo from "../components/seo"
-import Hero from '../components/HeroSections/Hero'
-/* import OfferIntro from "../components/OfferIntro" */
-import Testimonials from "../components/Testimonials"
-import Stats from "../components/Stats"
-import Email from "../components/Email"
+import Seo from "../components/SEO/index"
+
+import Testimonials from "../components/Testimonials/index"
+import Stats from "../components/Stats/index"
+import Email from "../components/Email/index"
 import FullWidthSection from '../components/FullWidthSection';
 import FeaturedProductsBox from '../containers/FeaturedProductsBox';
 
@@ -49,7 +48,7 @@ const bgImage = convertToBgImage(image);
       <StyledHero
             Video={Video}
             bgImage={bgImage}
-            HeroPoster="https://th.bing.com/th/id/R579b4552f248f5f3b8c22ec8de678f6d?rik=CZn5ZpmoPRhhWA&riu=http%3a%2f%2f1.s.dziennik.pl%2fpliki%2f2465000%2f2465139-lew-900-665.jpg&ehk=rOGUdngXo%2b2ZE6G%2bXYh1k730AK3lbwEv%2fptsUHZ6DK4%3d&risl=&pid=ImgRaw"
+            HeroPoster="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.przyslijprzepis.pl%2Fprzepis%2Fpierogi-z-twarogiem-i-szczypiorkiem&psig=AOvVaw39XP0NyDL7Uelk7tuNrhD2&ust=1620065330060000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDZ1efLq_ACFQAAAAAdAAAAABAD"
             HeroTitle="O nas"
             HeroMotto="Szybko, Smacznie, Świeżo"
             HeroBtnText="menu"

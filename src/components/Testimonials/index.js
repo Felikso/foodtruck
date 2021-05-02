@@ -29,11 +29,12 @@ export default function Testimonials() {
 
     `)
 
+
 console.log(data.allFile.edges)
     return (
         <TestimonialsContainer>
             <TopLine>
-            TestimonialsContainer
+            Tddd
             </TopLine>
             <Description>
                 Czym się kierujemy?

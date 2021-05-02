@@ -5,7 +5,7 @@ import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
 import { useHasBeenVisible } from '../hooks/useVisibility';
 import Layout from "../components/Layout/index.js"
-import Seo from "../components/seo"
+import Seo from "../components/SEO/index"
 //
 import OfferGalleryWp from '../components/OfferGalleryWp'
 import OfferGalleryWpLightBox from '../components/OfferGalleryWpLightBox'

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import BackgroundImage from 'gatsby-background-image'
 
-import { Button } from "../../Button"
+import { Button } from "../../Button/index"
 
 /* import DayOffer from '../../DayOffer' */
 
@@ -131,15 +131,13 @@ const StyledHeroContainer = styled.div`
         right: 0;
         left: 0;
         z-index: 2;
-        background: linear-gradient(180deg, 
-            rgba(0,0,0,0.2) 0%, 
-            rgba(0,0,0,0.6) 100%
-            ),
-            linear-gradient(180deg, 
-                rgba(0,0,0,0.2) 0%, 
-                transparent 100%
-                );
-    }
+        height: 101%;
+        background: linear-gradient(
+            180deg
+            ,rgb(0 0 0 / 30%) 0%,rgb(0 0 0) 100% ),linear-gradient(
+            180deg
+            ,rgba(0,0,0,0.2) 0%,transparent 100% );
+            }
 
 `
 

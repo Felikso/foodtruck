@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import { GatsbyImage} from "gatsby-plugin-image"
-import { Button } from '../Button'
+import { Button } from '../Button/index'
 
 import CardBoxGatsby from '../CardBoxGatsby'
 
