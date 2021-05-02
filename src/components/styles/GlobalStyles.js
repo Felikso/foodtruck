@@ -94,6 +94,10 @@ export const GlobalStyle = createGlobalStyle`
 
     --underline-item-bg-active: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
 
+    --menu-card-color-open: #ab5e00;
+
+    --menu-card-color-close: #1d1d1d;
+
     /* Info Top Box */
 
     --info-top-box-bg: #202020;
@@ -101,13 +105,6 @@ export const GlobalStyle = createGlobalStyle`
     --info-top-box-color: #7a7a7a;
 
     --info-top-box-color-hover: #bdbdbd;
-
-
-    
-
-
-
-
 
   }
 

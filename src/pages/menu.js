@@ -8,6 +8,7 @@ import Seo from "../components/seo"
 
 //
 import MenuCard from '../components/MenuCard'
+import MenuContent from '../components/MenuContent'
 //
 import FullWidthSection from '../components/FullWidthSection';
 import Video from '../assets/videos/pierogi1.mp4'
@@ -56,10 +57,14 @@ const bgImage = convertToBgImage(image);
       
       
       />
-      <MenuCard/>
+      <MenuContent
+      menuTitle="O naszym Menu"
+      menuDesc='Przykładamy wszelkich starań, aby potrawy przez nas serwowane trafiały w gusta najwybredniejszych Konsumentów. Naszą dewizą jest serwowanie posiłków przede wszystkim smacznych oraz "po domowemu". Zależy nam przede wszystkim na tym, żeby spójnie móc łączyć ze sobą słowiańskie smaki, do których zakwalifikowaliśmy kuchnię polską oraz ukraińską. Dania, które mogą Państwo u nas skosztować nie są tworzone z byle jakich przepisów, które można znaleźć w Internecie. Nasi kucharze do doświadczeni smakosze, którzy od lat skrupulatnie zajmują się tworzeniem rozmaitych potraw.'
+      MenuInvitation="Serdecznie zapraszamy do zapoznania się z naszą ofertą:" />
+
       {hasScrolled || isScrolling ? (
         <>
-
+      <MenuCard/>
         </>
       ) : (
         <FullWidthSection ref={halfPage} height='2286px' minHeight='3448px' />

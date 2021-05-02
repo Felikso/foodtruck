@@ -180,17 +180,24 @@ onClick={ e => setDishCategory(e.target.value)}
 /*     console.log(catItem) */
     return(
     <div>
-      <MenuButtonsBox>
-    <MenuButton key={i} value={item}  /* onClick={ e => setDishCategory(e.target.value)} */ onClick={((e) => handleClick(e, data, item))}                   style={{ background: item===listOpen ? dishOpen ? 'var(--color-2)' : 'var(--color-1)' : 'var(--color-1)'}}/* onClick={() => setDishOpen(!dishOpen)} */>
-      <a
-      style={{ backgroundSize: item===listOpen ? dishOpen ? '0 .2em, 100% .2em' : '100% .1em, 0 .1em': "100% .1em, 0 .1em"}}
-      >{item}</a>
-
-    </MenuButton>
-    <MenuArrow value={item} onClick={((e) => handleClick(e, data, item))} 
-/*     style={{ background: item===listOpen ? dishOpen ? "green" : "orange" : "black"}} */
-    style={{ transform: item===listOpen ? dishOpen ? 'rotate(-45deg)' : 'rotate(135deg)': "rotate(135deg)"}}
-    ></MenuArrow></MenuButtonsBox>
+        <MenuButtonsBox>
+            <MenuButton 
+                key={i} 
+                value={item}  
+                onClick={((e) => handleClick(e, data, item))}  
+                style={{ background: item===listOpen ? dishOpen ? 'var(--menu-card-color-open)' : 'var(--menu-card-color-close)' : 'var(--menu-card-color-close)'}}>
+                <a
+                style={{ backgroundSize: item===listOpen ? dishOpen ? '0 .2em, 100% .2em' : '100% .1em, 0 .1em': "100% .1em, 0 .1em"}}
+                >
+                  {item}
+                </a>
+            </MenuButton>
+                <MenuArrow 
+                value={item} onClick={((e) => handleClick(e, data, item))} 
+                style={{ transform: item===listOpen ? dishOpen ? 'rotate(-45deg)' : 'rotate(135deg)': "rotate(135deg)"}}
+                >
+                </MenuArrow>
+      </MenuButtonsBox>
               {dishOpen ? filteredDishes.filter(item => item.dishes.category === catItem).map((item, i) => {
 
                 return(
@@ -320,6 +327,7 @@ onClick={ e => setDishCategory(e.target.value)}
 
 export default MenuCard;
 
+
 const MenuBox = styled.div`
   background: var(--menu-box-bg);
   display: grid;
@@ -328,6 +336,7 @@ const MenuBox = styled.div`
   border-bottom: solid #808080 1px;
   transition: 1s;
   padding: 10px;
+      transition: all .2s ease-in-out;
 
 
   &:hover {
@@ -389,7 +398,6 @@ const MenuButton = styled.button`
   cursor: pointer;
   display: inline-block;
   white-space: nowrap;
-  background: linear-gradient(0deg,#00003e 0%,#000000 54.433428555424854%,#786721 100%);
   border-radius: 08px;
   border: 0px solid #444;
   border-width: 0px 0px 0px 0px;
@@ -478,12 +486,11 @@ transition:.2s ease;
 const MenuButtonsBox = styled.div`
 width: 100vw;
 height: 10vh;
-background: black;
 position: relative;
 display: flex;
 
 &:hover {
-  background: ${({ primary }) => (primary ? 'var(--color-2)' : 'var(--color-1)')};
+/*   background: ${({ primary }) => (primary ? 'var(--color-2)' : 'var(--color-1)')}; */
   transform: translateY(-2px);
 }
 `
