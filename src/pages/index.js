@@ -54,8 +54,8 @@ const bgImage = convertToBgImage(image);
             HeroMotto="Szybko, Smacznie, Świeżo"
             HeroBtnText="menu"
             HeroBtnPath="/menu"
-            HeroHeight="100vh"
-            HeroHeightMedia="100vh"
+            HeroHeight="95vh"
+            HeroHeightMedia="95vh"
 
              />
       {hasScrolled || isScrolling ? (

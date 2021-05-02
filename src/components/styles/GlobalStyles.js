@@ -94,6 +94,15 @@ export const GlobalStyle = createGlobalStyle`
 
     --underline-item-bg-active: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
 
+    /* Info Top Box */
+
+    --info-top-box-bg: #202020;
+
+    --info-top-box-color: #7a7a7a;
+
+    --info-top-box-color-hover: #bdbdbd;
+
+
     
 
 
@@ -131,6 +140,41 @@ export const GlobalStyle = createGlobalStyle`
 
 
 
+    /* Scroll Styles */
+
+    /* Nav */
+
+
+  .slideDownNav{
+    position: fixed !important;
+    background: #000000d1 !important;
+    top: 0;
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem calc((100vw - 1300px) /2);
+    opacity: 0;
+    animation: slide-down-nav .5s ease-in-out normal forwards;
+    animation-iteration-count: 1;
+    transition: all .2s ease-in-out;
+  }
+
+    /* Animations */
+    
+
+    
+    @keyframes opacity-nav {
+      30% { opacity: 0 }
+      100% { opacity: 1; }
+    }
+
+    @keyframes slide-down-nav {
+      0% {top: -80px; opacity: 0 ;}
+      100% {top: 0px; opacity: 1;}
+    }
+
+
     @keyframes hover-v {
       0% {
           transform: scaleX(0);
@@ -164,5 +208,7 @@ export const GlobalStyle = createGlobalStyle`
           opacity: .02;
          }
     }
+
+
 
 `

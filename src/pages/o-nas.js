@@ -10,6 +10,8 @@ import FullWidthSection from '../components/FullWidthSection';
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 
+import AboutSection from '../components/AboutSection'
+
 
 function AboutPage() {
   const { placeholderImage } = useStaticQuery(
@@ -53,7 +55,7 @@ const bgImage = convertToBgImage(image);
       
       
       />
-      <h1>ABOUT</h1>
+      <AboutSection />
       {hasScrolled || isScrolling ? (
         <>
 
