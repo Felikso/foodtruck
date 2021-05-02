@@ -88,6 +88,12 @@ export const GlobalStyle = createGlobalStyle`
     
     --scroll-top-btn-color-hover: var(--color-2);
 
+    /* Menu Cards */
+
+    --underline-item-bg: linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1));
+
+    --underline-item-bg-active: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
+
     
 
 
@@ -121,6 +127,42 @@ export const GlobalStyle = createGlobalStyle`
 
     .display-block {
       display: block;
+    }
+
+
+
+    @keyframes hover-v {
+      0% {
+          transform: scaleX(0);
+          height: 5px;
+         }
+      45% {   
+          transform: scaleX(1.05);
+          height: 5px;
+         }
+      55% {height: 5px;}
+      100% {
+          transform: scaleX(1.05);
+          height: 3.8rem;
+         }
+    }
+    @keyframes no-hover-v {
+      0% {
+          transform: scaleX(1.05);
+          height: 3.8rem;
+         }
+      45% {height: 5px;}
+      55% {   
+          transform: scaleX(1.05);
+          height: 5px;
+          opacity: 1;
+         }
+      
+      100% {
+          transform: scaleX(0);
+          height: 5px;
+          opacity: .02;
+         }
     }
 
 `

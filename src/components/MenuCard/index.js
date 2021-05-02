@@ -14,7 +14,21 @@ import 'aos/dist/aos.css';
 
 function MenuCard() {
 
-  const [dishCategory, setDishCategory] = useState("wszystkie")
+  const [dishCategory, setDishCategory] = useState("")
+
+  const [dishOpen, setDishOpen] = useState(true)
+
+  const [listOpen, setListOpen] = useState(0)
+
+
+
+/*   const toggle = () => setDishOpen(!dishOpen); */
+
+/*   console.log(dishOpen)
+
+  console.log(listOpen)
+ */
+  
 
   useEffect(() => {
     Aos.init({
@@ -22,8 +36,7 @@ function MenuCard() {
     });
 }, [])
 
-
-/* const data = useStaticQuery(
+const data = useStaticQuery(
   graphql`
     query {
       allWpDish {
@@ -39,7 +52,7 @@ function MenuCard() {
       }
       dishes {
         category
-        description
+        desc
         fieldGroupName
         name
         price
@@ -52,109 +65,10 @@ function MenuCard() {
 )
 
 
-  const wordpressDishes = data.allWpDish.nodes */
+  const wordpressDishes = data.allWpDish.nodes
 
+/*   console.log(wordpressDishes) */
 
-  
-const menuData = useStaticQuery(
-  graphql`
-    query {
-      allWpMenuHotDish {
-        nodes {
-          featuredImage {
-            node {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-          }
-          menu {
-            desc
-            name
-            price
-            quantity
-          }
-        }
-      }
-
-      allWpMenuDrink {
-        nodes {
-          featuredImage {
-            node {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-          }
-          menu {
-            desc
-            name
-            price
-            quantity
-          }
-          dishes {
-            desc
-            name
-            price
-            quantity
-          }
-        }
-      }
-
-      allWpMenuSoupe {
-        nodes {
-          featuredImage {
-            node {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData
-                }
-              }
-            }
-          }
-          menu {
-            desc
-            name
-            price
-            quantity
-          }
-        }
-      }
-    }
-  `
-)
-
-console.log(menuData)
-
-
-
-const menuDataObjKeys = Object.keys(menuData);
-console.log(menuDataObjKeys);
-
-const hotDish = menuData.allWpMenuSoupe.nodes
-
-console.log(Object.keys(menuData).map((key, index) => key))
-
-/* const hotDish = menuData.menuDataObjKeys[0]
-console.log(hotDish.nodes); */
-
-/* console.log(menuData.map((item, i) => item)) */
-/* 
-{Object.keys(games_list).map((game, i) => (
-  <div key={i}>
-     <p>{games_list[game].name}</p>
-     <p>{games_list[game].id}</p>
-  </div>
- ))}
- */
-/* console.log(menuData.menuDataObjKeys[0].nodes.map((item) => item.menu.desc)); */
-const drinks = menuData.allWpMenuDrink.nodes
-
-/* console.log(drinks) */
 
 
   const getUnique = (items, value) => {
@@ -165,60 +79,209 @@ const drinks = menuData.allWpMenuDrink.nodes
   };
 
 
-/* const nodeDish = wordpressDishes.map(item => item.dishes)
- */
 
 
-/* let filteredNodeDish = wordpressDishes
+
+/*       filterDishes = () => {
+
+        let currentDishes = [...wordpressDishes];
+        // transform values
+    
+        // filtruj category
+        if (category !=== "wszystkie") {
+          currentDishes = currentDishes.filter(product => product.category ==== category);
+        }
+
+        this.setState({
+          sortedDishes: currentDishes
+        });
+      }; */
+
+
+      let filteredDishes = wordpressDishes.filter(item => item.dishes.category === listOpen)
+/*       console.log('filteredDishes')
+      console.log(filteredDishes)
+      console.log(filteredDishes)
+      console.log('filteredDishes') */
+
+  const nodeDish = wordpressDishes.map(item => item.dishes)
+
+
+/*   const filteredNodeDish = wordpressDishes.map(item => item.dishes).filter(item => item.category === dishCategory) */
+
+let filteredNodeDish = wordpressDishes
 
 if(dishCategory === "wszystkie"){
   filteredNodeDish = wordpressDishes.filter(item => item.dishes.category === item.dishes.category)
 }else{
   filteredNodeDish = wordpressDishes.filter(item => item.dishes.category === dishCategory)
 }
+/* console.log('filteredNodeDish')
+console.log(filteredNodeDish)
 
-
+console.log('filteredNodeDish') */
   let categories = getUnique(nodeDish, "category");
 
-  categories = ["wszystkie", ...categories]; */
+ /*  categories = ["wszystkie", ...categories]; */ //deleted 'wszystkie'
 
-/*   console.log(categories) */
+/*   categories = categories.map((item, index) => (
+    <option key={index} value={item}>
+      {item}
+    </option>
+  )); */
+
+  const handleClick = (e, data, item) => {
+    console.log(e.target.value);
+    console.log('before');
+    console.log(listOpen);
+    console.log('before');
+    setListOpen(item);
+    console.log('after');
+    console.log(listOpen);
+    console.log('after');
+    console.log(dishOpen);
+    console.log('dishOpen');
+    console.log(dishOpen);
+    console.log('listOpen');
+    console.log(listOpen);
+    console.log('e.target.value');
+    console.log(e.target.value);
+    if(listOpen === e.target.value){
+      setDishOpen(!dishOpen)
+    }else{
+      setDishOpen(true)
+    }
+
+
+}
 
     return (
         <>
 
-        {
-
-Object.keys(menuData).map((key, index) => {
-/*   const myItem = menuData.key.nodes
-  console.log(myItem) */
-  return (
-    <h1>XD</h1>
-  )
-})
-
-        }
+{/* <select
+onClick={ e => setDishCategory(e.target.value)}
+>
+  {categories}
+</select> */}
 
 {/* {
-  menuData.map((item, i) => {
-    console.log(item)
-    item.nodes.map((item, i) => (
-      <p>{item.menu.name}</p>
-    ))
-  })
+  categories.map((item, i) => (
+    <>
+    <MenuButton key={i} value={item} onClick={ e => setDishCategory(e.target.value)}>{item}</MenuButton>
+    </>
+  ))
 } */}
 
-{/* <MenuButtonBox>
+
+{/* <MenuButtonBox> */}
 {
-  categories.map((item, i) => (
-    <MenuButton key={i} value={item} onClick={ e => setDishCategory(e.target.value)}>{item}</MenuButton>
-  ))
+  categories.map((item, i) => {
+    const catItem = item
+/*     console.log(catItem) */
+    return(
+    <div>
+      <MenuButtonsBox>
+    <MenuButton key={i} value={item}  /* onClick={ e => setDishCategory(e.target.value)} */ onClick={((e) => handleClick(e, data, item))}                   style={{ background: item===listOpen ? dishOpen ? 'var(--color-2)' : 'var(--color-1)' : 'var(--color-1)'}}/* onClick={() => setDishOpen(!dishOpen)} */>
+      <a
+      style={{ backgroundSize: item===listOpen ? dishOpen ? '0 .2em, 100% .2em' : '100% .1em, 0 .1em': "100% .1em, 0 .1em"}}
+      >{item}</a>
+
+    </MenuButton>
+    <MenuArrow value={item} onClick={((e) => handleClick(e, data, item))} 
+/*     style={{ background: item===listOpen ? dishOpen ? "green" : "orange" : "black"}} */
+    style={{ transform: item===listOpen ? dishOpen ? 'rotate(-45deg)' : 'rotate(135deg)': "rotate(135deg)"}}
+    ></MenuArrow></MenuButtonsBox>
+              {dishOpen ? filteredDishes.filter(item => item.dishes.category === catItem).map((item, i) => {
+
+                return(
+                <>
+    
+                  <MenuBox 
+                  data-aos="fade-in"   
+                  data-aos-offset="200"
+                  data-aos-delay="0"
+                  key={i}
+                  dishOpen={dishOpen}
+                  >
+                  <DishImg
+                      className="image-hover-capition__img"
+                      key={i}
+                      image={item.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                      alt="cos"
+                   />
+    
+                   <DishContent>
+                   <DishName>{item.dishes.name} <DishQ>{item.dishes.quantity}</DishQ></DishName>
+                   <DishDesc>{item.dishes.desc}</DishDesc>
+                   </DishContent>
+    
+                   <DishPrice>
+                    {item.dishes.price} pln
+                  </DishPrice>
+    
+    
+                  </MenuBox>
+                  </>
+                )}): <div></div>}
+    
+    </div>)})
 }
 
-</MenuButtonBox> */}
+
+{/* {
+  categories.map((item, i) => {
+    const catItem = item
+    console.log(catItem)
+    return(
+    <div>
+    <MenuButton key={i} value={item} onClick={ e => setDishCategory(e.target.value)}>{item}</MenuButton>
+              {filteredNodeDish.filter(item => item.dishes.category === catItem).map((item, i) => (
+                <>
+    
+                  <MenuBox
+                  data-aos="fade-in"   
+                  data-aos-offset="200"
+                  data-aos-delay="0"
+                  key={i}
+                  >
+                  <DishImg
+                      className="image-hover-capition__img"
+                      key={i}
+                      image={item.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                      alt="cos"
+                   />
+    
+                   <DishContent>
+                   <DishName>{item.dishes.name} <DishQ>{item.dishes.quantity}</DishQ></DishName>
+                   <DishDesc>{item.dishes.desc}</DishDesc>
+                   </DishContent>
+    
+                   <DishPrice>
+                    {item.dishes.price} pln
+                  </DishPrice>
+    
+    
+                  </MenuBox>
+                  </>
+                ))}
+    
+    </div>)})
+}
+ */}
+{/* { Object.keys(menuData).map((item, i) => (
+                <div key={i} className="report">
+                       {menuData[item].map((media,ind) =>
+                         <div key={ind}>{media.menu.name}</div>
+                      )}
+                </div>
+        ))} */}
+
+{/* </MenuButtonBox> */}
 
 
-{/* {Object.keys(menuData).map((item, i) => (
+{/* {filteredNodeDish.map((item, i) => (
+  <>
+
               <MenuBox
               data-aos="fade-in"   
               data-aos-offset="200"
@@ -233,26 +296,19 @@ Object.keys(menuData).map((key, index) => {
                />
 
                <DishContent>
-               <DishName>{item.menu.name} <DishQ>{item.menu.quantity}</DishQ></DishName>
-               <DishDesc>{item.menu.desc}</DishDesc>
+               <DishName>{item.dishes.name} <DishQ>{item.dishes.quantity}</DishQ></DishName>
+               <DishDesc>{item.dishes.desc}</DishDesc>
                </DishContent>
 
                <DishPrice>
-                {item.menu.price} pln {i}
+                {item.dishes.price} pln
               </DishPrice>
 
 
               </MenuBox>
-            ))}  */}
-
-
-{/* { Object.keys(menuData).map((item, i) => (
-                <div key={i} className="report">
-                       {menuData[item].map((media,ind) =>
-                         <div key={ind}>{media.menu.name}</div>
-                      )}
-                </div>
-        ))} */}
+              </>
+            ))} */}
+          
 
           
            
@@ -272,6 +328,7 @@ const MenuBox = styled.div`
   border-bottom: solid #808080 1px;
   transition: 1s;
   padding: 10px;
+
 
   &:hover {
     background: var(--menu-box-bg-hover);
@@ -327,7 +384,7 @@ const DishPrice = styled.span`
 
 const MenuButton = styled.button`
 
-    backface-visibility: hidden;
+  backface-visibility: hidden;
   position: relative;
   cursor: pointer;
   display: inline-block;
@@ -342,11 +399,28 @@ const MenuButton = styled.button`
   font-family: Helvetica Neue;
   font-weight: 900;
   font-style: normal;
+  width: 100vw;
   transition: 1s;
 
-
+/* 
   &:focus {
     color: var(--color-4);
+  } */
+
+  a {
+    font-size: 1.5em;
+    background: 
+    linear-gradient(to right, rgba(100, 200, 200, 0), rgba(100, 200, 200, 0)),
+    linear-gradient(90deg, rgba(36,0,0,1) 0%, rgba(40,0,0,1) 0%, rgba(255,0,0,1) 100%);
+    background-size: 100% 0.1em, 0 0.1em;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+  }
+  
+  a:hover,
+  a:focus {
+    background-size: 0 .2em, 100% .2em;
   }
  
 `
@@ -357,4 +431,59 @@ const MenuButtonBox = styled.div`
   grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
   margin: 20px 0;
 
+`
+
+const MenuArrow = styled.button`
+width: 3vh;
+height: 3vh;
+background: transparent;
+outline: none;
+border: none;
+box-sizing: border-box;
+position: absolute;
+top: 30%;
+left: 5%;
+
+transition:.2s ease;
+
+&::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  border-width: .8vmin .8vmin 0 0;
+  border-style: solid;
+  border-color: #fafafa;
+  transition: .2s ease;
+  display: block;
+  transform-origin: 100% 0;
+}
+
+
+&:after {
+  content: '';
+  float: left;
+  position: relative;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  border-width: 0 .8vmin 0 0;
+  border-style: solid;
+  border-color: #fafafa;
+  transform-origin: 100% 0;
+  transition:.2s ease;
+}
+
+`
+
+const MenuButtonsBox = styled.div`
+width: 100vw;
+height: 10vh;
+background: black;
+position: relative;
+display: flex;
+
+&:hover {
+  background: ${({ primary }) => (primary ? 'var(--color-2)' : 'var(--color-1)')};
+  transform: translateY(-2px);
+}
 `
