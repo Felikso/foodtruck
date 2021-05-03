@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
-import { Link } from 'gatsby'
+
 import { Button } from '../Button/index'
 import SvgLSLogo from './SvgLSLogo'
 
