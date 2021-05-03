@@ -55,8 +55,6 @@ const Navbar = ({showInfoBelow}) => {
   }
 
 
-window.addEventListener('scroll', changeBackground)
-
 useEffect(() => {
   if (showInfoBelow) {
       window.addEventListener(`scroll`, changeBackground)
