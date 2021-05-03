@@ -18,7 +18,10 @@ function Email() {
     }, [])
     return (
 
-        <StyledBackgroundEmailSection>
+        <StyledBackgroundEmailSection
+        data-aos="fade-in"   
+        data-aos-offset="200"
+        data-aos-delay="0">
 
             <EmailContent          
             data-aos="fade-in"   
@@ -81,6 +84,7 @@ export default Email
 
 const EmailContent = styled.div`
     height: 100%;
+    width: 100vw;
     position: absolute;
     display: flex;
     flex-direction: column;

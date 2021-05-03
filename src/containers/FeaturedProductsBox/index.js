@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import {  GatsbyImage } from 'gatsby-plugin-image'
 import styled from 'styled-components'
 
+//transitions
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 import ImageHoverCapition from './ImageHoverCapition'
 
@@ -11,21 +14,6 @@ export default function CardBoxGatsby({heading}) {
     const data = useStaticQuery(
         graphql`
           query {
-            allProductsJson {
-              nodes {
-                price
-                name
-                description
-                image {
-                  childImageSharp {
-                    fluid {
-                      ...GatsbyImageSharpFluid
-                    }
-                    gatsbyImageData
-                  }
-                }
-              }
-            }
 
             allWpHomeDish {
                 nodes {
@@ -69,23 +57,40 @@ const chooseRandom = (arr, num = 1) => {
    return res;
 };
 
+useEffect(() => {
+  Aos.init({
+      duration: 1000
+  });
+}, [])
 
 const randomFeatured = chooseRandom(wpPhotos, 3)
 
     return (
       <>
-<FeaturedContainer>
+<FeaturedContainer
+>
             <FeaturedHeading>{heading}</FeaturedHeading>
-            <FeaturedWrapper>
+            <FeaturedWrapper
+                  data-aos="fade-in"   
+                  data-aos-offset="200"
+                  data-aos-delay="100">
             {
     randomFeatured.map((item, i) => (
-      <ImageHoverCapition textH2={item.homeDish.name} textP={item.homeDish.description} price={item.homeDish.price}>
+      <ImageHoverCapition 
+      textH2={item.homeDish.name} 
+      textP={item.homeDish.description} 
+      price={item.homeDish.price}
+
+      >
            <GatsbyImage
             className="image-featured-hover-capition__img"
             key={i}
             image={item.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-            alt="cos"
-            loading="eager"
+            alt={item.homeDish.name}
+            loading="lazy"
+            data-aos="fade-in"   
+            data-aos-offset="200"
+            data-aos-delay={i*100}
       />
       </ImageHoverCapition>
       
