@@ -67,9 +67,6 @@ const data = useStaticQuery(
 
   const wordpressDishes = data.allWpDish.nodes
 
-/*   console.log(wordpressDishes) */
-
-
 
   const getUnique = (items, value) => {
     return [...new Set(items.map(item => item[value]))].filter(function (el) {
@@ -81,33 +78,10 @@ const data = useStaticQuery(
 
 
 
-
-/*       filterDishes = () => {
-
-        let currentDishes = [...wordpressDishes];
-        // transform values
-    
-        // filtruj category
-        if (category !=== "wszystkie") {
-          currentDishes = currentDishes.filter(product => product.category ==== category);
-        }
-
-        this.setState({
-          sortedDishes: currentDishes
-        });
-      }; */
-
-
       let filteredDishes = wordpressDishes.filter(item => item.dishes.category === listOpen)
-/*       console.log('filteredDishes')
-      console.log(filteredDishes)
-      console.log(filteredDishes)
-      console.log('filteredDishes') */
 
   const nodeDish = wordpressDishes.map(item => item.dishes)
 
-
-/*   const filteredNodeDish = wordpressDishes.map(item => item.dishes).filter(item => item.category === dishCategory) */
 
 let filteredNodeDish = wordpressDishes
 
@@ -116,36 +90,13 @@ if(dishCategory === "wszystkie"){
 }else{
   filteredNodeDish = wordpressDishes.filter(item => item.dishes.category === dishCategory)
 }
-/* console.log('filteredNodeDish')
-console.log(filteredNodeDish)
 
-console.log('filteredNodeDish') */
   let categories = getUnique(nodeDish, "category");
 
- /*  categories = ["wszystkie", ...categories]; */ //deleted 'wszystkie'
 
-/*   categories = categories.map((item, index) => (
-    <option key={index} value={item}>
-      {item}
-    </option>
-  )); */
 
   const handleClick = (e, data, item) => {
-    console.log(e.target.value);
-    console.log('before');
-    console.log(listOpen);
-    console.log('before');
     setListOpen(item);
-    console.log('after');
-    console.log(listOpen);
-    console.log('after');
-    console.log(dishOpen);
-    console.log('dishOpen');
-    console.log(dishOpen);
-    console.log('listOpen');
-    console.log(listOpen);
-    console.log('e.target.value');
-    console.log(e.target.value);
     if(listOpen === e.target.value){
       setDishOpen(!dishOpen)
     }else{
@@ -158,26 +109,9 @@ console.log('filteredNodeDish') */
     return (
         <>
 
-{/* <select
-onClick={ e => setDishCategory(e.target.value)}
->
-  {categories}
-</select> */}
-
-{/* {
-  categories.map((item, i) => (
-    <>
-    <MenuButton key={i} value={item} onClick={ e => setDishCategory(e.target.value)}>{item}</MenuButton>
-    </>
-  ))
-} */}
-
-
-{/* <MenuButtonBox> */}
 {
   categories.map((item, i) => {
     const catItem = item
-/*     console.log(catItem) */
     return(
     <div>
         <MenuButtonsBox>
