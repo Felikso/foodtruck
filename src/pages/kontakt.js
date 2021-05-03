@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { getImage } from 'gatsby-plugin-image';
@@ -6,6 +6,10 @@ import { convertToBgImage } from 'gbimage-bridge';
 import { useHasBeenVisible } from '../hooks/useVisibility';
 import Layout from "../components/Layout/index.js"
 import Seo from "../components/SEO/index"
+
+//transitions
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 //
 import ContactInfo from '../components/ContactInfo'
@@ -20,6 +24,11 @@ import MapPhoto from '../components/MapPhoto'
 
 
 function ContactPage() {
+  useEffect(() => {
+    Aos.init({
+        duration: 1000
+    });
+}, [])
   const { placeholderImage } = useStaticQuery(
     graphql`
       query {
@@ -66,10 +75,17 @@ const bgImage = convertToBgImage(image);
         <>
         <ContactSectionTitle>Informacje dotyczące godzin otwarcia oraz lokalizacji</ContactSectionTitle>
         <ContactSection>
-            <ContactOpeningHoursBox>
+            <ContactOpeningHoursBox
+                   data-aos="fade-in"   
+                   data-aos-offset="200"
+                   data-aos-delay="0"
+                   >
               <OpeningHoursBox />
             </ContactOpeningHoursBox>
-              <ContactMapBox>
+              <ContactMapBox
+                     data-aos="fade-in"   
+                     data-aos-offset="200"
+                     data-aos-delay="0">
                 <MapPhoto />
               </ContactMapBox>
         </ContactSection>

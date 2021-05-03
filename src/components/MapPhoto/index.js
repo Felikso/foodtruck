@@ -9,11 +9,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 export default function MapPhoto() {
-    useEffect(() => {
-        Aos.init({
-            duration: 1000
-        });
-    }, [])
+
     const data = useStaticQuery(graphql`
     query {
         allFile(filter: {ext: {regex: "/(jpg)|(png)|(jpeg)/"}, name: {eq: "lwowskie-smaki-lokalizacja"}}) {
