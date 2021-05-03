@@ -15,6 +15,8 @@ padding: 0.5rem calc((100vw - 1300px) /2);
 z-index: 100;
 position: relative;
 transition: all .5s ease-in-out;
+align-items: center;
+width: 100%;
 
   .logo {
     padding: 15px 0;
