@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { IoIosArrowDropupCircle } from 'react-icons/io'
 
 const ScrollBtn = ({
@@ -40,6 +40,16 @@ const ScrollBtn = ({
 }
 export default ScrollBtn
 
+const ShowScroll = keyframes`
+from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+`
+
 const ScrollButton = styled.button`
             z-index: 2;
             position: fixed;
@@ -50,6 +60,9 @@ const ScrollButton = styled.button`
             font-size: 50px;
             color: var(--scroll-top-btn-color);
             transition: 0.8s;
+            animation: ${ShowScroll} .5s ease-in-out normal forwards;
+            animation-iteration-count: 1;
+            transition: all .2s ease-in-out;
 
         &:hover {
             transition: 0.5s;

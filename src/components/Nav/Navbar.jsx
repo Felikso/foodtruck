@@ -42,27 +42,20 @@ const NavBtn = styled.div`
 `
 
 const Navbar = () => {
-  const [scrollNav, setScrollNav] = useState(true)
+  const [scrollNav, setScrollNav] = useState(false)
 
   const changeBackground = () => {
-    if(window.scrollY >= 80){
+    if(window.pageYOffset >= 80){
       setScrollNav(true)
-      console.log(scrollNav)
+
     }else{
       setScrollNav(false)
-      console.log(scrollNav)
     }
 
   }
 
-  useEffect(() => {
-    if (scrollNav) {
-        window.addEventListener('scroll', changeBackground)
-        return () => window.addEventListener('scroll', changeBackground)
-    }
-}, [])
 
-  
+window.addEventListener('scroll', changeBackground)
 
 
   return (

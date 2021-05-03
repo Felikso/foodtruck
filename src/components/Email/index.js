@@ -86,12 +86,8 @@ const EmailContent = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(
-        180deg, 
-        rgba(0,0,0,0.5) 0%, 
-        rgba(0,0,0,0.5) 35%,
-        rgba(0,0,0,1) 100% 
-        );
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(42,42,42,0.7038165608040091) 30%, rgba(68,68,68,0.49933476808692223) 45%, rgba(199,199,199,0.3984944319524685) 80%, rgba(255,255,255,0.5021358885351015) 95%, rgba(238,238,238,1) 100%);
+
 
     h3 {
         text-align: center;

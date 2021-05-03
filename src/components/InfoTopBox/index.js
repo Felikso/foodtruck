@@ -5,15 +5,15 @@ import { FiPhoneCall, FiMapPin } from 'react-icons/fi'
 
 
 //transitions
-import Aos from 'aos';
-import 'aos/dist/aos.css';
+/* import Aos from 'aos';
+import 'aos/dist/aos.css'; */
 
 export default function InfoTopBox({number, numberHref, adress, adressHref, background, color, colorHover }) {
-    useEffect(() => {
+/*     useEffect(() => {
         Aos.init({
             duration: 1000
         });
-    }, [])
+    }, []) */
 
         return (
             <TopBox

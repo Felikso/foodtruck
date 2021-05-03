@@ -2,10 +2,11 @@ import React, { useState }  from "react"
 import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions";
 
 import { GlobalStyle } from "../styles/GlobalStyles"
-import Footer from "../Footer/index.js"
+
+import InfoTopBox from '../InfoTopBox'
 import Navbar from '../Nav/Navbar';
 import ScrollBtn from '../ScrollBtn'
-import InfoTopBox from '../InfoTopBox'
+import Footer from "../Footer/index.js";
 
 
 const Layout = ({ location, children }) => {
