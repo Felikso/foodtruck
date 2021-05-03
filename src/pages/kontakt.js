@@ -93,18 +93,18 @@ const ContactOpeningHoursBox = styled.div`
   padding: 20px;
 
   h2 {
-    font-size: 2em;
-    color: var(--contact-opening-h2);
+    font-size: 2em !important;
+    color: var(--contact-opening-h2) !important;
   }
 
   h5 {
-    color: var(--contact-opening-day);
-    font-size: 1.8em;
+    color: var(--contact-opening-day) !important;
+    font-size: 1.8em !important;
   }
 
   p {
-    font-size: 1.5em;
-    color: var(--contact-opening-hours);
+    font-size: 1.5em !important;
+    color: var(--contact-opening-hours) !important;
   }
 
   @media screen and (max-width: 1000px) {
