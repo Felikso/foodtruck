@@ -1,0 +1,88 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+a {
+	text-decoration: none;
+}
+
+.card-gatsby-box {
+	width: 90%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: repeat( auto-fit, minmax(220px, 1fr) );
+	grid-gap: 10px;
+	justify-items: center;
+	width: 100vw;
+	min-height: 100vh;
+	background-color: #096868;
+}
+
+.card-gatsby {
+	position: relative;
+	width: 100%;
+	height: 250px;
+	overflow: hidden;
+	box-shadow: 0px 0px 10px 2px rgba(#c5c5c5, 0.5);
+	box-sizing: border-box;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+	transition: all 0.3s;
+
+	&:hover {
+		transform: translateY(-20px);
+		background-position: center 100%;
+		background-size: 300%;
+/* 		height: 270px; */
+		box-shadow: 0px 0px 20px 0px rgba(#777777, 0.6);
+
+		.card-gatsby__button {
+			transform: translateY(0%);
+			color: #027090;
+
+			transition: all 0.3s;
+		}
+	}
+
+
+
+/* 	&:hover::after{
+		content: '';
+		display: block;
+		position: absolute;
+		width: 100%;
+		height: 180% !important;
+		top: 0;
+		left: 0;
+		background-color: #040e18;
+		transition: opacity 0.5s ease 250ms;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position-x: center;
+		background-position-y: center;
+
+	} */
+}
+
+.card-gatsby__button {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	background-color: rgba(0, 121, 201, 0.349);
+	box-sizing: border-box;
+	padding: 20px 10px;
+	font-size: 12px;
+	color: rgb(155, 134, 17);
+	font-weight: 300;
+	text-align: center;
+	text-transform: uppercase;
+
+	transform: translateY(100%);
+
+	transition: all 0.3s;
+}

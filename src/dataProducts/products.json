@@ -1,0 +1,31 @@
+[
+    {
+        "id": "1",
+        "name": "pierogi 1",
+        "price": "10",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis eu nisl ut placerat. In gravida turpis velit, ut convallis dolor suscipit elementum. Ut a lacus quis purus facilisis dictum. Donec commodo lacus a enim interdum lacinia.",
+        "image": "./images/pierogi-1.jpg"
+    },
+    {
+        "id": "2",
+        "name": "pierogi 2",
+        "price": "20",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis eu nisl ut placerat. In gravida turpis velit, ut convallis dolor suscipit elementum. Ut a lacus quis purus facilisis dictum. Donec commodo lacus a enim interdum lacinia.",
+        "image": "./images/pierogi-2.jpg"
+    },
+    {
+        "id": "3",
+        "name": "pierogi 3",
+        "price": "30",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis eu nisl ut placerat. In gravida turpis velit, ut convallis dolor suscipit elementum. Ut a lacus quis purus facilisis dictum. Donec commodo lacus a enim interdum lacinia.",
+        "image": "./images/pierogi-3.jpg"
+    },
+    {
+        "id": "4",
+        "name": "pierogi 4",
+        "price": "40",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis eu nisl ut placerat. In gravida turpis velit, ut convallis dolor suscipit elementum. Ut a lacus quis purus facilisis dictum. Donec commodo lacus a enim interdum lacinia.",
+        "image": "./images/pierogi-4.jpg"
+    }
+
+]
