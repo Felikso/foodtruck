@@ -14,7 +14,6 @@ const Layout = ({ location, children }) => {
 <>
         <GlobalStyle />
         <InfoTopBox
-          showInfoBelow={80}
           number="000-000-000"
           numberHref="736758198"
           adress="Wrocław, ul. Dawida 2"
@@ -23,7 +22,9 @@ const Layout = ({ location, children }) => {
           colorHover="var(--info-top-box-color-hover)"
           background="var(--info-top-box-bg)"
         />
-        <Navbar />
+        <Navbar
+        showNavBelow={80}
+        />
           {children}
           <ScrollBtn showBelow={250} />
         <Footer />

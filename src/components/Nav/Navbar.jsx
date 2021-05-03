@@ -41,11 +41,11 @@ const NavBtn = styled.div`
   }
 `
 
-const Navbar = ({showInfoBelow}) => {
-  const [scrollNav, setScrollNav] = useState(false)
+const Navbar = ({showNavBelow}) => {
+  const [scrollNav, setScrollNav] = useState(showNavBelow ? false : true)
 
   const changeBackground = () => {
-    if(window.pageYOffset >= 80){
+    if(window.pageYOffset > showNavBelow){
       setScrollNav(true)
 
     }else{
@@ -56,7 +56,7 @@ const Navbar = ({showInfoBelow}) => {
 
 
 useEffect(() => {
-  if (showInfoBelow) {
+  if (showNavBelow) {
       window.addEventListener(`scroll`, changeBackground)
       return () => window.removeEventListener(`scroll`, changeBackground)
   }

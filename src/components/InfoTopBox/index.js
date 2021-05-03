@@ -3,17 +3,8 @@ import styled from 'styled-components'
 
 import { FiPhoneCall, FiMapPin } from 'react-icons/fi'
 
-
-//transitions
-/* import Aos from 'aos';
-import 'aos/dist/aos.css'; */
-
 export default function InfoTopBox({number, numberHref, adress, adressHref, background, color, colorHover }) {
-/*     useEffect(() => {
-        Aos.init({
-            duration: 1000
-        });
-    }, []) */
+
 
         return (
             <TopBox
@@ -64,8 +55,9 @@ const TopBox = styled.div`
     width: 100wv;
     display: flex;
     justify-content: flex-end;
-    padding: 10px 0;
+    align-items: center;
     height: 5vh;
+    font-size: 2.5vh;
 
     @media screen and (max-width: 768px) {
         justify-content: flex-start;

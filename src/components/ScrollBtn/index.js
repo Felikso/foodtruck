@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components'
 import { IoIosArrowDropupCircle } from 'react-icons/io'
 
 const ScrollBtn = ({
-    showBelow,
+    showBelow
 }) => {
 
 
@@ -59,6 +59,7 @@ const ScrollButton = styled.button`
             border: none;
             font-size: 50px;
             color: var(--scroll-top-btn-color);
+            cursor: pointer;
             transition: 0.8s;
             animation: ${ShowScroll} .5s ease-in-out normal forwards;
             animation-iteration-count: 1;

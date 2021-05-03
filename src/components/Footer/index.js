@@ -13,6 +13,7 @@ import SvgFooterLogo from './SvgFooterLogo'
 //transitions
 import Aos from 'aos';
 import 'aos/dist/aos.css';
+import OpeningHoursBox from '../OpeningHoursBox'
 
 export default function Footer() {
     useEffect(() => {
@@ -35,7 +36,7 @@ export default function Footer() {
                 </FooterDesc>
                 <SvgFooterLogo />
             </FooterBrandBox>
-
+<FooterInfoWrapper>
             <FooterLinksWrapper>
             <FooterLinkItems>
                     <FooterLinkTitle>Skontaktuj się z nami</FooterLinkTitle>
@@ -53,12 +54,10 @@ export default function Footer() {
                     </FooterIconsBox>
                 </FooterLinkItems>
             </FooterLinksWrapper>
-
+            <FooterOpeningContainer><OpeningHoursBox /></FooterOpeningContainer>
+            </FooterInfoWrapper>
         </FooterContainer>
-            <FooterBottomBox
-/*                     data-aos="fade-in"   
-                    data-aos-offset="-100"
-                    data-aos-delay="0" */>
+            <FooterBottomBox>
             <FooterBottomBoxLink>regulamin</FooterBottomBoxLink>
             <FooterBottomBoxLink>polityka prywatoności</FooterBottomBoxLink>
             <FooterBottomBoxLink>materiały wykorzystane na stronie</FooterBottomBoxLink>
@@ -69,15 +68,17 @@ export default function Footer() {
 
 
 const FooterContainer = styled.div`
-/*     padding: 5rem calc((100vw - 1100px) /2); */
+    padding: 1em 5em;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     color: var(--footer-color);
     background: var(--footer-bg);
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 900px) {
         grid-template-columns: 1fr;
         justify-items: center;
+        padding: 0;
+        
     }
 
 `
@@ -88,6 +89,8 @@ const FooterLinksWrapper = styled.div`
 
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
+/*         grid-template-columns: repeat( auto-fit, minmax(250px, 1fr) ); */
+
     }
 `
 
@@ -130,7 +133,7 @@ const FooterLinkTitle = styled.h3`
     margin-bottom: 16px;
     color: var(--footer-title);
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 768px) {
         font-size: 20px;
     }
 
@@ -151,7 +154,7 @@ const FooterLink = styled(Link)`
 const FooterIconsBox = styled.div`
     display: flex;
 
-    @media screen and (max-width: 500px) {
+    @media screen and (max-width: 768px) {
         font-size: 30px;
     }
 `
@@ -221,7 +224,7 @@ const FooterBottomBox = styled.div`
 /*     width: 100vw; */
     border-top: solid var(--footer-bottom-box-border-color);
 
-    @media screen and (max-width: 500px){
+    @media screen and (max-width: 768px){
         flex-direction: column;
         align-items: center;
     }
@@ -247,7 +250,26 @@ const FooterBrandBox = styled.div`
     justify-content: center;
     align-items: center;
 
-    @media screen and (max-width: 500px){
-        grid-template-rows: 1fr 1fr;
+    @media screen and (max-width: 768px){
+        grid-template-rows: 1fr;
+        text-align: center;
     }
+`
+const FooterOpeningContainer = styled.div`
+    height: 100%;
+    width: 100%;
+    display: flex;
+`
+
+const FooterInfoWrapper = styled.div`
+    display: flex;
+    padding: 0 10px;
+
+    @media screen and (max-width: 768px) {
+        width: 80vw;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    
 `

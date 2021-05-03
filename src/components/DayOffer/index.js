@@ -1,4 +1,4 @@
-/* import React, { useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
@@ -17,20 +17,17 @@ export default function DayOffer({heading}) {
     const data = useStaticQuery(
         graphql`
           query {
-            HWGraphQL {
-                dayOffers {
-                nodes {
-                        DayOffer {
-                        date
-                        dayname
-                        dish1
-                        dish2
-                        dish3
-                        dish4
-                        }
-                    }
+            wpDayOffer {
+                DayOffer {
+                  date
+                  dayname
+                  dish1
+                  dish2
+                  dish3
+                  dish4
+                  fieldGroupName
                 }
-            }
+              }
 
             }
  
@@ -39,42 +36,35 @@ export default function DayOffer({heading}) {
         `
       )
 
-        const DayOffer = data.HWGraphQL.dayOffers.nodes
+        const DayOffer = data.wpDayOffer.DayOffer
 
     return (
       <>
 <DayOfferContainer>
             <DayOfferHeading>Oferta dnia</DayOfferHeading>
 
-
-                             {
-    DayOffer.map((item, i) => (
-        
-
-           <DayOfferBox
-           key={i}>
+            <DayOfferBox
+           >
             <DayOfferHead>
                 <DayOfferDayName>
-                    {item.DayOffer.dayname}
+                    {DayOffer.dayname}
                 </DayOfferDayName>
                 <DayOfferDate>
-                {item.DayOffer.date}
+                {DayOffer.date}
                 </DayOfferDate>
 
             </DayOfferHead>
             <DayOfferDishesList>
                
-            <DayOfferDish>{item.DayOffer.dish1}</DayOfferDish>
-            <DayOfferDish>{item.DayOffer.dish2}</DayOfferDish>
-            <DayOfferDish>{item.DayOffer.dish3}</DayOfferDish>
-            <DayOfferDish>{item.DayOffer.dish4}</DayOfferDish>
+            <DayOfferDish>{DayOffer.dish1}</DayOfferDish>
+            <DayOfferDish>{DayOffer.dish2}</DayOfferDish>
+            <DayOfferDish>{DayOffer.dish3}</DayOfferDish>
+            <DayOfferDish>{DayOffer.dish4}</DayOfferDish>
                 
             </DayOfferDishesList>
            </DayOfferBox>
 
-      
-    ))
-  } 
+
 
         </DayOfferContainer>
 </>
@@ -91,6 +81,7 @@ const DayOfferContainer = styled.div`
             background: #ffffff6e;
             padding: 10px;
             border: solid 5px white;
+            z-index: 10;
     
 
 `
@@ -134,4 +125,3 @@ const DayOfferBox = styled.div`
 
 
 
- */

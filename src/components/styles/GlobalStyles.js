@@ -106,6 +106,20 @@ export const GlobalStyle = createGlobalStyle`
 
     --info-top-box-color-hover: #bdbdbd;
 
+
+    
+    /* Opening Data */
+
+    --opening-data-border-bottom: #9993;
+
+    --opening-data-hours: #f26a2e;
+
+    --opening-data-day: #c7c7c7;
+
+    --opening-data-bg: transparent;
+
+    --opening-data-title: white;
+
   }
 
     * {
@@ -156,6 +170,8 @@ export const GlobalStyle = createGlobalStyle`
     animation-iteration-count: 1;
     transition: all .2s ease-in-out;
   }
+
+
 
     /* Animations */
     
