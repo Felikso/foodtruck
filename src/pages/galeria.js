@@ -7,8 +7,8 @@ import { useHasBeenVisible } from '../hooks/useVisibility';
 import Layout from "../components/Layout/index.js"
 import Seo from "../components/SEO/index"
 //
-import OfferGalleryWp from '../components/OfferGalleryWp'
 import OfferGalleryWpLightBox from '../components/OfferGalleryWpLightBox'
+import GalleryContent from '../components/GalleryContent'
 //
 import FullWidthSection from '../components/FullWidthSection';
 import Video from '../assets/videos/pierogi1.mp4'
@@ -74,7 +74,11 @@ const bgImage = convertToBgImage(image);
       
       
       />
-      <OfferGalleryWpLightBox/>
+            <GalleryContent
+              galleryTitle="Nasze portfolio"
+              galleryDesc='Chcemy na bieżąco móc dzielić się widokiem potraw przez nas serwowanych wraz z procesami ich przygotowywania. Konsumenci mogą poznać nas najlepiej osobiście, natomiast pragniemy również przyblizyć im otoczenie naszej wspólnej pracy. Następujące zdjęcia prezentują wszystko TO co wiąże się z naszą firmą. ;)'
+              galleryInvitation="Serdecznie zapraszamy do obejrzenia naszej galerii:" />
+              <OfferGalleryWpLightBox/>
       {hasScrolled || isScrolling ? (
         <>
 

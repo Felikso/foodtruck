@@ -41,7 +41,7 @@ const NavBtn = styled.div`
   }
 `
 
-const Navbar = () => {
+const Navbar = ({showInfoBelow}) => {
   const [scrollNav, setScrollNav] = useState(false)
 
   const changeBackground = () => {
@@ -56,6 +56,13 @@ const Navbar = () => {
 
 
 window.addEventListener('scroll', changeBackground)
+
+useEffect(() => {
+  if (showInfoBelow) {
+      window.addEventListener(`scroll`, changeBackground)
+      return () => window.removeEventListener(`scroll`, changeBackground)
+  }
+})
 
 
   return (

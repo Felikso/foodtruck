@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 
-function MenuContent({ menuTitle, menuDesc, MenuInvitation }) {
+function MenuContent({ menuTitle, menuDesc, menuInvitation }) {
 
             useEffect(() => {
                 Aos.init({
@@ -26,7 +26,7 @@ function MenuContent({ menuTitle, menuDesc, MenuInvitation }) {
                                 {menuDesc}
                             </MenuContentDesc>
                             <MenuContentInvitation>
-                                {MenuInvitation}
+                                {menuInvitation}
                             </MenuContentInvitation>
 
                         </MenuContentBox>

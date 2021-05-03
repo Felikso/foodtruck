@@ -14,6 +14,7 @@ const Layout = ({ location, children }) => {
 <>
         <GlobalStyle />
         <InfoTopBox
+          showInfoBelow={80}
           number="000-000-000"
           numberHref="736758198"
           adress="Wrocław, ul. Dawida 2"
