@@ -1,5 +1,6 @@
 import React, { useRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby'
+import styled from 'styled-components'
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
 import { useHasBeenVisible } from '../hooks/useVisibility';
@@ -13,6 +14,9 @@ import ContactInfo from '../components/ContactInfo'
 import FullWidthSection from '../components/FullWidthSection';
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
+import OpeningHoursBox from '../components/OpeningHoursBox'
+
+import MapPhoto from '../components/MapPhoto'
 
 
 function ContactPage() {
@@ -60,7 +64,16 @@ const bgImage = convertToBgImage(image);
       <ContactInfo/>
       {hasScrolled || isScrolling ? (
         <>
-
+        <ContactSectionTitle>Informacje dotyczące godzin otwarcia oraz lokalizacji</ContactSectionTitle>
+        <ContactSection>
+            <ContactOpeningHoursBox>
+              <OpeningHoursBox />
+            </ContactOpeningHoursBox>
+              <ContactMapBox>
+                <MapPhoto />
+              </ContactMapBox>
+        </ContactSection>
+      
         </>
       ) : (
         <FullWidthSection ref={halfPage} height='2286px' minHeight='3448px' />
@@ -73,3 +86,54 @@ const bgImage = convertToBgImage(image);
 }
 
 export default ContactPage
+
+const ContactOpeningHoursBox = styled.div`
+  background: var(--contact-opening-hours-box-bg);
+  width: 35vw;
+  padding: 20px;
+
+  h2 {
+    font-size: 2em;
+    color: var(--contact-opening-h2);
+  }
+
+  h5 {
+    color: var(--contact-opening-day);
+    font-size: 1.8em;
+  }
+
+  p {
+    font-size: 1.5em;
+    color: var(--contact-opening-hours);
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+    margin-bottom: 2em;
+}
+`
+
+const ContactMapBox = styled.div`
+  width: 45vw;
+  padding: 20px;
+
+  @media screen and (max-width: 1000px) {
+    width: 100%;
+}
+`
+
+const ContactSection = styled.div`
+  display: flex;
+  width: 80vw;
+  margin: 20px auto;
+
+  @media screen and (max-width: 1000px) {
+    flex-direction: column;
+}
+`
+
+const ContactSectionTitle = styled.h3`
+  text-align: center;
+  font-size: 2em;
+  margin: 2em 0;
+`

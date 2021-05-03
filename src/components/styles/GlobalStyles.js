@@ -10,11 +10,21 @@ export const GlobalStyle = createGlobalStyle`
 
     --font-1: rgb(255, 255, 255);
 
+    /* Contact */
+
     --contact-a: orange;
     --contact-p: red;
     --contact-to: green;
 
     --contact-to-hover: blue;
+
+    --contact-opening-hours-box-bg: transparent;
+
+    --contact-opening-day: rgb(0,0,100);
+
+    --contact-opening-hours: rgb(200,0,0);
+
+    --contact-opening-h2: black;
 
     --messenger-icon: #00B2FF;
     --facebook-icon: #3b5998;

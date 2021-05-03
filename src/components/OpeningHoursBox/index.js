@@ -45,6 +45,7 @@ const OpeningHoursContainer = styled.div`
     justify-content: space-evenly;
     padding: 10px;
     width: 100%;
+    height: 100%;
 
     h2 {
         color: var(--opening-data-title);
