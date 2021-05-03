@@ -6,6 +6,8 @@ import { menuData } from "../../data/MenuData"
 
 import AniLink from "gatsby-plugin-transition-link/AniLink";
 
+import background from "../../assets/images/lwowskie-smaki.png";
+
 
 const Ul = styled.ul`
   list-style: none;
@@ -49,7 +51,13 @@ const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
         {menuData.map((item, index)=> (
-          <NavLink to={item.link} key={index} swipe top="entry">
+          <NavLink 
+          to={item.link} 
+          key={index} 
+          cover
+          direction="right"
+          duration={2}
+          bg={`#1d1d1d url("${background}") no-repeat fixed center`}>
             {item.title}
           </NavLink>
         ))}

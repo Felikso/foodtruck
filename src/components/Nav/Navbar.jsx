@@ -5,6 +5,10 @@ import { Link } from 'gatsby'
 import { Button } from '../Button/index'
 import SvgLSLogo from './SvgLSLogo'
 
+import AniLink from "gatsby-plugin-transition-link/AniLink";
+
+import background from "../../assets/images/lwowskie-smaki.png";
+
 
 const Nav = styled.nav`
 background: transparent;
@@ -23,7 +27,7 @@ width: 100%;
   }
 `
 
-const NavLink = styled(Link)`
+const NavLink = styled(AniLink)`
   color: #fff;
   display: flex;
   align-items: center;
@@ -69,12 +73,25 @@ useEffect(() => {
     <Nav
     className={scrollNav ? "slideDownNav": ""}
     >
-      <NavLink to="/"><SvgLSLogo /></NavLink>
+      <NavLink 
+      to="/"
+      cover
+      direction="right"
+      duration={2}
+      bg={`#1d1d1d url("${background}") no-repeat fixed center`}
+      ><SvgLSLogo /></NavLink>
       <Burger />
       <NavBtn>
-        <Button primary="true" round="true" to="/menu">
+        <AniLink
+          to="/menu"
+          cover
+          direction="right"
+          duration={2}
+          bg={`#1d1d1d url("${background}") no-repeat fixed center`}
+        ><Button primary="true" round="true" >
           Menu
         </Button>
+        </AniLink>
       </NavBtn>
     </Nav>
   )
