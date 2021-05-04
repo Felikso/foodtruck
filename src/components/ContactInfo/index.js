@@ -57,12 +57,12 @@ export default ContactInfo
 
 const ContactContainer = styled.div`
     width: 100%;
-    background: #fcfcfc;
-    color: #000;
+    background: var(--contact-container-stats-bg);
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 4rem calc((100vw - 1300px) /2);
+ 
 
 `
 const ContactHeading = styled.h1`
@@ -79,6 +79,7 @@ const ContactWrapper = styled.div`
 
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
+        font-size: 1.2em;
     }
 
     @media screen and (max-width: 500px) {
@@ -97,10 +98,19 @@ const ContactBox = styled.div`
 const ContactIcon = styled.div`
     font-size: 3rem;
     margin-bottom: 1rem;
+
+    @media screen and (max-width: 768px){
+        font-size: 4.5rem;
+        margin-bottom: 0.8rem;
+    }
 `
 const ContactTitle = styled.p`
     font-size: clamp(1rem, 2.5vw, 1.5rem);
-    margin-bottom: 0.5rem;  
+    margin-bottom: 0.5rem; 
+    
+    @media screen and (max-width: 768px){
+        font-size: 1.2em;
+    }
 `
 
 const ContactTo = styled.p`
@@ -110,14 +120,23 @@ const ContactTo = styled.p`
     transition: 1s;
 
     &:hover{
-        color: var(--contact-to-hover);    
+        color: var(--contact-to-hover);  
+         
+    }
+
+    @media screen and (max-width: 768px) {
+        font-size: 1.1rem; 
     }
 `
 
 const ContactDesc = styled.p`
     font-size: clamp(0.6rem, 2.2vw, 1.1rem);
     line-height: 3em;
-    color: var(--contact-p2)
+    color: var(--contact-p);
+
+    @media screen and (max-width: 768px){
+        font-size: 1.2em;
+    }
 `
 
 const ContactHref = styled.a`
@@ -125,12 +144,19 @@ const ContactHref = styled.a`
     line-height: 1em;
     text-decoration: none;
     color: var(--contact-a);
+
+    @media screen and (max-width: 768px){
+        font-size: 1.2em;
+    }
 `
 
 const AdressP = styled.p`
         font-size: clamp(0.6rem, 2.2vw, 1.1rem);
         line-height: 1em;
-        text-decoration: none;
-        color: var(--contact-p);  
+        text-decoration: none; 
         line-height: 2em;
+
+        @media screen and (max-width: 768px){
+            font-size: 1em;
+        }
 `

@@ -57,13 +57,19 @@ const MenuContentBox = styled.div`
     margin: 40px auto;
 
     @media screen and (max-width: 768px) {
-        width: 90vw;
+        width: 85vw;
       }
 `
 
 const MenuContentTitle = styled.h3`
         margin-bottom: 2em;
         font-size: 2em;
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 1em;
+            font-size: 1.5em;
+            text-align: center;
+          }
 `
 
 const MenuContentDesc = styled.p`
@@ -75,4 +81,9 @@ const MenuContentInvitation = styled.h5`
         font-size: 1.5em;
         margin-top: 2em;
         font-style: italic;
+
+        @media screen and (max-width: 768px)  {
+            font-size: 1.2em;
+            margin-top: 1.5em; 
+        }
 `

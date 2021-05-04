@@ -12,9 +12,11 @@ export const GlobalStyle = createGlobalStyle`
 
     /* Contact */
 
-    --contact-a: orange;
-    --contact-p: red;
-    --contact-to: green;
+    --contact-a: #f26a2e;
+    --contact-p: #b35656;
+    --contact-to: #28a728;
+
+    --contact-container-stats-bg: black;
 
     --contact-to-hover: blue;
 

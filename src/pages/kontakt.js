@@ -131,6 +131,20 @@ const ContactOpeningHoursBox = styled.div`
     width: 100%;
     margin-bottom: 2em;
 }
+
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 1.5em !important;
+    }
+  
+    h5 {
+      font-size: 1.2em !important;
+    }
+  
+    p {
+      font-size: 1em !important;
+    }
+  }
 `
 
 const ContactMapBox = styled.div`
@@ -155,5 +169,10 @@ const ContactSection = styled.div`
 const ContactSectionTitle = styled.h3`
   text-align: center;
   font-size: 2em;
+  line-height: 1.5em;
   margin: 2em 0;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 1.5em;
+  }
 `
