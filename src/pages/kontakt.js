@@ -73,7 +73,11 @@ const bgImage = convertToBgImage(image);
       <ContactInfo/>
       {hasScrolled || isScrolling ? (
         <>
-        <ContactSectionTitle>Informacje dotyczące godzin otwarcia oraz lokalizacji</ContactSectionTitle>
+        <ContactSectionTitle
+                   data-aos="fade-in"   
+                   data-aos-offset="200"
+                   data-aos-delay="0"
+        >Informacje dotyczące godzin otwarcia oraz lokalizacji</ContactSectionTitle>
         <ContactSection>
             <ContactOpeningHoursBox
                    data-aos="fade-in"   

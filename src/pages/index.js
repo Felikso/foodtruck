@@ -24,12 +24,12 @@ function IndexPage() {
     graphql`
       query {
           placeholderImage: file(relativePath: {eq: "email-1.jpg"}) {
-      childImageSharp {
-      gatsbyImageData(
-          width: 1200, 
-          quality: 60, 
-          webpOptions: {quality: 75})
-      }
+            childImageSharp {
+            gatsbyImageData(
+                width: 1200, 
+                quality: 60, 
+                webpOptions: {quality: 75})
+            }
   }
 }
 `

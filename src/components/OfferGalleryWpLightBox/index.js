@@ -88,19 +88,22 @@ const CustomWrapper = ({ children, onClick }) => (
 
     return (
       <>
-<GalleryContainer>
-<Gallery  
-images={images}
-lightboxOptions={lightboxOptions}
-onClose={onClose}
-rowMargin="10vw"
-/* gutter="20px"
-colWidth="25%"
-mdColWidth="50%" */
-customWrapper={CustomWrapper}
+            <GalleryContainer
+              data-aos="fade-in"   
+              data-aos-offset="100"
+              data-aos-delay="100">
+            <Gallery  
+            images={images}
+            lightboxOptions={lightboxOptions}
+            onClose={onClose}
+            rowMargin="10vw"
+            /* gutter="20px"
+            colWidth="25%"
+            mdColWidth="50%" */
+            customWrapper={CustomWrapper}
 
- />
-</GalleryContainer>
+            />
+            </GalleryContainer>
 {/* <OfferGalleryWpLightBoxContainer>
             <OfferGalleryWpLightBoxHeading>{heading}</OfferGalleryWpLightBoxHeading>
             <OfferGalleryWpLightBoxWrapper>

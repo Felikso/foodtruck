@@ -19,13 +19,22 @@ function MenuContent({ menuTitle, menuDesc, menuInvitation }) {
                     <>
 
                         <MenuContentBox>
-                            <MenuContentTitle>
+                            <MenuContentTitle
+                                                            data-aos="fade-in"   
+                                                            data-aos-offset="100"
+                                                            data-aos-delay="200">
                                 {menuTitle}
                             </MenuContentTitle>
-                            <MenuContentDesc>
+                            <MenuContentDesc
+                                                            data-aos="fade-in"   
+                                                            data-aos-offset="100"
+                                                            data-aos-delay="200">
                                 {menuDesc}
                             </MenuContentDesc>
-                            <MenuContentInvitation>
+                            <MenuContentInvitation
+                                                            data-aos="fade-in"   
+                                                            data-aos-offset="100"
+                                                            data-aos-delay="200">
                                 {menuInvitation}
                             </MenuContentInvitation>
 

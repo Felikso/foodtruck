@@ -17,7 +17,11 @@ function ContactInfo() {
     }, [])
     return (
         <ContactContainer>
-            <ContactHeading>Serdecznie zapraszamy do kontaktu</ContactHeading>
+            <ContactHeading
+                               data-aos="fade-in"   
+                               data-aos-offset="100"
+                               data-aos-delay="100"
+            >Serdecznie zapraszamy do kontaktu</ContactHeading>
             <ContactWrapper>
                 {ContactData.map((item, index) => (
                 <ContactBox 

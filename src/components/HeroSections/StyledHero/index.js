@@ -9,9 +9,9 @@ import DayOffer from '../../DayOffer'
 
 import BgImgBridge from '../../BgImgBridge'
 
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+/* import AniLink from "gatsby-plugin-transition-link/AniLink";
 
-import background from "../../../assets/images/lwowskie-smaki.png";
+import background from "../../../assets/images/lwowskie-smaki.png"; */
 
 
 
@@ -76,17 +76,17 @@ function StyledHero({
                     <StyledHeroP>
                         {HeroMotto}
                     </StyledHeroP>
-                    <AniLink
+{/*                     <AniLink
                           to={HeroBtnPath}
                           cover
                           direction="right"
                           duration={2}
                           bg={`#1d1d1d url("${background}") no-repeat fixed center`}
-                    >
-                        <Button primary="true" round="true" big="true">
+                    > */}
+                        <Button primary="true" round="true" big="true" to={HeroBtnPath}>
                         {HeroBtnText}
                     </Button>
-                    </AniLink>
+{/*                     </AniLink> */}
                 </StyledHeroItems>
             </StyledHeroContent>
         </StyledHeroContainer>

@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 import { menuData } from "../../data/MenuData"
 
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Link } from "gatsby"
 
-import background from "../../assets/images/lwowskie-smaki.png";
+/* import AniLink from "gatsby-plugin-transition-link/AniLink";
+
+import background from "../../assets/images/lwowskie-smaki.png"; */
 
 
 const Ul = styled.ul`
@@ -31,7 +33,7 @@ const Ul = styled.ul`
   }
 `;
 
-const NavLink = styled(AniLink)`
+const NavLink = styled(Link)`
   color: #fff;
   display: flex;
   align-items: center;
@@ -53,10 +55,10 @@ const RightNav = ({ open }) => {
           <NavLink 
           to={item.link} 
           key={index} 
-          cover
+/*           cover
           direction="right"
           duration={2}
-          bg={`#1d1d1d url("${background}") no-repeat fixed center`}>
+          bg={`#1d1d1d url("${background}") no-repeat fixed center`} */>
             {item.title}
           </NavLink>
         ))}

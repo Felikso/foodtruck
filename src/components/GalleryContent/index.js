@@ -19,13 +19,22 @@ function GalleryContent({ galleryTitle, galleryDesc, galleryInvitation }) {
                     <>
 
                         <GalleryContentBox>
-                            <GalleryContentTitle>
+                            <GalleryContentTitle
+                                data-aos="fade-in"   
+                                data-aos-offset="100"
+                                data-aos-delay="100">
                                 {galleryTitle}
                             </GalleryContentTitle>
-                            <GalleryContentDesc>
+                            <GalleryContentDesc
+                                data-aos="fade-in"   
+                                data-aos-offset="100"
+                                data-aos-delay="100">
                                 {galleryDesc}
                             </GalleryContentDesc>
-                            <GalleryContentInvitation>
+                            <GalleryContentInvitation
+                                data-aos="fade-in"   
+                                data-aos-offset="100"
+                                data-aos-delay="100">
                                 {galleryInvitation}
                             </GalleryContentInvitation>
 
