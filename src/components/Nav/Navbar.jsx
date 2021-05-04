@@ -73,25 +73,28 @@ useEffect(() => {
     <Nav
     className={scrollNav ? "slideDownNav": ""}
     >
-      <NavLink 
+{/*       <NavLink 
       to="/"
       cover
       direction="right"
       duration={2}
       bg={`#1d1d1d url("${background}") no-repeat fixed center`}
-      ><SvgLSLogo /></NavLink>
+      > */}
+        <SvgLSLogo />
+      {/* </NavLink> */}
       <Burger />
       <NavBtn>
-        <AniLink
+{/*         <AniLink
           to="/menu"
           cover
           direction="right"
           duration={2}
           bg={`#1d1d1d url("${background}") no-repeat fixed center`}
-        ><Button primary="true" round="true" >
+        > */}
+          <Button primary="true" round="true" >
           Menu
         </Button>
-        </AniLink>
+        {/* </AniLink> */}
       </NavBtn>
     </Nav>
   )
