@@ -3,7 +3,7 @@ module.exports = {
     title: `Gatsby Foodtruck Website`,
     description: `Simply Foodtruck Template.`,
     author: `@Felikso`,
-    siteUrl: `https://projekty.ventus-trade.pl/`
+    siteUrl: `https://lwowskie-smaki.ventus-trade.pl/`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
