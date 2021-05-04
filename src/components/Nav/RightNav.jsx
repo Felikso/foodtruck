@@ -5,6 +5,8 @@ import { menuData } from "../../data/MenuData"
 
 import { Link } from "gatsby"
 
+import SvgLSLogoMobile from './SvgLSLogoMobile'
+
 /* import AniLink from "gatsby-plugin-transition-link/AniLink";
 
 import background from "../../assets/images/lwowskie-smaki.png"; */
@@ -62,6 +64,7 @@ const RightNav = ({ open }) => {
             {item.title}
           </NavLink>
         ))}
+  <SvgLSLogoMobile/>
     </Ul>
   )
 }
