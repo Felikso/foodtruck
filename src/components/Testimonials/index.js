@@ -34,7 +34,7 @@ console.log(data.allFile.edges)
     return (
         <TestimonialsContainer>
             <TopLine>
-            Tddd
+            Nasza motywacja
             </TopLine>
             <Description>
                 Czym się kierujemy?

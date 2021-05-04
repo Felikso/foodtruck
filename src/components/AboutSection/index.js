@@ -90,14 +90,14 @@ console.log(data.allFile.edges)
 
 const AboutContainer = styled.div`
     width: 100%;
-    background: #fcfcfc;
-    color: #000;
+    background: var(--about-us-container-bg);
+    color: var(--about-us-container-color);
     padding: 5rem calc((100vw - 1300px) /2);
     height: 100%;
 
 `
 const AboutTopLine = styled.div`
-    color: #077bf1;
+    color: var(--about-us-top-line-color);
     font-size: 1rem;
     padding-left: 2rem;
     margin-bottom: 0.75rem;
@@ -145,14 +145,11 @@ const AboutTestimonial = styled.div`
     }
 
     p {
-        color: #3b3b3b;
+        color: var(--about-us-testimonial-p);
     }
 `
 
 const AboutImages = styled(GatsbyImage)`
     border-radius: 10px;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
 `

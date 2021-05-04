@@ -10,13 +10,21 @@ export const GlobalStyle = createGlobalStyle`
 
     --font-1: rgb(255, 255, 255);
 
+    /* About Section */
+
+    --about-us-container-bg: transparent;
+
+    --about-us-container-color: white;
+
+    --about-us-top-line-color: #077bf1;
+
+    --about-us-testimonial-p: #3b3b3b;
+
     /* Contact */
 
     --contact-a: #f26a2e;
     --contact-p: #b35656;
     --contact-to: #28a728;
-
-    --contact-container-stats-bg: black;
 
     --contact-to-hover: blue;
 
@@ -56,7 +64,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --footer-title: white;
 
-    --footer-bg: black;
+    --footer-bg: transparent;
 
     --footer-color: #000;
 
@@ -66,7 +74,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --footer-link-color-hover: #f26a2e;
 
-    --footer-bottom-box-bg: black;
+    --footer-bottom-box-bg: transparent;
 
     --footer-bottom-box-link-color: rgb(222,222,222);
 
@@ -90,9 +98,17 @@ export const GlobalStyle = createGlobalStyle`
 
     --stats-icons-hover: blue;
 
-    --stats-box-bg: #f2f2f2;
+    --stats-box-bg: #646464c2;
 
-    --stats-box-bg-hover: #fff;
+    --stats-box-bg-hover: #979797c2;
+
+    --stats-container-bg: transparent;
+
+    --stats-container-color: white;
+
+    --stats-question-color: red;
+
+    --contact-container-stats-bg: transparent;
 
     /* Scroll btn */
 
@@ -131,6 +147,7 @@ export const GlobalStyle = createGlobalStyle`
     --opening-data-bg: transparent;
 
     --opening-data-title: white;
+
 
   }
 
