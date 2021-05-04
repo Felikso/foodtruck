@@ -40,13 +40,13 @@ export const GlobalStyle = createGlobalStyle`
 
     --menu-box-border: #808080;
 
-    --menu-dish-name-color: #8c0000;
+    --menu-dish-name-color: #e60000;
 
-    --menu-dish-q-color: black;
+    --menu-dish-q-color: #525252;
 
-    --menu-dish-desc-color: #000000;
+    --menu-dish-desc-color: #eaeaea;
 
-    --menu-dish-price-color: #0c4e00;
+    --menu-dish-price-color: #33d000;
 
     /* Footer */
 
@@ -141,6 +141,8 @@ export const GlobalStyle = createGlobalStyle`
 
     html, body {
         overflow-x: hidden;
+        background: black;
+        color: white;
     }
 
     #scroll-btn {

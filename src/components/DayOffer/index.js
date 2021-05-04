@@ -82,6 +82,13 @@ const DayOfferContainer = styled.div`
             padding: 10px;
             border: solid 5px white;
             z-index: 10;
+
+            @media screen and (max-width: 768px) {
+                width: 80vw;
+                margin: auto;
+                position: relative;
+                transform: translate(0%, 0%);
+            }
     
 
 `
