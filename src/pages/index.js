@@ -48,7 +48,7 @@ const bgImage = convertToBgImage(image);
       <StyledHero
             Video={Video}
             bgImage={bgImage}
-            HeroPoster="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.przyslijprzepis.pl%2Fprzepis%2Fpierogi-z-twarogiem-i-szczypiorkiem&psig=AOvVaw39XP0NyDL7Uelk7tuNrhD2&ust=1620065330060000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCJDZ1efLq_ACFQAAAAAdAAAAABAD"
+            HeroPoster="https://www.ventus-trade.pl/img/video-place-holder.png"
             HeroTitle="O nas"
             HeroMotto="Szybko, Smacznie, Świeżo"
             HeroBtnText="menu"
