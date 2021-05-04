@@ -26,6 +26,7 @@ function StyledHero({
     HeroBtnText, 
     sources, 
     HeroHeight, 
+    HeroWidthMedia,
     HeroHeightMedia,
     bgImage
     }) {
@@ -39,13 +40,19 @@ function StyledHero({
         min-height: ${HeroHeight};
 
         @media screen and (max-width: 768px) {
-            min-height: ${HeroHeightMedia}; 
+            min-height: ${HeroWidthMedia}; 
+        }
+        @media screen and (max-height: 500px) {
+            height: ${HeroHeightMedia}; 
         }
         `}>
         <StyledHeroContainer
         css={`
         height: ${HeroHeight};
         @media screen and (max-width: 768px) {
+            height: ${HeroWidthMedia}; 
+        }
+        @media screen and (max-height: 500px) {
             height: ${HeroHeightMedia}; 
         }
         `}>
@@ -55,9 +62,11 @@ function StyledHero({
              css={`
             height: ${HeroHeight};
             @media screen and (max-width: 768px) {
+                height: ${HeroWidthMedia}; 
+             } 
+             @media screen and (max-height: 500px) {
                 height: ${HeroHeightMedia}; 
-        } 
-         }
+            }
              `}/>
                 <VideoBg src={Video} poster={HeroPoster}type="video/mp4" autoPlay loop muted playsInline />
                </StyledHeroBg>
@@ -66,6 +75,10 @@ function StyledHero({
             css={`
             height: ${HeroHeight};
             @media screen and (max-width: 768px) {
+            height: ${HeroWidthMedia}; 
+        }
+
+        @media screen and (max-height: 500px) {
             height: ${HeroHeightMedia}; 
         }
             `}

@@ -54,7 +54,8 @@ const bgImage = convertToBgImage(image);
             HeroBtnText="menu"
             HeroBtnPath="/menu"
             HeroHeight="95vh"
-            HeroHeightMedia="65vh"
+            HeroWidthMedia="65vh"
+            HeroHeightMedia="100vh"
 
              />
       {hasScrolled || isScrolling ? (
