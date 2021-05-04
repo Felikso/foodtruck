@@ -49,13 +49,13 @@ const bgImage = convertToBgImage(image);
             Video={Video}
             bgImage={bgImage}
             HeroPoster="https://www.ventus-trade.pl/img/video-place-holder.png"
-            HeroTitle="O nas"
+            HeroTitle="Lwowskie Smaki"
             HeroMotto="Szybko, Smacznie, Świeżo"
             HeroBtnText="menu"
             HeroBtnPath="/menu"
             HeroHeight="95vh"
             HeroWidthMedia="65vh"
-            HeroHeightMedia="100vh"
+            HeroHeightMedia="95vh"
 
              />
       {hasScrolled || isScrolling ? (

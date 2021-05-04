@@ -53,7 +53,7 @@ const bgImage = convertToBgImage(image);
       HeroBtnPath="/o-nas"
       HeroHeight="60vh"
       HeroWidthMedia="65vh"
-      HeroHeightMedia="100vh"
+      HeroHeightMedia="95vh"
       
       
       

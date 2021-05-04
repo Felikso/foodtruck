@@ -66,7 +66,7 @@ const bgImage = convertToBgImage(image);
       HeroBtnPath="/menu"
       HeroHeight="60vh"
       HeroWidthMedia="65vh"
-      HeroHeightMedia="100vh"
+      HeroHeightMedia="95vh"
       
       
       

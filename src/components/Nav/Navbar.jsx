@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Burger from './Burger';
 
+import { Link } from 'gatsby'
+
 import { Button } from '../Button/index'
 import SvgLSLogo from './SvgLSLogo'
 
@@ -80,7 +82,9 @@ useEffect(() => {
       duration={2}
       bg={`#1d1d1d url("${background}") no-repeat fixed center`}
       > */}
+      <Link to="/">
         <SvgLSLogo />
+        </Link>
       {/* </NavLink> */}
       <Burger />
       <NavBtn>
@@ -91,7 +95,7 @@ useEffect(() => {
           duration={2}
           bg={`#1d1d1d url("${background}") no-repeat fixed center`}
         > */}
-          <Button primary="true" round="true" >
+          <Button primary="true" round="true" href="/menu" >
           Menu
         </Button>
         {/* </AniLink> */}
