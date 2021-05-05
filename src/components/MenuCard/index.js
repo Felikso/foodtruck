@@ -91,7 +91,7 @@ if(dishCategory === "wszystkie"){
   filteredNodeDish = wordpressDishes.filter(item => item.dishes.category === dishCategory)
 }
 
-  let categories = getUnique(nodeDish, "category");
+  let categories = getUnique(nodeDish, "category").reverse();
 
 
 
@@ -101,6 +101,11 @@ if(dishCategory === "wszystkie"){
       setDishOpen(!dishOpen)
     }else{
       setDishOpen(true)
+      const pageOffset = window.pageYOffset
+      const buttonY = e.target.getBoundingClientRect().y
+      const scrollWinTo = (pageOffset+buttonY)
+      window[`scrollTo`]({ top: (scrollWinTo-80), behavior: `smooth` })
+
     }
 
 
@@ -116,7 +121,7 @@ if(dishCategory === "wszystkie"){
     <div>
         <MenuButtonsBox>
             <MenuButton 
-                key={i} 
+                key={i}
                 value={item}  
                 onClick={((e) => handleClick(e, data, item))}  
                 style={{ background: item===listOpen ? dishOpen ? 'var(--menu-card-color-open)' : 'var(--menu-card-color-close)' : 'var(--menu-card-color-close)'}}>
