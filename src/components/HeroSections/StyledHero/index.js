@@ -157,11 +157,7 @@ const StyledHeroContainer = styled.div`
         left: 0;
         z-index: 2;
         height: 101%;
-        background: linear-gradient(
-            180deg
-            ,rgb(0 0 0 / 30%) 0%,rgb(0 0 0) 100% ),linear-gradient(
-            180deg
-            ,rgba(0,0,0,0.2) 0%,transparent 100% );
+        background: var(--hero-styled-bg);
             }
 
 `
@@ -214,12 +210,14 @@ const StyledHeroH1 = styled.h1`
     margin-bottom: 1.5rem;
     letter-spacing: 3px;
     padding: 0 1rem;
+    color: var(--hero-title-color);
 `
 
 const StyledHeroP = styled.p`
     font-size: clamp(1rem, 3vw, 3rem);
     margin-bottom: 2rem;
     font-weight: 400;
+    color: var(--hero-motto-color);
 `
 
 

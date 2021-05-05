@@ -89,21 +89,25 @@ module.exports = {
 			resolve: `gatsby-source-wordpress`,
 			options: {
 				url: "https://blog.ventus-trade.pl/graphql",
-/*         protocol: `https`,
-        hostingWPCOM: false,
-        useACF: true,
-        plugins: [
-          {
-            resolve: `@draftbox-co/gatsby-wordpress-inline-images`,
-            options: {
-              baseUrl: `blog.ventus-trade.pl`,
-              protocol: `https`,
-              useACF: true,
-            }
-          }
-        ] */
 			},
 		},
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Ubuntu`
+        ],
+        display: 'swap'
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-video-poster`,
+        ],
+      },
+    },
 /*     {
       resolve: `gatsby-plugin-layout`,
       options: {

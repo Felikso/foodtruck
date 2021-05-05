@@ -23,7 +23,7 @@ const Ul = styled.ul`
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #0d2538e6;
+    background-color: var(--mobile-nav-bg);
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
     top: 0;
@@ -36,13 +36,18 @@ const Ul = styled.ul`
 `;
 
 const NavLink = styled(Link)`
-  color: #fff;
+  color: var(--nav-link-color);
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  transition: 1s;
+
+  &:hover{
+    color: var(--nav-link-color-hover);
+  }
 
   @media (max-width: 768px) {
     margin: auto;

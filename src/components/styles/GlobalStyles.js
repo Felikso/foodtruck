@@ -3,12 +3,27 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 
 :root {
-    --color-1: rgb(0, 0, 62);
-    --color-2: rgb(120, 103, 33);
-    --color-3: rgb(150, 11, 11);
-    --color-4: #0c4e00;
+    --color-1: rgb(0, 87, 184);
+    --color-2: rgb(255, 215, 0);
+    --color-3: #D4312D;
+    --color-4: rgb(15, 200, 0);
+
 
     --font-1: rgb(255, 255, 255);
+
+    /* Body */
+
+    --body-bg: white;
+
+    --body-color: black;
+
+    /* Hero */
+
+    --hero-styled-bg: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5046218316428134) 4%, rgba(255,255,255,0.25252099130667893) 7%, rgba(0,0,0,1) 100%);
+
+    --hero-title-color: #FF0600;
+
+    --hero-motto-color: #fffb00;
 
     /* About Section */
 
@@ -58,15 +73,21 @@ export const GlobalStyle = createGlobalStyle`
 
     --menu-dish-price-color: #33d000;
 
+    /* Featured */
+
+    --featured-bg: transparent;
+
+    --featured-heading-color: #ca0101;
+
     /* Footer */
 
     --footer-icons-color: #3d3d4e;
 
     --footer-title: white;
 
-    --footer-bg: transparent;
+    --footer-bg: black;
 
-    --footer-color: #000;
+    --footer-color: white;
 
     --footer-h3-color: #f26a2e;
 
@@ -74,7 +95,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --footer-link-color-hover: #f26a2e;
 
-    --footer-bottom-box-bg: transparent;
+    --footer-bottom-box-bg: black;
 
     --footer-bottom-box-link-color: rgb(222,222,222);
 
@@ -128,11 +149,11 @@ export const GlobalStyle = createGlobalStyle`
 
     /* Info Top Box */
 
-    --info-top-box-bg: #202020;
+    --info-top-box-bg: black;
 
-    --info-top-box-color: #7a7a7a;
+    --info-top-box-color: #c80000;
 
-    --info-top-box-color-hover: #bdbdbd;
+    --info-top-box-color-hover: #ec5050;
 
 
     
@@ -148,11 +169,20 @@ export const GlobalStyle = createGlobalStyle`
 
     --opening-data-title: white;
 
+    /* NavMenu */
+
+    --mobile-nav-bg: #d90000e6;
+
+    --nav-link-color: white;
+
+    --nav-link-color-hover: #e1be02;
+
 
   }
 
+
     * {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -160,8 +190,8 @@ export const GlobalStyle = createGlobalStyle`
 
     html, body {
         overflow-x: hidden;
-        background: black;
-        color: white;
+        background: var(--body-bg);
+        color: var(--body-color);
     }
 
     #scroll-btn {
@@ -189,7 +219,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .slideDownNav{
     position: fixed !important;
-    background: #000000d1 !important;
+    background: #660000de !important;
     top: 0;
     width: 100vw;
     height: 80px;

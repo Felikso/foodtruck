@@ -47,12 +47,7 @@ const StyledBackgroundImg = styled(BackgroundImage)`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background: linear-gradient(
-      180deg, 
-      rgba(0,0,0,0.5) 0%, 
-      rgba(0,0,0,0.5) 35%,
-      rgba(0,0,0,1) 100% 
-      );
+    background: var(--hero-styled-bg);
       background-size: cover;
   width: 100%;
   padding: 5rem calc((100vw - 1300px) /2);

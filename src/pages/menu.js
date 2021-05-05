@@ -11,6 +11,7 @@ import MenuCard from '../components/MenuCard'
 import MenuContent from '../components/MenuContent'
 //
 import FullWidthSection from '../components/FullWidthSection';
+import VideoPoster from '../assets/images/bg-poster.png'
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 
@@ -46,7 +47,7 @@ const bgImage = convertToBgImage(image);
       <StyledHero
       bgImage={bgImage}
       Video={Video}
-      HeroPoster="https://www.ventus-trade.pl/img/video-place-holder.png"
+      HeroPoster={VideoPoster}
       HeroTitle="Menu"
       HeroMotto="Szybko, Smacznie, Świeżo"
       HeroBtnText="o nas"

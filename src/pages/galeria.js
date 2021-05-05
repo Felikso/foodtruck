@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { TransitionLink } from "gatsby-plugin-transitions";
+/* import { TransitionLink } from "gatsby-plugin-transitions"; */
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
@@ -11,6 +11,7 @@ import OfferGalleryWpLightBox from '../components/OfferGalleryWpLightBox'
 import GalleryContent from '../components/GalleryContent'
 //
 import FullWidthSection from '../components/FullWidthSection';
+import VideoPoster from '../assets/images/bg-poster.png'
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 
@@ -63,7 +64,7 @@ const bgImage = convertToBgImage(image);
       <StyledHero
       bgImage={bgImage}
       Video={Video}
-      HeroPoster="https://www.ventus-trade.pl/img/video-place-holder.png"
+      HeroPoster={VideoPoster}
       HeroTitle="Galeria"
       HeroMotto="Szybko, Smacznie, Świeżo"
       HeroBtnText="menu"
