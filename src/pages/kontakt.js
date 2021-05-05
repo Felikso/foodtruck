@@ -92,7 +92,8 @@ const bgImage = convertToBgImage(image);
                      data-aos="fade-in"   
                      data-aos-offset="200"
                      data-aos-delay="0">
-                <MapPhoto />
+                <MapTitle>Kliknij w mapę i sprawdź jak do nas trafić</MapTitle>
+                <a href="https://www.google.com/maps/place/Dawida,+50-529+Wroc%C5%82aw/data=!4m2!3m1!1s0x470fc266af93489f:0x1f56d200be7fe04c?sa=X&ved=2ahUKEwjik86zvLLwAhXO16QKHWi-DW4Q8gEwAHoECAMQAQ" target="_blank"><MapPhoto /></a>
               </ContactMapBox>
         </ContactSection>
       
@@ -121,30 +122,31 @@ const ContactOpeningHoursBox = styled.div`
 
   h5 {
     color: var(--contact-opening-day) !important;
-    font-size: 1.8em !important;
+    font-size: 1.2em !important;
   }
 
   p {
-    font-size: 1.5em !important;
+    font-size: 1.1em !important;
     color: var(--contact-opening-hours) !important;
   }
 
   @media screen and (max-width: 1000px) {
-    width: 100%;
+    width: 80%;
+    margin: auto;
     margin-bottom: 2em;
 }
 
   @media screen and (max-width: 768px) {
     h2 {
-      font-size: 1.5em !important;
-    }
-  
-    h5 {
       font-size: 1.2em !important;
     }
   
-    p {
+    h5 {
       font-size: 1em !important;
+    }
+  
+    p {
+      font-size: 0.8em !important;
     }
   }
 `
@@ -152,16 +154,20 @@ const ContactOpeningHoursBox = styled.div`
 const ContactMapBox = styled.div`
   width: 45vw;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 
   @media screen and (max-width: 1000px) {
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }
 `
 
 const ContactSection = styled.div`
   display: flex;
-  width: 80vw;
+  width: 95vw;
   margin: 20px auto;
+  justify-content: center;
 
   @media screen and (max-width: 1000px) {
     flex-direction: column;
@@ -172,9 +178,26 @@ const ContactSectionTitle = styled.h3`
   text-align: center;
   font-size: 2em;
   line-height: 1.5em;
-  margin: 2em 0;
+  margin: 2em auto;
+  width: 80vw;
 
   @media screen and (max-width: 1000px) {
     font-size: 1.5em;
   }
+`
+
+const MapTitle = styled.h4`
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    color: var(--contact-map-title);
+    margin-bottom: 1em;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 1.2em;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.8em;
+    }
 `

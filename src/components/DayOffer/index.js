@@ -78,9 +78,9 @@ const DayOfferContainer = styled.div`
             bottom: 0;
             right: 0;
             transform: translate(-10%, -10%);
-            background: #ffffff6e;
+            background: var(--day-offer-container-bg);
             padding: 10px;
-            border: solid 5px white;
+            border: solid 5px var(--day-offer-container-border);
             z-index: 10;
 
             @media screen and (max-width: 768px) {
@@ -96,7 +96,7 @@ const DayOfferContainer = styled.div`
 const DayOfferHeading = styled.div`
     font-size: clamp(1rem,2.5vw,3rem);
     text-align: right;
-    color: #fff;
+    color: var(--day-offer-heading);
 `
 
 
@@ -105,12 +105,12 @@ const DayOfferHead = styled.div`
 `
 
 const DayOfferDayName = styled.h3`
-    color: white;
+    color: var(--day-offer-day-name);
     font-size: clamp(1rem,1vw,3rem);
 `
 
 const DayOfferDate = styled.span`
-    color: white;
+    color: var(--day-offer-date);
     font-style: italic;
     font-size: clamp(0.8rem,1vw,3rem);
 `
@@ -121,7 +121,7 @@ const DayOfferDishesList = styled.ul`
 `
 
 const DayOfferDish = styled.li`
-    color: var(--color-1);
+    color: var(--day-offer-dishes);
     list-style: none;
     line-height: 2em;
 `

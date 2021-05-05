@@ -42,7 +42,7 @@ function StyledHero({
         @media screen and (max-width: 768px) {
             min-height: ${HeroWidthMedia}; 
         }
-        @media screen and (max-height: 500px) {
+        @media screen and (max-height: 300px) {
             height: ${HeroHeightMedia}; 
         }
         `}>

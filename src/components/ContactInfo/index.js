@@ -70,6 +70,12 @@ const ContactHeading = styled.h2`
     font-size: clamp(1.5rem, 5vw, 2rem);
     margin-bottom: 3rem;
     padding: 0 2rem;
+    color: var(--contact-heading-color);
+    line-height: 1.5em;
+
+    @media screen and (max-width: 768px){
+        text-align: center;
+    }
 
 `
 const ContactWrapper = styled.div`

@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
 
     /* Contact */
 
-    --contact-a: #f26a2e;
+    --contact-a: rgb(200,0,0);
     --contact-p: #b35656;
     --contact-to: #28a728;
 
@@ -52,6 +52,8 @@ export const GlobalStyle = createGlobalStyle`
     --contact-opening-h2: black;
 
     ---contact-title-color: blue;
+    
+    --contact-heading-color: #ba1111;
 
     --messenger-icon: #00B2FF;
     --facebook-icon: #3b5998;
@@ -75,6 +77,22 @@ export const GlobalStyle = createGlobalStyle`
 
     --menu-dish-price-color: #33d000;
 
+    /* Day Offer */
+
+    --day-offer-container-bg: #ffffff6e;
+
+    --day-offer-container-border: #ba1111;
+
+    --day-offer-heading: #ba1111;
+
+    --day-offer-day-name: rgb(0, 87, 184);
+
+    --day-offer-date: #D4312D;
+
+    --day-offer-dishes: rgb(0, 87, 184);
+
+    --contact-map-title: #D4312D;
+
     /* Featured */
 
     --featured-bg: transparent;
@@ -91,11 +109,11 @@ export const GlobalStyle = createGlobalStyle`
 
     --footer-color: white;
 
-    --footer-h3-color: #f26a2e;
+    --footer-h3-color: rgb(200,0,0);
 
     --footer-link-color: #3d3d4e;
 
-    --footer-link-color-hover: #f26a2e;
+    --footer-link-color-hover: rgb(200,0,0);
 
     --footer-bottom-box-bg: black;
 
@@ -163,7 +181,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --opening-data-border-bottom: #9993;
 
-    --opening-data-hours: #f26a2e;
+    --opening-data-hours: rgb(200,0,0);
 
     --opening-data-day: #c7c7c7;
 
