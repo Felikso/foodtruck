@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
-import { ContactData } from '../../data/ContactData'
+import { ContactData } from './ContactData'
 
 
 //transitions
@@ -39,7 +39,7 @@ function ContactInfo() {
                     <AdressP>{item.p2}</AdressP>
                     <AdressP>{item.p3}</AdressP>
 
-                    <ContactHref href="#">
+                    <ContactHref href={item.href} target="_blank">
                     <ContactTo>{item.to}</ContactTo>
                     <ContactDesc>{item.desc}</ContactDesc>
                     </ContactHref>
@@ -65,7 +65,7 @@ const ContactContainer = styled.div`
  
 
 `
-const ContactHeading = styled.h1`
+const ContactHeading = styled.h2`
     text-align: start;
     font-size: clamp(1.5rem, 5vw, 2rem);
     margin-bottom: 3rem;
@@ -74,8 +74,12 @@ const ContactHeading = styled.h1`
 `
 const ContactWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
+
+    @media screen and (max-width: 1000px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
@@ -107,6 +111,7 @@ const ContactIcon = styled.div`
 const ContactTitle = styled.p`
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     margin-bottom: 0.5rem; 
+    color: var(--contact-title-color);
     
     @media screen and (max-width: 768px){
         font-size: 1.2em;

@@ -51,6 +51,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --contact-opening-h2: black;
 
+    ---contact-title-color: blue;
+
     --messenger-icon: #00B2FF;
     --facebook-icon: #3b5998;
     --google-icon: #487fe7;

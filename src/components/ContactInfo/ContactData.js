@@ -2,6 +2,7 @@ import React from 'react'
 import { RiMailSendFill } from "react-icons/ri";
 import { SiGooglemaps } from "react-icons/si";
 import { MdPhonelinkRing } from "react-icons/md";
+import { GiFoodTruck } from "react-icons/gi"
 
 
 export const ContactData = [
@@ -9,38 +10,51 @@ export const ContactData = [
         id: 1,
         icon: (<SiGooglemaps
             css={`
-            color: #047bf1;
+            color: #ba1111;
             `}
             />),
         title: "Lokalizacja",
-        href: "mailto:kontakt@lwowskie-smaki.pl",
+        href: "https://www.google.com/maps/place/Dawida,+50-529+Wroc%C5%82aw/data=!4m2!3m1!1s0x470fc266af93489f:0x1f56d200be7fe04c?sa=X&ved=2ahUKEwjik86zvLLwAhXO16QKHWi-DW4Q8gEwAHoECAMQAQ",
         p1: "Lwowskie Smaki - Wrocław",
         p2: "Ulica 30",
-        p3: "Wrocław 55-555"
+        p3: "Wrocław 55-555",
+        desc: "kliknij i wyznacz trasę"
     },
     {
         id: 2,
         icon: (<MdPhonelinkRing
             css={`
-            color: #f3a82e;
+            color: #ba1111;
             `}
             />),
         title: "Telefon",
         href: "tel: 888-888-888",
         to: "+ 48 888-888-888",
-        desc: "zadzwoń do nas"
+        desc: "kliknij i zadzwoń"
+    },
+    {
+        id: 2,
+        icon: (<GiFoodTruck
+            css={`
+            color: #ba1111;
+            `}
+            />),
+        title: "Telefon na dowóz",
+        href: "tel: 888-888-888",
+        to: "+ 48 888-888-888",
+        desc: "kliknij i zadzwoń"
     },
     {
         id: 3,
         icon: (<RiMailSendFill
             css={`
-            color: #f34f2e;
+            color: #ba1111;
             `}
             />),
         title: "Mail",
         href: "mailto:kontakt@lwowskie-smaki.pl",
         to: "kontakt@lwowskie-smaki.pl",
-        desc: "wyślij maila"
+        desc: "kliknij i wyślij maila"
     },
 
 ]
