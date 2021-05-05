@@ -99,11 +99,23 @@ if(dishCategory === "wszystkie"){
     setListOpen(item);
     if(listOpen === e.target.value){
       setDishOpen(!dishOpen)
+      const pageOffset = window.pageYOffset
+      console.log(e.target.getBoundingClientRect())
+      console.log("if")
+      const buttonY = e.target.getBoundingClientRect().y
+      const scrollWinTo = (pageOffset+buttonY)
+      console.log(buttonY)
+      console.log(pageOffset)
+      window[`scrollTo`]({ top: (scrollWinTo-80), behavior: `smooth` })
     }else{
       setDishOpen(true)
       const pageOffset = window.pageYOffset
+      console.log(e.target.getBoundingClientRect())
+      console.log("else")
       const buttonY = e.target.getBoundingClientRect().y
       const scrollWinTo = (pageOffset+buttonY)
+      console.log(buttonY)
+      console.log(pageOffset)
       window[`scrollTo`]({ top: (scrollWinTo-80), behavior: `smooth` })
 
     }
@@ -153,9 +165,9 @@ if(dishCategory === "wszystkie"){
                       className="image-hover-capition__img"
                       key={i}
                       image={item.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-                      alt="cos"
+                      alt={`lwowskie-smaki-menu-${item.dishes.name}`}
                    />
-    
+                    <DishText>
                    <DishContent>
                    <DishName>{item.dishes.name} <DishQ>{item.dishes.quantity}</DishQ></DishName>
                    <DishDesc>{item.dishes.desc}</DishDesc>
@@ -164,7 +176,7 @@ if(dishCategory === "wszystkie"){
                    <DishPrice>
                     {item.dishes.price} pln
                   </DishPrice>
-    
+                  </DishText>
     
                   </MenuBox>
                   </>
@@ -173,92 +185,6 @@ if(dishCategory === "wszystkie"){
     </div>)})
 }
 
-
-{/* {
-  categories.map((item, i) => {
-    const catItem = item
-    console.log(catItem)
-    return(
-    <div>
-    <MenuButton key={i} value={item} onClick={ e => setDishCategory(e.target.value)}>{item}</MenuButton>
-              {filteredNodeDish.filter(item => item.dishes.category === catItem).map((item, i) => (
-                <>
-    
-                  <MenuBox
-                  data-aos="fade-in"   
-                  data-aos-offset="200"
-                  data-aos-delay="0"
-                  key={i}
-                  >
-                  <DishImg
-                      className="image-hover-capition__img"
-                      key={i}
-                      image={item.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-                      alt="cos"
-                   />
-    
-                   <DishContent>
-                   <DishName>{item.dishes.name} <DishQ>{item.dishes.quantity}</DishQ></DishName>
-                   <DishDesc>{item.dishes.desc}</DishDesc>
-                   </DishContent>
-    
-                   <DishPrice>
-                    {item.dishes.price} pln
-                  </DishPrice>
-    
-    
-                  </MenuBox>
-                  </>
-                ))}
-    
-    </div>)})
-}
- */}
-{/* { Object.keys(menuData).map((item, i) => (
-                <div key={i} className="report">
-                       {menuData[item].map((media,ind) =>
-                         <div key={ind}>{media.menu.name}</div>
-                      )}
-                </div>
-        ))} */}
-
-{/* </MenuButtonBox> */}
-
-
-{/* {filteredNodeDish.map((item, i) => (
-  <>
-
-              <MenuBox
-              data-aos="fade-in"   
-              data-aos-offset="200"
-              data-aos-delay="0"
-              key={i}
-              >
-              <DishImg
-                  className="image-hover-capition__img"
-                  key={i}
-                  image={item.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-                  alt="cos"
-               />
-
-               <DishContent>
-               <DishName>{item.dishes.name} <DishQ>{item.dishes.quantity}</DishQ></DishName>
-               <DishDesc>{item.dishes.desc}</DishDesc>
-               </DishContent>
-
-               <DishPrice>
-                {item.dishes.price} pln
-              </DishPrice>
-
-
-              </MenuBox>
-              </>
-            ))} */}
-          
-
-          
-           
-          
         </>
     )
 }
@@ -270,7 +196,7 @@ export default MenuCard;
 const MenuBox = styled.div`
   background: var(--menu-box-bg);
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 2fr;
   justify-content: space-between;
   border-bottom: solid #808080 1px;
   transition: 1s;
@@ -284,7 +210,7 @@ const MenuBox = styled.div`
 
 
   @media screen and (max-width: 768px) {
-    grid-template-columns: auto;
+    grid-template-columns: 2fr 2fr;
   }
 `
 
@@ -292,15 +218,27 @@ const DishName = styled.h4`
   color: var(--menu-dish-name-color);
   font-size: clamp(1.5rem, 5vw, 2rem);
   text-transform: uppercase;
+
+  @media screen and (max-width: 768px) {
+    font-size: 14px;
+  }
 `
 
 const DishQ = styled.span`
     color: var(--menu-dish-q-color);
     font-size: clamp(1.6rem,5vw, 1rem);
     text-transform: lowercase;
+
+    @media screen and (max-width: 768px) {
+      font-size: 12px;
+    }
 `
 
 const DishImg = styled(GatsbyImage)`
+  height: 250px;
+@media screen and (max-width: 768px) {
+  height: 150px;
+}
 
 `
 
@@ -318,16 +256,23 @@ const DishDesc = styled.p`
   color: var(--menu-dish-desc-color);
   font-size: clamp(1rem, 2vw, 2rem);
   padding-top: 20px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 12px;
+  }
 `
 
 const DishPrice = styled.span`
   color: var(--menu-dish-price-color);
   display: flex;
   justify-content: flex-end;
-  margin: 20px;
   font-size: clamp(1.5rem, 5vw, 2rem);
   align-items: center;
   white-space: nowrap;
+
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
   `
 
 const MenuButton = styled.button`
@@ -388,6 +333,7 @@ outline: none;
 border: none;
 box-sizing: border-box;
 position: absolute;
+cursor: pointer;
 top: 30%;
 left: 5%;
 
@@ -432,4 +378,10 @@ display: flex;
 /*   background: ${({ primary }) => (primary ? 'var(--color-2)' : 'var(--color-1)')}; */
   transform: translateY(-2px);
 }
+`
+
+const DishText = styled.div`
+  display: flex;
+  align-items: flex-end;
+  justify-content: inherit;
 `

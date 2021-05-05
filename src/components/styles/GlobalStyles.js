@@ -71,7 +71,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --menu-dish-q-color: #525252;
 
-    --menu-dish-desc-color: #eaeaea;
+    --menu-dish-desc-color: black;
 
     --menu-dish-price-color: #33d000;
 
@@ -145,7 +145,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --underline-item-bg-active: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
 
-    --menu-card-color-open: #ab5e00;
+    --menu-card-color-open: #ab0000;
 
     --menu-card-color-close: #1d1d1d;
 
