@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import styled from 'styled-components'
 
 import { graphql, useStaticQuery } from 'gatsby'
@@ -93,20 +93,32 @@ if(dishCategory === "wszystkie"){
 
   let categories = getUnique(nodeDish, "category").reverse();
 
+  const ref = useRef();
 
+      /* ref && ref.current && ref.current.scrollIntoView({ behavior: "smooth" }); */
 
-  const handleClick = (e, data, item) => {
+  const handleClick = (e, data, item, i) => {
     setListOpen(item);
     if(listOpen === e.target.value){
       setDishOpen(!dishOpen)
       const pageOffset = window.pageYOffset
-      console.log(e.target.getBoundingClientRect())
+      console.log(e.target.id)
       console.log("if")
       const buttonY = e.target.getBoundingClientRect().y
       const scrollWinTo = (pageOffset+buttonY)
-      console.log(buttonY)
+      const menuFirstBox = document.getElementById(`menu-box-${i}`);
+      console.log(menuFirstBox)
+      console.log(menuFirstBox.offsetTop)
+      console.log(menuFirstBox.offsetHeight)
       console.log(pageOffset)
-      window[`scrollTo`]({ top: (scrollWinTo-80), behavior: `smooth` })
+      const menuOffset = menuFirstBox.offsetTop
+      ref && ref.current && ref.current.scrollIntoView({ behavior: "smooth" });
+      console.log(menuFirstBox.getBoundingClientRect())
+/*       console.log(buttonY)
+      console.log(pageOffset)
+      console.log(scrollWinTo-80)
+      console.log(window.innerHeight) */
+/*       window[`scrollTo`]({ top: (menuFirstBox.offsetTop-menuFirstBox.offsetHeight+160), behavior: `smooth` }) */
     }else{
       setDishOpen(true)
       const pageOffset = window.pageYOffset
@@ -114,14 +126,26 @@ if(dishCategory === "wszystkie"){
       console.log("else")
       const buttonY = e.target.getBoundingClientRect().y
       const scrollWinTo = (pageOffset+buttonY)
-      console.log(buttonY)
+      const menuFirstBox = document.getElementById(`menu-box-${i}`);
+      console.log(menuFirstBox)
+      console.log(menuFirstBox.offsetTop)
+      console.log(menuFirstBox.offsetHeight)
+      const menuOffset = menuFirstBox.offsetTop
+      ref && ref.current && ref.current.scrollIntoView({ behavior: "smooth" });
+      console.log(menuFirstBox.getBoundingClientRect())
+      console.log(menuFirstBox.offsetTop)
       console.log(pageOffset)
-      window[`scrollTo`]({ top: (scrollWinTo-80), behavior: `smooth` })
+/*       console.log(buttonY)
+      console.log(pageOffset)
+      console.log(scrollWinTo-80)
+      console.log(window.innerHeight) */
+/*       window[`scrollTo`]({ top: (menuFirstBox.offsetTop-menuFirstBox.offsetHeight+160), behavior: `smooth` }) */
 
     }
 
 
 }
+
 
     return (
         <>
@@ -134,8 +158,10 @@ if(dishCategory === "wszystkie"){
         <MenuButtonsBox>
             <MenuButton 
                 key={i}
+                id={i}
+
                 value={item}  
-                onClick={((e) => handleClick(e, data, item))}  
+                onClick={((e) => handleClick(e, data, item, i))}  
                 style={{ background: item===listOpen ? dishOpen ? 'var(--menu-card-color-open)' : 'var(--menu-card-color-close)' : 'var(--menu-card-color-close)'}}>
                 <a
                 style={{ backgroundSize: item===listOpen ? dishOpen ? '0 .2em, 100% .2em' : '100% .1em, 0 .1em': "100% .1em, 0 .1em"}}
@@ -148,7 +174,8 @@ if(dishCategory === "wszystkie"){
                 style={{ transform: item===listOpen ? dishOpen ? 'rotate(-45deg)' : 'rotate(135deg)': "rotate(135deg)"}}
                 >
                 </MenuArrow>
-      </MenuButtonsBox>
+      </MenuButtonsBox >
+      <div                  ref={ref}                id={`menu-box-${i}`}>
               {dishOpen ? filteredDishes.filter(item => item.dishes.category === catItem).map((item, i) => {
 
                 return(
@@ -160,6 +187,7 @@ if(dishCategory === "wszystkie"){
                   data-aos-delay="0"
                   key={i}
                   dishOpen={dishOpen}
+
                   >
                   <DishImg
                       className="image-hover-capition__img"
@@ -180,7 +208,7 @@ if(dishCategory === "wszystkie"){
     
                   </MenuBox>
                   </>
-                )}): <div></div>}
+                )}) : <div></div>}</div>
     
     </div>)})
 }
