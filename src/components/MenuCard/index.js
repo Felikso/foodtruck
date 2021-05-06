@@ -21,6 +21,12 @@ function MenuCard() {
   const [listOpen, setListOpen] = useState(0)
 
 
+ /*  const winOffset = () => {
+    console.log(window.pageYOffset)
+
+  }
+
+  window.addEventListener(`scroll`, winOffset) */
 
 /*   const toggle = () => setDishOpen(!dishOpen); */
 
@@ -100,46 +106,84 @@ if(dishCategory === "wszystkie"){
   const handleClick = (e, data, item, i) => {
     setListOpen(item);
     if(listOpen === e.target.value){
-      setDishOpen(!dishOpen)
+
       const pageOffset = window.pageYOffset
-      console.log(e.target.id)
+/*       console.log(e.target.getBoundingClientRect())
+      console.log('e.target.getBoundingClientRect()') */
       console.log("if")
       const buttonY = e.target.getBoundingClientRect().y
+  
       const scrollWinTo = (pageOffset+buttonY)
       const menuFirstBox = document.getElementById(`menu-box-${i}`);
-      console.log(menuFirstBox)
+/*       console.log(menuFirstBox)
       console.log(menuFirstBox.offsetTop)
       console.log(menuFirstBox.offsetHeight)
-      console.log(pageOffset)
+      console.log(pageOffset) */
       const menuOffset = menuFirstBox.offsetTop
-      ref && ref.current && ref.current.scrollIntoView({ behavior: "smooth" });
-      console.log(menuFirstBox.getBoundingClientRect())
+/*       console.log(menuFirstBox.offsetTop) */
+      const menuFirstBoxHeight = menuFirstBox.offsetHeight
+/*       ref && ref.current && ref.current.scrollIntoView({ behavior: "smooth" }); */
+/*       console.log(menuFirstBox.getBoundingClientRect())
+      console.log('menuFirstBox.getBoundingClientRect()') */
+
+      setDishOpen(!dishOpen)
+
+      const menuSecondBox = document.getElementById(`menu-box-${i}`);
+
+      console.log(menuFirstBox)
+      console.log(menuSecondBox)
+      menuSecondBox.scrollIntoView({ behavior: 'smooth' })
+      window[`scrollTo`]({ top: (pageOffset-menuFirstBoxHeight-80), behavior: `smooth` })
 /*       console.log(buttonY)
       console.log(pageOffset)
       console.log(scrollWinTo-80)
       console.log(window.innerHeight) */
-/*       window[`scrollTo`]({ top: (menuFirstBox.offsetTop-menuFirstBox.offsetHeight+160), behavior: `smooth` }) */
+/*       if(buttonY<menuOffset){
+        window[`scrollTo`]({ top: (pageOffset+buttonY), behavior: `smooth` })
+      }else{
+        
+        window[`scrollTo`]({ top: (pageOffset+buttonY+160), behavior: `smooth` })
+      } */
+
+
     }else{
       setDishOpen(true)
       const pageOffset = window.pageYOffset
-      console.log(e.target.getBoundingClientRect())
+/*       console.log(e.target.getBoundingClientRect()) */
       console.log("else")
       const buttonY = e.target.getBoundingClientRect().y
       const scrollWinTo = (pageOffset+buttonY)
       const menuFirstBox = document.getElementById(`menu-box-${i}`);
-      console.log(menuFirstBox)
-      console.log(menuFirstBox.offsetTop)
-      console.log(menuFirstBox.offsetHeight)
+/*       console.log(menuFirstBox) */
+/*       console.log(menuFirstBox.offsetTop) */
+/*       console.log(menuFirstBox.offsetHeight) */
+/*       console.log(buttonY) */
       const menuOffset = menuFirstBox.offsetTop
-      ref && ref.current && ref.current.scrollIntoView({ behavior: "smooth" });
-      console.log(menuFirstBox.getBoundingClientRect())
-      console.log(menuFirstBox.offsetTop)
-      console.log(pageOffset)
+
+      const menuFirstBoxHeight = menuFirstBox.offsetHeight
+/*       ref && ref.current && ref.current.scrollIntoView({ behavior: "smooth" }); */
+/*       console.log(menuFirstBox.getBoundingClientRect()) */
+
+
 /*       console.log(buttonY)
       console.log(pageOffset)
       console.log(scrollWinTo-80)
       console.log(window.innerHeight) */
-/*       window[`scrollTo`]({ top: (menuFirstBox.offsetTop-menuFirstBox.offsetHeight+160), behavior: `smooth` }) */
+      setDishOpen(true)
+      const menuSecondBox = document.getElementById(`menu-box-${i}`);
+
+
+      console.log(menuFirstBox)
+      console.log(menuSecondBox)
+/*       if(buttonY<menuOffset){
+        window[`scrollTo`]({ top: (pageOffset+buttonY), behavior: `smooth` })
+      }else{
+        
+        window[`scrollTo`]({ top: (pageOffset+buttonY+160), behavior: `smooth` })
+      } */
+
+      menuSecondBox.scrollIntoView({ behavior: 'smooth' })
+      window[`scrollTo`]({ top: (pageOffset-menuFirstBoxHeight-80), behavior: `smooth` })
 
     }
 
