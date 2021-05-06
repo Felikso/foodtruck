@@ -93,12 +93,39 @@ if(dishCategory === "wszystkie"){
 
   let categories = getUnique(nodeDish, "category").reverse();
 
+  const winOffset = () => {
+    console.log(window.pageYOffset)
 
+  }
+
+  window.addEventListener(`scroll`, winOffset)
 
   const handleClick = (e, i, item) => {
     setListOpen(item);
     const pageOffset = window.pageYOffset
     const menuBtn = document.getElementById(`menu-btn-${i}`);
+
+    const scrollToBtn = (callback) => {
+      menuBtn.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+
+      callback();
+/*       console.log('menuBtn.scrollTop')
+      console.log(window.scrollTop)
+      console.log('window.pageYOffset')
+      console.log(window.pageYOffset) */
+
+   }
+
+   const scrollWin = () => {
+    setTimeout(() => {
+      window.scrollTo({ top: window.pageYOffset-80, behavior: 'smooth' })
+      console.log('window.pageYOffset2')
+      console.log(window.pageYOffset)
+
+}, 500);
+
+   }
+
     if(listOpen === e.target.value){
       setDishOpen(!dishOpen)
       const pageOffset = window.pageYOffset
@@ -106,11 +133,21 @@ if(dishCategory === "wszystkie"){
       console.log("if") */
       const buttonY = e.target.getBoundingClientRect().y
       const scrollWinTo = (pageOffset+buttonY)
-/*       console.log(buttonY)
-      console.log(pageOffset) */
+      console.log(buttonY)
+      console.log(pageOffset)
+
+
       
       setTimeout(() => {
-        menuBtn.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+        scrollToBtn(scrollWin);
+ /*        scrollWin(); */
+        console.log(menuBtn.offsetTop)
+        console.log('menuBtn.offsetTop')
+        console.log(menuBtn.getBoundingClientRect())
+        console.log(window.scrollY)
+        console.log('window.scrollY')
+/*         window.scrollBy({top: window.scrollY, left: 0, behavior: 'smooth'}) */
+/*         window[`scrollTo`]({ top: (window.scrollY-160), behavior: `smooth` }); */
 
 }, 100);
 /* setTimeout(() => {
@@ -118,15 +155,21 @@ if(dishCategory === "wszystkie"){
 }, 200); */
     }else{
       setDishOpen(true)
-      const pageOffset = window.pageYOffset
+      
 /*       console.log(e.target.getBoundingClientRect())
       console.log("else") */
       const buttonY = e.target.getBoundingClientRect().y
       const scrollWinTo = (pageOffset+buttonY)
-/*       console.log(buttonY)
-      console.log(pageOffset) */
+      console.log(buttonY)
+      console.log(pageOffset)
       setTimeout(() => {
-        menuBtn.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+        scrollToBtn(scrollWin);
+/*         scrollWin(); */
+        console.log(menuBtn.offsetTop)
+        console.log(menuBtn.getBoundingClientRect())
+        console.log(window.scrollY)
+/*         window.scrollBy({top: window.scrollY, left: 0, behavior: 'smooth'}) */
+/*         window[`scrollTo`]({ top: (window.scrollY-160), behavior: `smooth` }); */
 }, 100);
 
 /* setTimeout(() => {
