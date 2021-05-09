@@ -62,13 +62,13 @@ const image = getImage(placeholderImage);
 
 let videoPh = placeholderVideoSmall.childImageSharp.gatsbyImageData.images.fallback.src
 
-if(typeof window !== 'undefined'){
+/* if(typeof window !== 'undefined'){
   if(window.innerWidth <= 786){
     videoPh = placeholderVideoSmall.childImageSharp.gatsbyImageData.images.fallback.src
   }else{
     videoPh = placeholderVideo.childImageSharp.gatsbyImageData.images.fallback.src
   }
-}
+} */
 
 
 
