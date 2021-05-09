@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+
+@media (min-width: 640px){
+    .menu-offer-container {
+        width: 100%;
+        background: whitesmoke;
+    }
+    
+}
+
+.menu-offer-container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.menu-offer-subheader {
+    margin: 0 0 28px;
+    color: inherit;
+    text-align: center;
+}
+
+.menu-offer-subheader__sup-title, .m-hero__sup-title {
+    font-family: 'New Tegomin', serif;
+}
+
+.menu-offer-subheader__title {
+    margin: 0;
+    display: block;
+/*     text-transform: uppercase; */
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+
+
+.menu-offer__list-wrapper {
+    overflow: hidden;
+}
+
+.menu-offer__list {
+    padding-left: 0;
+    list-style: none;
+    margin-top: -25px;
+    margin-bottom: 15px;
+}
+
+.menu-offer__list-item {
+    padding-top: 25px;
+    margin-bottom: 25px;
+    -webkit-column-break-inside: avoid;
+    break-inside: avoid;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.menu-offer__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-offer__heading {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    line-height: 1.4;
+    flex: 1 1 auto;
+}
+
+.menu-offer__heading--price {
+    margin-left: 15px;
+    flex-basis: 150px;
+    text-align: right;
+}
+
+.menu-offer__description {
+    margin: 0 0 29px;
+}
+

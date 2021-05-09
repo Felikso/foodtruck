@@ -1,0 +1,241 @@
+{
+    "dataCoppy": {
+      "HWGraphQL": {
+        "posts": {
+          "nodes": [
+            {
+              "featuredImage": {
+                "node": {
+                  "sourceUrlSharp": {
+                    "childImageSharp": {
+                      "fluid": {
+                        "base64": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAARCAIAAABSJhvpAAAACXBIWXMAAA7DAAAOwwHHb6hkAAABfklEQVQ4y42Ty0uCURDFf2ZFCUUPg6InUbuigmoTRA9IolpE2KJWvaAWpdQie+inZZpB9C83Hr36aWVeLjL3OufMmXPnA9JNbA9S+q27/weW0n6Fd8gobhZspXLwAZdwAEkd/RIaId9gH8agm+LqgmNxZRy+nPdTbR4ilFfABcayBY8V8IuPqQ4/IsAA9EKb4n7ogQtZYBAS8CQKr7bsBrTAOExBGPoEnoZDiMFtCWyHJSnJOHBS4HkIwTC0QgcMwgLMQVDHsKoWs41m23WSlKQbZfi7DUqwrRW4gvNSz54MtPpR+JL+UxhyyIC6DTkWu9+Rxs8K2A73En8Eyy4vIMHtMKEX2oNNmNG9vdmanCo/lRV8hlUn0uwdVWCGZfVvXhOSUI9WYFb5VZMKcCJASCydsAhxzWbK7Ywb1YLi6vMY8bqzJCLNRnGmbM83dp4jqk6YZdzJj6hExjQJu3BdC/7lq/LUmAEmdSxpy0lb9m9k2m/YgzyMK6402QCZ/gaFkX9/ShmBhwAAAABJRU5ErkJggg==",
+                        "aspectRatio": 1.1695906432748537,
+                        "src": "/static/74c8cb91f9b394aeda58220e681f145c/0030e/propozycja3.png",
+                        "srcSet": "/static/74c8cb91f9b394aeda58220e681f145c/69585/propozycja3.png 200w,\n/static/74c8cb91f9b394aeda58220e681f145c/497c6/propozycja3.png 400w,\n/static/74c8cb91f9b394aeda58220e681f145c/0030e/propozycja3.png 568w",
+                        "sizes": "(max-width: 568px) 100vw, 568px"
+                      },
+                      "gatsbyImageData": {
+                        "layout": "constrained",
+                        "backgroundColor": "#080878",
+                        "images": {
+                          "fallback": {
+                            "src": "/static/74c8cb91f9b394aeda58220e681f145c/35204/propozycja3.png",
+                            "srcSet": "/static/74c8cb91f9b394aeda58220e681f145c/621f2/propozycja3.png 142w,\n/static/74c8cb91f9b394aeda58220e681f145c/b29cb/propozycja3.png 284w,\n/static/74c8cb91f9b394aeda58220e681f145c/35204/propozycja3.png 568w",
+                            "sizes": "(min-width: 568px) 568px, 100vw"
+                          },
+                          "sources": [
+                            {
+                              "srcSet": "/static/74c8cb91f9b394aeda58220e681f145c/a3164/propozycja3.webp 142w,\n/static/74c8cb91f9b394aeda58220e681f145c/b4de6/propozycja3.webp 284w,\n/static/74c8cb91f9b394aeda58220e681f145c/9e09b/propozycja3.webp 568w",
+                              "type": "image/webp",
+                              "sizes": "(min-width: 568px) 568px, 100vw"
+                            }
+                          ]
+                        },
+                        "width": 568,
+                        "height": 486
+                      }
+                    }
+                  },
+                  "title": "Tytuł",
+                  "sourceUrl": "https://blog.ventus-trade.pl/wp-content/uploads/2021/04/propozycja3.png"
+                }
+              }
+            }
+          ]
+        },
+        "dishes": {
+          "nodes": [
+            {
+              "title": "pierożki",
+              "featuredImage": {
+                "node": {
+                  "sourceUrl": "https://blog.ventus-trade.pl/wp-content/uploads/2021/04/pierogi-1-scaled.jpg",
+                  "sourceUrlSharp": {
+                    "childImageSharp": {
+                      "gatsbyImageData": {
+                        "layout": "constrained",
+                        "backgroundColor": "#e8e8e8",
+                        "images": {
+                          "fallback": {
+                            "src": "/static/6b67abca3707155baa970ea58db4e2c7/e5259/pierogi-1-scaled.jpg",
+                            "srcSet": "/static/6b67abca3707155baa970ea58db4e2c7/e70fc/pierogi-1-scaled.jpg 640w,\n/static/6b67abca3707155baa970ea58db4e2c7/f3dc5/pierogi-1-scaled.jpg 1280w,\n/static/6b67abca3707155baa970ea58db4e2c7/e5259/pierogi-1-scaled.jpg 2560w",
+                            "sizes": "(min-width: 2560px) 2560px, 100vw"
+                          },
+                          "sources": [
+                            {
+                              "srcSet": "/static/6b67abca3707155baa970ea58db4e2c7/62859/pierogi-1-scaled.webp 640w,\n/static/6b67abca3707155baa970ea58db4e2c7/f121e/pierogi-1-scaled.webp 1280w,\n/static/6b67abca3707155baa970ea58db4e2c7/2b4b7/pierogi-1-scaled.webp 2560w",
+                              "type": "image/webp",
+                              "sizes": "(min-width: 2560px) 2560px, 100vw"
+                            }
+                          ]
+                        },
+                        "width": 2560,
+                        "height": 1706
+                      },
+                      "fluid": {
+                        "base64": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAVAQEBAAAAAAAAAAAAAAAAAAACAf/aAAwDAQACEAMQAAABor9FjaBsR//EABsQAAEEAwAAAAAAAAAAAAAAAAIAAQMhERIT/9oACAEBAAEFAs6qQqaxOgjbsS//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAbEAACAgMBAAAAAAAAAAAAAAAAARFBEBIhMf/aAAgBAQAGPwLVUSJko74qx//EABsQAQACAgMAAAAAAAAAAAAAAAEAESFBEDFR/9oACAEBAAE/IUEHBxEHamZh2ktsKnk9Dj//2gAMAwEAAgADAAAAEKP/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAEQETH/2gAIAQMBAT8QGVf/xAAWEQEBAQAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8QR2f/xAAdEAEBAAEEAwAAAAAAAAAAAAABEQAhMUFhobHw/9oACAEBAAE/ELuygOX73l0rbvgxpSAXEtIIew2MM3lY6Mx0gEAgZ//Z",
+                        "aspectRatio": 1.5037593984962405,
+                        "src": "/static/6b67abca3707155baa970ea58db4e2c7/14b42/pierogi-1-scaled.jpg",
+                        "srcSet": "/static/6b67abca3707155baa970ea58db4e2c7/f836f/pierogi-1-scaled.jpg 200w,\n/static/6b67abca3707155baa970ea58db4e2c7/2244e/pierogi-1-scaled.jpg 400w,\n/static/6b67abca3707155baa970ea58db4e2c7/14b42/pierogi-1-scaled.jpg 800w,\n/static/6b67abca3707155baa970ea58db4e2c7/47498/pierogi-1-scaled.jpg 1200w,\n/static/6b67abca3707155baa970ea58db4e2c7/0e329/pierogi-1-scaled.jpg 1600w,\n/static/6b67abca3707155baa970ea58db4e2c7/4a461/pierogi-1-scaled.jpg 2560w",
+                        "sizes": "(max-width: 800px) 100vw, 800px"
+                      }
+                    }
+                  }
+                }
+              },
+              "dishes": {
+                "category": "pierogi",
+                "description": "opis pierożków",
+                "fieldGroupName": "dishes",
+                "name": "pierożki",
+                "price": "8,00",
+                "quantity": "5 szt"
+              }
+            },
+            {
+              "title": "Pierogi ruskie",
+              "featuredImage": {
+                "node": {
+                  "sourceUrl": "https://blog.ventus-trade.pl/wp-content/uploads/2021/04/pierogi-2.jpg",
+                  "sourceUrlSharp": {
+                    "childImageSharp": {
+                      "gatsbyImageData": {
+                        "layout": "constrained",
+                        "backgroundColor": "#c8c8c8",
+                        "images": {
+                          "fallback": {
+                            "src": "/static/e0010524a25848601488bd209f3f6658/a962d/pierogi-2.jpg",
+                            "srcSet": "/static/e0010524a25848601488bd209f3f6658/da65b/pierogi-2.jpg 160w,\n/static/e0010524a25848601488bd209f3f6658/f6fcd/pierogi-2.jpg 320w,\n/static/e0010524a25848601488bd209f3f6658/a962d/pierogi-2.jpg 640w",
+                            "sizes": "(min-width: 640px) 640px, 100vw"
+                          },
+                          "sources": [
+                            {
+                              "srcSet": "/static/e0010524a25848601488bd209f3f6658/405d4/pierogi-2.webp 160w,\n/static/e0010524a25848601488bd209f3f6658/dde70/pierogi-2.webp 320w,\n/static/e0010524a25848601488bd209f3f6658/18e38/pierogi-2.webp 640w",
+                              "type": "image/webp",
+                              "sizes": "(min-width: 640px) 640px, 100vw"
+                            }
+                          ]
+                        },
+                        "width": 640,
+                        "height": 426
+                      },
+                      "fluid": {
+                        "base64": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAABAACA//EABUBAQEAAAAAAAAAAAAAAAAAAAEC/9oADAMBAAIQAxAAAAHKhJl7xZP/xAAaEAADAQADAAAAAAAAAAAAAAABAhEAEhMh/9oACAEBAAEFAuS5HEI9QUBBe2b/xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAcEAACAQUBAAAAAAAAAAAAAAAAEQECEBIxQXH/2gAIAQEABj8CfDHdpok8Emf/xAAcEAACAQUBAAAAAAAAAAAAAAABEQAhMUFRkaH/2gAIAQEAAT8hCLk9haLDNbhgsQq9jUGBs8QvYUy5/9oADAMBAAIAAwAAABAA3//EABYRAAMAAAAAAAAAAAAAAAAAABARIf/aAAgBAwEBPxCIf//EABcRAAMBAAAAAAAAAAAAAAAAAAABESH/2gAIAQIBAT8Q2kR//8QAHBAAAwEBAQADAAAAAAAAAAAAAREhAGExQVGh/9oACAEBAAE/EGt4kgNvJwPBrQme4jKPiH5h4AgQX2DS47nCgDBpNNcxz+ciE3//2Q==",
+                        "aspectRatio": 1.5037593984962405,
+                        "src": "/static/e0010524a25848601488bd209f3f6658/f422e/pierogi-2.jpg",
+                        "srcSet": "/static/e0010524a25848601488bd209f3f6658/f836f/pierogi-2.jpg 200w,\n/static/e0010524a25848601488bd209f3f6658/2244e/pierogi-2.jpg 400w,\n/static/e0010524a25848601488bd209f3f6658/f422e/pierogi-2.jpg 640w",
+                        "sizes": "(max-width: 640px) 100vw, 640px"
+                      }
+                    }
+                  }
+                }
+              },
+              "dishes": {
+                "category": "pierogi",
+                "description": "opis pierogów ruskich",
+                "fieldGroupName": "dishes",
+                "name": "pierogi ruskie",
+                "price": "10,00",
+                "quantity": "5 sztuk"
+              }
+            },
+            {
+              "title": "Pielmenie",
+              "featuredImage": {
+                "node": {
+                  "sourceUrl": "https://blog.ventus-trade.pl/wp-content/uploads/2021/04/pierogi-1-scaled.jpg",
+                  "sourceUrlSharp": {
+                    "childImageSharp": {
+                      "gatsbyImageData": {
+                        "layout": "constrained",
+                        "backgroundColor": "#e8e8e8",
+                        "images": {
+                          "fallback": {
+                            "src": "/static/6b67abca3707155baa970ea58db4e2c7/e5259/pierogi-1-scaled.jpg",
+                            "srcSet": "/static/6b67abca3707155baa970ea58db4e2c7/e70fc/pierogi-1-scaled.jpg 640w,\n/static/6b67abca3707155baa970ea58db4e2c7/f3dc5/pierogi-1-scaled.jpg 1280w,\n/static/6b67abca3707155baa970ea58db4e2c7/e5259/pierogi-1-scaled.jpg 2560w",
+                            "sizes": "(min-width: 2560px) 2560px, 100vw"
+                          },
+                          "sources": [
+                            {
+                              "srcSet": "/static/6b67abca3707155baa970ea58db4e2c7/62859/pierogi-1-scaled.webp 640w,\n/static/6b67abca3707155baa970ea58db4e2c7/f121e/pierogi-1-scaled.webp 1280w,\n/static/6b67abca3707155baa970ea58db4e2c7/2b4b7/pierogi-1-scaled.webp 2560w",
+                              "type": "image/webp",
+                              "sizes": "(min-width: 2560px) 2560px, 100vw"
+                            }
+                          ]
+                        },
+                        "width": 2560,
+                        "height": 1706
+                      },
+                      "fluid": {
+                        "base64": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAGAAAAwEBAAAAAAAAAAAAAAAAAAQFAgP/xAAVAQEBAAAAAAAAAAAAAAAAAAACAf/aAAwDAQACEAMQAAABor9FjaBsR//EABsQAAEEAwAAAAAAAAAAAAAAAAIAAQMhERIT/9oACAEBAAEFAs6qQqaxOgjbsS//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAEDAQE/AT//xAAUEQEAAAAAAAAAAAAAAAAAAAAQ/9oACAECAQE/AT//xAAbEAACAgMBAAAAAAAAAAAAAAAAARFBEBIhMf/aAAgBAQAGPwLVUSJko74qx//EABsQAQACAgMAAAAAAAAAAAAAAAEAESFBEDFR/9oACAEBAAE/IUEHBxEHamZh2ktsKnk9Dj//2gAMAwEAAgADAAAAEKP/AP/EABcRAAMBAAAAAAAAAAAAAAAAAAEQETH/2gAIAQMBAT8QGVf/xAAWEQEBAQAAAAAAAAAAAAAAAAABEBH/2gAIAQIBAT8QR2f/xAAdEAEBAAEEAwAAAAAAAAAAAAABEQAhMUFhobHw/9oACAEBAAE/ELuygOX73l0rbvgxpSAXEtIIew2MM3lY6Mx0gEAgZ//Z",
+                        "aspectRatio": 1.5037593984962405,
+                        "src": "/static/6b67abca3707155baa970ea58db4e2c7/14b42/pierogi-1-scaled.jpg",
+                        "srcSet": "/static/6b67abca3707155baa970ea58db4e2c7/f836f/pierogi-1-scaled.jpg 200w,\n/static/6b67abca3707155baa970ea58db4e2c7/2244e/pierogi-1-scaled.jpg 400w,\n/static/6b67abca3707155baa970ea58db4e2c7/14b42/pierogi-1-scaled.jpg 800w,\n/static/6b67abca3707155baa970ea58db4e2c7/47498/pierogi-1-scaled.jpg 1200w,\n/static/6b67abca3707155baa970ea58db4e2c7/0e329/pierogi-1-scaled.jpg 1600w,\n/static/6b67abca3707155baa970ea58db4e2c7/4a461/pierogi-1-scaled.jpg 2560w",
+                        "sizes": "(max-width: 800px) 100vw, 800px"
+                      }
+                    }
+                  }
+                }
+              },
+              "dishes": {
+                "category": "pielmienie",
+                "description": "pielmienie z masełkiem i pieprzem czarnym",
+                "fieldGroupName": "dishes",
+                "name": "Pielmenie",
+                "price": "10,00",
+                "quantity": "8 szt"
+              }
+            },
+            {
+              "title": "Danie 1",
+              "featuredImage": {
+                "node": {
+                  "sourceUrl": "https://blog.ventus-trade.pl/wp-content/uploads/2021/04/solanka.jpg",
+                  "sourceUrlSharp": {
+                    "childImageSharp": {
+                      "gatsbyImageData": {
+                        "layout": "constrained",
+                        "backgroundColor": "#481808",
+                        "images": {
+                          "fallback": {
+                            "src": "/static/ce89d326c04f127dbef597ebc87b5a47/d177f/solanka.jpg",
+                            "srcSet": "/static/ce89d326c04f127dbef597ebc87b5a47/01b6a/solanka.jpg 422w,\n/static/ce89d326c04f127dbef597ebc87b5a47/ec2d9/solanka.jpg 844w,\n/static/ce89d326c04f127dbef597ebc87b5a47/d177f/solanka.jpg 1687w",
+                            "sizes": "(min-width: 1687px) 1687px, 100vw"
+                          },
+                          "sources": [
+                            {
+                              "srcSet": "/static/ce89d326c04f127dbef597ebc87b5a47/f57c3/solanka.webp 422w,\n/static/ce89d326c04f127dbef597ebc87b5a47/aff6a/solanka.webp 844w,\n/static/ce89d326c04f127dbef597ebc87b5a47/d1d9c/solanka.webp 1687w",
+                              "type": "image/webp",
+                              "sizes": "(min-width: 1687px) 1687px, 100vw"
+                            }
+                          ]
+                        },
+                        "width": 1687,
+                        "height": 1126
+                      },
+                      "fluid": {
+                        "base64": "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAANABQDASIAAhEBAxEB/8QAFwABAQEBAAAAAAAAAAAAAAAAAAIDBP/EABYBAQEBAAAAAAAAAAAAAAAAAAMBAv/aAAwDAQACEAMQAAABclQL0xXP/8QAGhAAAgIDAAAAAAAAAAAAAAAAAQIDEQASMf/aAAgBAQABBQJ+WwFKDK52MmLO6j//xAAVEQEBAAAAAAAAAAAAAAAAAAAAEf/aAAgBAwEBPwFX/8QAFhEBAQEAAAAAAAAAAAAAAAAAAAER/9oACAECAQE/Aax//8QAGxABAAICAwAAAAAAAAAAAAAAAQARAlESIoH/2gAIAQEABj8CcfZfJdjEphsnXEGUT//EABsQAAICAwEAAAAAAAAAAAAAAAERAFEhMUGx/9oACAEBAAE/ITRCwF8nQ0qAmg2ajFw3cENoDbaj/BCxP//aAAwDAQACAAMAAAAQK/8A/8QAFREBAQAAAAAAAAAAAAAAAAAAECH/2gAIAQMBAT8Qg//EABYRAQEBAAAAAAAAAAAAAAAAABEQIf/aAAgBAgEBPxBOR//EAB8QAQACAgEFAQAAAAAAAAAAAAEAESFBMVFhgcHR4f/aAAgBAQABPxDOQmTk502HycVdBKJ0jUUWRPuV07SzVwj2lLsavAP7D9vNZGf/2Q==",
+                        "aspectRatio": 1.5037593984962405,
+                        "src": "/static/ce89d326c04f127dbef597ebc87b5a47/14b42/solanka.jpg",
+                        "srcSet": "/static/ce89d326c04f127dbef597ebc87b5a47/f836f/solanka.jpg 200w,\n/static/ce89d326c04f127dbef597ebc87b5a47/2244e/solanka.jpg 400w,\n/static/ce89d326c04f127dbef597ebc87b5a47/14b42/solanka.jpg 800w,\n/static/ce89d326c04f127dbef597ebc87b5a47/47498/solanka.jpg 1200w,\n/static/ce89d326c04f127dbef597ebc87b5a47/0e329/solanka.jpg 1600w,\n/static/ce89d326c04f127dbef597ebc87b5a47/81a9d/solanka.jpg 1687w",
+                        "sizes": "(max-width: 800px) 100vw, 800px"
+                      }
+                    }
+                  }
+                }
+              },
+              "dishes": {
+                "category": "zupy",
+                "description": "opis dla solanki",
+                "fieldGroupName": "dishes",
+                "name": "solanka",
+                "price": "8,00",
+                "quantity": "300 ml"
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
