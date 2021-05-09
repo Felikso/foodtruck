@@ -17,8 +17,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
 
-import VideoPoster from '../assets/images/bg-poster.png'
-import VideoPosterSmall from '../assets/images/bg-poster-small.png'
+import VideoPoster from '../assets/images/bg-poster.webp'
+import VideoPosterSmall from '../assets/images/bg-poster-small.webp'
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 

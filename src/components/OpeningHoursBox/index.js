@@ -39,7 +39,11 @@ export default function OpeningHoursBox({heading}) {
         <OpeningHoursContainer>
             <h2>Godziny otwarcia</h2>
             {openingData.map((item, i)=> (
-                <OpeningHoursLine>
+                <OpeningHoursLine
+                css={item.day == plDay && item.open < todayHour  && item.close > todayHour ? `
+                background: rgba(90,90,90,0.5);
+                `: ""}
+                >
                         <OpeningDay 
                         css={item.day == plDay ? `
                         &:before {
