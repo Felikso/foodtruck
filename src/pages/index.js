@@ -38,7 +38,7 @@ function IndexPage() {
             }
   }
 
-  placeholderVideo: file(relativePath: {eq: "bg-poster.webp}) {
+  placeholderVideo: file(relativePath: {eq: "bg-poster.webp"}) {
     childImageSharp {
     gatsbyImageData(
         width: 1200, 
