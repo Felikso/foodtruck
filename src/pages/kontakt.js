@@ -17,6 +17,7 @@ import ContactInfo from '../components/ContactInfo'
 
 import FullWidthSection from '../components/FullWidthSection';
 import VideoPoster from '../assets/images/bg-poster.png'
+import VideoPosterSmall from '../assets/images/bg-poster-small.png'
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 import OpeningHoursBox from '../components/OpeningHoursBox'
@@ -60,7 +61,7 @@ const bgImage = convertToBgImage(image);
       <StyledHero
       bgImage={bgImage}
       Video={Video}
-      HeroPoster={VideoPoster}
+      HeroPoster={window.innerWidth < 786 ? VideoPosterSmall : VideoPoster}
       HeroTitle="Kontakt"
       HeroMotto="Szybko, Smacznie, Świeżo"
       HeroBtnText="menu"
