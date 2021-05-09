@@ -1,0 +1,50 @@
+
+
+
+.logo-lwowskie-smaki-mobile{
+    display: none;
+
+    @media (max-width: 768px){
+        text-align: center;
+        display: block;
+    }
+    
+}
+
+.svg-logo-lwowskie-smaki-mobile{
+    fill: rgb(255, 255, 255);
+    width: 10rem;
+    height: 10rem;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+.lion-hat-mobile{
+    fill: var(--color-1);
+    transition: 1s;
+}
+
+.lion-body-mobile{
+    fill: var(--color-2);
+    transition: 1s;
+}
+
+.l-letter-mobile{
+    fill: var(--color-1);
+    transition: 1s;
+}
+
+.s-letter-mobile{
+    fill: var(--color-2);
+    transition: 1s;
+}
+
+
+/* .lion-hat:hover + .lion-body
+
+
+{
+    fill: black;
+}
+ */
+

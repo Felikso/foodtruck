@@ -6,7 +6,7 @@ import { GlobalStyle } from "../styles/GlobalStyles"
 import InfoTopBox from '../InfoTopBox'
 import Navbar from '../Nav/Navbar';
 import ScrollBtn from '../ScrollBtn'
-import Footer from "../Footer/index.js"
+import Footer from "../Footer/index.js";
 
 
 const Layout = ({ location, children }) => {

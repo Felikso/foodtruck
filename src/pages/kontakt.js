@@ -16,6 +16,7 @@ import ContactInfo from '../components/ContactInfo'
 //
 
 import FullWidthSection from '../components/FullWidthSection';
+import VideoPoster from '../assets/images/bg-poster.png'
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 import OpeningHoursBox from '../components/OpeningHoursBox'
@@ -59,13 +60,14 @@ const bgImage = convertToBgImage(image);
       <StyledHero
       bgImage={bgImage}
       Video={Video}
-      HeroPoster="https://th.bing.com/th/id/R579b4552f248f5f3b8c22ec8de678f6d?rik=CZn5ZpmoPRhhWA&riu=http%3a%2f%2f1.s.dziennik.pl%2fpliki%2f2465000%2f2465139-lew-900-665.jpg&ehk=rOGUdngXo%2b2ZE6G%2bXYh1k730AK3lbwEv%2fptsUHZ6DK4%3d&risl=&pid=ImgRaw"
+      HeroPoster={VideoPoster}
       HeroTitle="Kontakt"
       HeroMotto="Szybko, Smacznie, Świeżo"
       HeroBtnText="menu"
       HeroBtnPath="/menu"
       HeroHeight="60vh"
-      HeroHeightMedia="100vh"
+      HeroWidthMedia="65vh"
+      HeroHeightMedia="95vh"
       
       
       
@@ -73,7 +75,11 @@ const bgImage = convertToBgImage(image);
       <ContactInfo/>
       {hasScrolled || isScrolling ? (
         <>
-        <ContactSectionTitle>Informacje dotyczące godzin otwarcia oraz lokalizacji</ContactSectionTitle>
+        <ContactSectionTitle
+                   data-aos="fade-in"   
+                   data-aos-offset="200"
+                   data-aos-delay="0"
+        >Informacje dotyczące godzin otwarcia oraz lokalizacji</ContactSectionTitle>
         <ContactSection>
             <ContactOpeningHoursBox
                    data-aos="fade-in"   
@@ -86,7 +92,8 @@ const bgImage = convertToBgImage(image);
                      data-aos="fade-in"   
                      data-aos-offset="200"
                      data-aos-delay="0">
-                <MapPhoto />
+                <MapTitle>Kliknij w mapę i sprawdź jak do nas trafić</MapTitle>
+                <a href="https://www.google.com/maps/place/Dawida,+50-529+Wroc%C5%82aw/data=!4m2!3m1!1s0x470fc266af93489f:0x1f56d200be7fe04c?sa=X&ved=2ahUKEwjik86zvLLwAhXO16QKHWi-DW4Q8gEwAHoECAMQAQ" target="_blank"><MapPhoto /></a>
               </ContactMapBox>
         </ContactSection>
       
@@ -115,33 +122,52 @@ const ContactOpeningHoursBox = styled.div`
 
   h5 {
     color: var(--contact-opening-day) !important;
-    font-size: 1.8em !important;
+    font-size: 1.2em !important;
   }
 
   p {
-    font-size: 1.5em !important;
+    font-size: 1.1em !important;
     color: var(--contact-opening-hours) !important;
   }
 
   @media screen and (max-width: 1000px) {
-    width: 100%;
+    width: 80%;
+    margin: auto;
     margin-bottom: 2em;
 }
+
+  @media screen and (max-width: 768px) {
+    h2 {
+      font-size: 1.2em !important;
+    }
+  
+    h5 {
+      font-size: 1em !important;
+    }
+  
+    p {
+      font-size: 0.8em !important;
+    }
+  }
 `
 
 const ContactMapBox = styled.div`
   width: 45vw;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
 
   @media screen and (max-width: 1000px) {
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }
 `
 
 const ContactSection = styled.div`
   display: flex;
-  width: 80vw;
+  width: 95vw;
   margin: 20px auto;
+  justify-content: center;
 
   @media screen and (max-width: 1000px) {
     flex-direction: column;
@@ -151,5 +177,27 @@ const ContactSection = styled.div`
 const ContactSectionTitle = styled.h3`
   text-align: center;
   font-size: 2em;
-  margin: 2em 0;
+  line-height: 1.5em;
+  margin: 2em auto;
+  width: 80vw;
+
+  @media screen and (max-width: 1000px) {
+    font-size: 1.5em;
+  }
+`
+
+const MapTitle = styled.h4`
+    text-align: center;
+    font-size: 1.3em;
+    line-height: 1.5em;
+    color: var(--contact-map-title);
+    margin-bottom: 1em;
+
+    @media screen and (max-width: 1000px) {
+      font-size: 1.2em;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 0.8em;
+    }
 `

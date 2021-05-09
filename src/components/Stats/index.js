@@ -16,7 +16,6 @@ function Stats() {
         });
     }, [])
 
-    console.log(StatsData)
     return (
         <StatsContainer>
             <Heading>Czemu tak chętnie jesz właśnie u nas?</Heading>
@@ -67,8 +66,8 @@ export default Stats
 const StatsContainer = styled.div`
     width: 90vw;
     margin: 2em auto;
-    background: #fcfcfc;
-    color: #000;
+    background: var(--stats-container-bg);
+    color: var(--stats-container-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -139,7 +138,7 @@ const Title = styled.p`
 const Question = styled.p`
     font-size: clamp(0.5rem, 2vw, 0.8rem);
     font-style: italic;
-    color: red;
+    color: var(--stats-question-color);
     margin-bottom: 2em;
 `
 

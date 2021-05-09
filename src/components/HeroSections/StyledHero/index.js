@@ -9,9 +9,9 @@ import DayOffer from '../../DayOffer'
 
 import BgImgBridge from '../../BgImgBridge'
 
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+/* import AniLink from "gatsby-plugin-transition-link/AniLink";
 
-import background from "../../../assets/images/lwowskie-smaki.png";
+import background from "../../../assets/images/lwowskie-smaki.png"; */
 
 
 
@@ -26,6 +26,7 @@ function StyledHero({
     HeroBtnText, 
     sources, 
     HeroHeight, 
+    HeroWidthMedia,
     HeroHeightMedia,
     bgImage
     }) {
@@ -39,13 +40,19 @@ function StyledHero({
         min-height: ${HeroHeight};
 
         @media screen and (max-width: 768px) {
-            min-height: ${HeroHeightMedia}; 
+            min-height: ${HeroWidthMedia}; 
+        }
+        @media screen and (max-height: 300px) {
+            height: ${HeroHeightMedia}; 
         }
         `}>
         <StyledHeroContainer
         css={`
         height: ${HeroHeight};
         @media screen and (max-width: 768px) {
+            height: ${HeroWidthMedia}; 
+        }
+        @media screen and (max-height: 500px) {
             height: ${HeroHeightMedia}; 
         }
         `}>
@@ -55,9 +62,11 @@ function StyledHero({
              css={`
             height: ${HeroHeight};
             @media screen and (max-width: 768px) {
+                height: ${HeroWidthMedia}; 
+             } 
+             @media screen and (max-height: 500px) {
                 height: ${HeroHeightMedia}; 
-        } 
-         }
+            }
              `}/>
                 <VideoBg src={Video} poster={HeroPoster}type="video/mp4" autoPlay loop muted playsInline />
                </StyledHeroBg>
@@ -66,6 +75,10 @@ function StyledHero({
             css={`
             height: ${HeroHeight};
             @media screen and (max-width: 768px) {
+            height: ${HeroWidthMedia}; 
+        }
+
+        @media screen and (max-height: 500px) {
             height: ${HeroHeightMedia}; 
         }
             `}
@@ -76,17 +89,17 @@ function StyledHero({
                     <StyledHeroP>
                         {HeroMotto}
                     </StyledHeroP>
-                    <AniLink
+{/*                     <AniLink
                           to={HeroBtnPath}
                           cover
                           direction="right"
                           duration={2}
                           bg={`#1d1d1d url("${background}") no-repeat fixed center`}
-                    >
-                        <Button primary="true" round="true" big="true">
+                    > */}
+                        <Button primary="true" round="true" big="true" to={HeroBtnPath}>
                         {HeroBtnText}
                     </Button>
-                    </AniLink>
+{/*                     </AniLink> */}
                 </StyledHeroItems>
             </StyledHeroContent>
         </StyledHeroContainer>
@@ -144,11 +157,7 @@ const StyledHeroContainer = styled.div`
         left: 0;
         z-index: 2;
         height: 101%;
-        background: linear-gradient(
-            180deg
-            ,rgb(0 0 0 / 30%) 0%,rgb(0 0 0) 100% ),linear-gradient(
-            180deg
-            ,rgba(0,0,0,0.2) 0%,transparent 100% );
+        background: var(--hero-styled-bg);
             }
 
 `
@@ -201,11 +210,14 @@ const StyledHeroH1 = styled.h1`
     margin-bottom: 1.5rem;
     letter-spacing: 3px;
     padding: 0 1rem;
+    color: var(--hero-title-color);
 `
 
 const StyledHeroP = styled.p`
     font-size: clamp(1rem, 3vw, 3rem);
     margin-bottom: 2rem;
     font-weight: 400;
+    color: var(--hero-motto-color);
 `
+
 

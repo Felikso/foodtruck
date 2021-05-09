@@ -19,13 +19,22 @@ function GalleryContent({ galleryTitle, galleryDesc, galleryInvitation }) {
                     <>
 
                         <GalleryContentBox>
-                            <GalleryContentTitle>
+                            <GalleryContentTitle
+                                data-aos="fade-in"   
+                                data-aos-offset="100"
+                                data-aos-delay="100">
                                 {galleryTitle}
                             </GalleryContentTitle>
-                            <GalleryContentDesc>
+                            <GalleryContentDesc
+                                data-aos="fade-in"   
+                                data-aos-offset="100"
+                                data-aos-delay="100">
                                 {galleryDesc}
                             </GalleryContentDesc>
-                            <GalleryContentInvitation>
+                            <GalleryContentInvitation
+                                data-aos="fade-in"   
+                                data-aos-offset="100"
+                                data-aos-delay="100">
                                 {galleryInvitation}
                             </GalleryContentInvitation>
 
@@ -48,13 +57,19 @@ const GalleryContentBox = styled.div`
     margin: 40px auto;
 
     @media screen and (max-width: 768px) {
-        width: 90vw;
+        width: 85vw;
       }
 `
 
 const GalleryContentTitle = styled.h3`
         margin-bottom: 2em;
         font-size: 2em;
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 1em;
+            font-size: 1.5em;
+            text-align: center;
+          }
 `
 
 const GalleryContentDesc = styled.p`
@@ -66,4 +81,9 @@ const GalleryContentInvitation = styled.h5`
         font-size: 1.5em;
         margin-top: 2em;
         font-style: italic;
+
+        @media screen and (max-width: 768px)  {
+            font-size: 1.2em;
+            margin-top: 1.5em; 
+        }
 `

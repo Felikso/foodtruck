@@ -3,18 +3,43 @@ import { createGlobalStyle } from 'styled-components'
 export const GlobalStyle = createGlobalStyle`
 
 :root {
-    --color-1: rgb(0, 0, 62);
-    --color-2: rgb(120, 103, 33);
-    --color-3: rgb(150, 11, 11);
-    --color-4: #0c4e00;
+    --color-1: rgb(0, 87, 184);
+    --color-2: rgb(255, 215, 0);
+    --color-3: #D4312D;
+    --color-4: rgb(15, 200, 0);
+
 
     --font-1: rgb(255, 255, 255);
 
+    /* Body */
+
+    --body-bg: white;
+
+    --body-color: black;
+
+    /* Hero */
+
+    --hero-styled-bg: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5046218316428134) 4%, rgba(255,255,255,0.25252099130667893) 7%, rgba(0,0,0,1) 100%);
+
+    --hero-title-color: #FF0600;
+
+    --hero-motto-color: #fffb00;
+
+    /* About Section */
+
+    --about-us-container-bg: transparent;
+
+    --about-us-container-color: white;
+
+    --about-us-top-line-color: #077bf1;
+
+    --about-us-testimonial-p: #3b3b3b;
+
     /* Contact */
 
-    --contact-a: orange;
-    --contact-p: red;
-    --contact-to: green;
+    --contact-a: rgb(200,0,0);
+    --contact-p: #b35656;
+    --contact-to: #28a728;
 
     --contact-to-hover: blue;
 
@@ -25,6 +50,10 @@ export const GlobalStyle = createGlobalStyle`
     --contact-opening-hours: rgb(200,0,0);
 
     --contact-opening-h2: black;
+
+    ---contact-title-color: blue;
+    
+    --contact-heading-color: #ba1111;
 
     --messenger-icon: #00B2FF;
     --facebook-icon: #3b5998;
@@ -40,13 +69,35 @@ export const GlobalStyle = createGlobalStyle`
 
     --menu-box-border: #808080;
 
-    --menu-dish-name-color: #8c0000;
+    --menu-dish-name-color: #e60000;
 
-    --menu-dish-q-color: black;
+    --menu-dish-q-color: #525252;
 
-    --menu-dish-desc-color: #000000;
+    --menu-dish-desc-color: black;
 
-    --menu-dish-price-color: #0c4e00;
+    --menu-dish-price-color: #33d000;
+
+    /* Day Offer */
+
+    --day-offer-container-bg: #ffffff6e;
+
+    --day-offer-container-border: #ba1111;
+
+    --day-offer-heading: #ba1111;
+
+    --day-offer-day-name: rgb(0, 87, 184);
+
+    --day-offer-date: #D4312D;
+
+    --day-offer-dishes: rgb(0, 87, 184);
+
+    --contact-map-title: #D4312D;
+
+    /* Featured */
+
+    --featured-bg: transparent;
+
+    --featured-heading-color: #ca0101;
 
     /* Footer */
 
@@ -56,13 +107,13 @@ export const GlobalStyle = createGlobalStyle`
 
     --footer-bg: black;
 
-    --footer-color: #000;
+    --footer-color: white;
 
-    --footer-h3-color: #f26a2e;
+    --footer-h3-color: rgb(200,0,0);
 
     --footer-link-color: #3d3d4e;
 
-    --footer-link-color-hover: #f26a2e;
+    --footer-link-color-hover: rgb(200,0,0);
 
     --footer-bottom-box-bg: black;
 
@@ -88,9 +139,17 @@ export const GlobalStyle = createGlobalStyle`
 
     --stats-icons-hover: blue;
 
-    --stats-box-bg: #f2f2f2;
+    --stats-box-bg: #646464c2;
 
-    --stats-box-bg-hover: #fff;
+    --stats-box-bg-hover: #979797c2;
+
+    --stats-container-bg: transparent;
+
+    --stats-container-color: white;
+
+    --stats-question-color: red;
+
+    --contact-container-stats-bg: transparent;
 
     /* Scroll btn */
 
@@ -104,17 +163,17 @@ export const GlobalStyle = createGlobalStyle`
 
     --underline-item-bg-active: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
 
-    --menu-card-color-open: #ab5e00;
+    --menu-card-color-open: #ab0000;
 
     --menu-card-color-close: #1d1d1d;
 
     /* Info Top Box */
 
-    --info-top-box-bg: #202020;
+    --info-top-box-bg: black;
 
-    --info-top-box-color: #7a7a7a;
+    --info-top-box-color: #c80000;
 
-    --info-top-box-color-hover: #bdbdbd;
+    --info-top-box-color-hover: #ec5050;
 
 
     
@@ -122,7 +181,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --opening-data-border-bottom: #9993;
 
-    --opening-data-hours: #f26a2e;
+    --opening-data-hours: rgb(200,0,0);
 
     --opening-data-day: #c7c7c7;
 
@@ -130,10 +189,20 @@ export const GlobalStyle = createGlobalStyle`
 
     --opening-data-title: white;
 
+    /* NavMenu */
+
+    --mobile-nav-bg: #d90000e6;
+
+    --nav-link-color: white;
+
+    --nav-link-color-hover: #e1be02;
+
+
   }
 
+
     * {
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
@@ -141,6 +210,8 @@ export const GlobalStyle = createGlobalStyle`
 
     html, body {
         overflow-x: hidden;
+        background: var(--body-bg);
+        color: var(--body-color);
     }
 
     #scroll-btn {
@@ -168,7 +239,7 @@ export const GlobalStyle = createGlobalStyle`
 
   .slideDownNav{
     position: fixed !important;
-    background: #000000d1 !important;
+    background: #660000de !important;
     top: 0;
     width: 100vw;
     height: 80px;

@@ -106,14 +106,14 @@ const randomFeatured = chooseRandom(wpPhotos, 3)
 const FeaturedContainer = styled.div`
     min-height: 100vh;
     padding: 5rem calc((100vw - 1300px) /2);
-    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(68,68,68,1) 50%, rgba(42,42,42,1) 60%, rgba(0,0,0,1) 100%);
+    background: var(--featured-bg);
 `
 
 const FeaturedHeading = styled.div`
     font-size: clamp(1.2rem, 5vw, 3rem);
     text-align: center;
     margin: 5rem auto;
-    color: white;
+    color: var(--featured-heading-color);
 `
 
 

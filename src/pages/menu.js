@@ -11,6 +11,7 @@ import MenuCard from '../components/MenuCard'
 import MenuContent from '../components/MenuContent'
 //
 import FullWidthSection from '../components/FullWidthSection';
+import VideoPoster from '../assets/images/bg-poster.png'
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 
@@ -46,13 +47,14 @@ const bgImage = convertToBgImage(image);
       <StyledHero
       bgImage={bgImage}
       Video={Video}
-      HeroPoster="https://th.bing.com/th/id/R579b4552f248f5f3b8c22ec8de678f6d?rik=CZn5ZpmoPRhhWA&riu=http%3a%2f%2f1.s.dziennik.pl%2fpliki%2f2465000%2f2465139-lew-900-665.jpg&ehk=rOGUdngXo%2b2ZE6G%2bXYh1k730AK3lbwEv%2fptsUHZ6DK4%3d&risl=&pid=ImgRaw"
+      HeroPoster={VideoPoster}
       HeroTitle="Menu"
       HeroMotto="Szybko, Smacznie, Świeżo"
-      HeroBtnText="menu"
-      HeroBtnPath="/menu"
+      HeroBtnText="o nas"
+      HeroBtnPath="/o-nas"
       HeroHeight="60vh"
-      HeroHeightMedia="100vh"
+      HeroWidthMedia="65vh"
+      HeroHeightMedia="95vh"
       
       
       

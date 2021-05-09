@@ -3,9 +3,13 @@ import styled from 'styled-components';
 
 import { menuData } from "../../data/MenuData"
 
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+import { Link } from "gatsby"
 
-import background from "../../assets/images/lwowskie-smaki.png";
+import SvgLSLogoMobile from './SvgLSLogoMobile'
+
+/* import AniLink from "gatsby-plugin-transition-link/AniLink";
+
+import background from "../../assets/images/lwowskie-smaki.png"; */
 
 
 const Ul = styled.ul`
@@ -19,7 +23,7 @@ const Ul = styled.ul`
 
   @media (max-width: 768px) {
     flex-flow: column nowrap;
-    background-color: #0d2538e6;
+    background-color: var(--mobile-nav-bg);
     position: fixed;
     transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
     top: 0;
@@ -31,14 +35,19 @@ const Ul = styled.ul`
   }
 `;
 
-const NavLink = styled(AniLink)`
-  color: #fff;
+const NavLink = styled(Link)`
+  color: var(--nav-link-color);
   display: flex;
   align-items: center;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
+  transition: 1s;
+
+  &:hover{
+    color: var(--nav-link-color-hover);
+  }
 
   @media (max-width: 768px) {
     margin: auto;
@@ -53,13 +62,14 @@ const RightNav = ({ open }) => {
           <NavLink 
           to={item.link} 
           key={index} 
-          cover
+/*           cover
           direction="right"
           duration={2}
-          bg={`#1d1d1d url("${background}") no-repeat fixed center`}>
+          bg={`#1d1d1d url("${background}") no-repeat fixed center`} */>
             {item.title}
           </NavLink>
         ))}
+  <SvgLSLogoMobile/>
     </Ul>
   )
 }
