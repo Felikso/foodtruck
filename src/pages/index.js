@@ -59,18 +59,28 @@ placeholderVideoSmall: file(relativePath: {eq: "bg-poster-small.png"}) {
 `
 );
 const image = getImage(placeholderImage);
-const videoPlaceholder = getImage(placeholderVideo);
-const videoPlaceholderSmall = getImage(placeholderVideoSmall);
+/* let videoPlaceHolder = getImage(placeholderVideo);
+
+console.log(videoPlaceHolder)
 
 if(typeof window !== 'undefined'){
   if(window.innerWidth <= 786){
-    const videoPlaceHolder = getImage(placeholderVideo);
+    videoPlaceHolder = getImage(placeholderVideo);
   }else{
-    const videoPlaceHolder = getImage(placeholderVideoSmall);
+    videoPlaceHolder = getImage(placeholderVideoSmall);
   }
-}
-console.log(image)
-console.log(videoPlaceholder.images.fallback.src)
+} */
+
+
+
+console.log(placeholderVideo)
+
+console.log(placeholderVideo.childImageSharp.gatsbyImageData.images.sources[0].srcSet)
+
+console.log(placeholderVideo.childImageSharp.gatsbyImageData.images.fallback.src)
+
+const videoPh = placeholderVideo.childImageSharp.gatsbyImageData.images.fallback.src
+
 const bgImage = convertToBgImage(image);
 
 
@@ -84,7 +94,7 @@ const bgImage = convertToBgImage(image);
       <StyledHero
             Video={Video}
             bgImage={bgImage}
-            HeroPoster={videoPlaceholder.images.fallback.src}
+            HeroPoster={videoPh}
             HeroTitle="Lwowskie Smaki"
             HeroMotto="Szybko, Smacznie, Świeżo"
             HeroBtnText="menu"

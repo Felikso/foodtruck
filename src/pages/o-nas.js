@@ -17,20 +17,53 @@ import AboutSection from '../components/AboutSection'
 
 
 function AboutPage() {
-  const { placeholderImage } = useStaticQuery(
+  const { placeholderImage, placeholderVideo, placeholderVideoSmall } = useStaticQuery(
     graphql`
       query {
           placeholderImage: file(relativePath: {eq: "email-1.jpg"}) {
-      childImageSharp {
-      gatsbyImageData(
-          width: 1200, 
-          quality: 60, 
-          webpOptions: {quality: 75})
-      }
+            childImageSharp {
+            gatsbyImageData(
+                width: 1200, 
+                quality: 60, 
+                webpOptions: {quality: 75})
+            }
   }
+
+  placeholderVideo: file(relativePath: {eq: "bg-poster.png"}) {
+    childImageSharp {
+    gatsbyImageData(
+        width: 1200, 
+        quality: 60, 
+        webpOptions: {quality: 75})
+    }
+}
+
+placeholderVideoSmall: file(relativePath: {eq: "bg-poster-small.png"}) {
+  childImageSharp {
+  gatsbyImageData(
+      width: 1200, 
+      quality: 60, 
+      webpOptions: {quality: 75})
+  }
+}
 }
 `
 );
+
+/* let videoPlaceHolder = getImage(placeholderVideo);
+
+if(typeof window !== 'undefined'){
+  if(window.innerWidth <= 786){
+    videoPlaceHolder = getImage(placeholderVideo);
+  }else{
+    videoPlaceHolder = getImage(placeholderVideoSmall);
+  }
+}
+ */
+
+const videoPh = placeholderVideo.childImageSharp.gatsbyImageData.images.fallback.src
+
+
 const image = getImage(placeholderImage);
 const bgImage = convertToBgImage(image);
 
@@ -47,7 +80,7 @@ const bgImage = convertToBgImage(image);
       <StyledHero
       bgImage={bgImage}
       Video={Video}
-      HeroPoster={window.innerWidth < 786 ? VideoPosterSmall : VideoPoster}
+      HeroPoster={videoPh}
       HeroTitle="O nas"
       HeroMotto="Szybko, Smacznie, Świeżo"
       HeroBtnText="menu"
