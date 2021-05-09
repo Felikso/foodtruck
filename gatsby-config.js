@@ -166,6 +166,13 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-plugin-transition-link`,
     `gatsby-plugin-scroll-reveal`,
+    `gatsby-plugin-minify`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+      },
+    },
 /*     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
