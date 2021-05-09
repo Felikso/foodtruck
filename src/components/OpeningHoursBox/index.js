@@ -55,7 +55,7 @@ export default function OpeningHoursBox({heading}) {
                             {item.day}
                             </OpeningDay>
                         <OpeningHoursTime                         
-                        css={item.day == plDay && item.open < todayHour  && item.close > todayHour ? `
+                        css={item.day == plDay ? `
                         &:before {
                             content: "${(item.day == plDay && item.open < todayHour  && item.close > todayHour ? "otwarte" : "zamknięte")}";
                             position: absolute;
