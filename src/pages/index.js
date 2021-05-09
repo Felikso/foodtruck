@@ -26,7 +26,7 @@ import StyledHero from '../components/HeroSections/StyledHero'
 
 function IndexPage() {
   
-  const { placeholderImage } = useStaticQuery(
+  const { placeholderImage, placeholderVideo, placeholderVideoSmall } = useStaticQuery(
     graphql`
       query {
           placeholderImage: file(relativePath: {eq: "email-1.jpg"}) {
@@ -37,10 +37,32 @@ function IndexPage() {
                 webpOptions: {quality: 75})
             }
   }
+
+  placeholderVideo: file(relativePath: {eq: "bg-poster.png"}) {
+    childImageSharp {
+    gatsbyImageData(
+        width: 1200, 
+        quality: 60, 
+        webpOptions: {quality: 75})
+    }
+}
+
+placeholderVideoSmall: file(relativePath: {eq: "bg-poster-small.png"}) {
+  childImageSharp {
+  gatsbyImageData(
+      width: 1200, 
+      quality: 60, 
+      webpOptions: {quality: 75})
+  }
+}
 }
 `
 );
 const image = getImage(placeholderImage);
+const videoPlaceholder = getImage(placeholderVideo);
+const videoPlaceholderSmall = getImage(placeholderVideoSmall);
+console.log(image)
+console.log(videoPlaceholder.images.fallback.src)
 const bgImage = convertToBgImage(image);
 
 
@@ -54,7 +76,7 @@ const bgImage = convertToBgImage(image);
       <StyledHero
             Video={Video}
             bgImage={bgImage}
-            HeroPoster={window.innerWidth < 786 ? VideoPosterSmall : VideoPoster}
+            HeroPoster={window.innerWidth < 786 ? videoPlaceholderSmall.images.fallback.src : videoPlaceholder.images.fallback.src}
             HeroTitle="Lwowskie Smaki"
             HeroMotto="Szybko, Smacznie, Świeżo"
             HeroBtnText="menu"
