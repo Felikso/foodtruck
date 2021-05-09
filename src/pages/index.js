@@ -59,17 +59,17 @@ placeholderVideoSmall: file(relativePath: {eq: "bg-poster-small.png"}) {
 `
 );
 const image = getImage(placeholderImage);
-/* let videoPlaceHolder = getImage(placeholderVideo);
 
-console.log(videoPlaceHolder)
+let videoPh
 
 if(typeof window !== 'undefined'){
   if(window.innerWidth <= 786){
-    videoPlaceHolder = getImage(placeholderVideo);
+    videoPh = placeholderVideoSmall.childImageSharp.gatsbyImageData.images.fallback.src
   }else{
-    videoPlaceHolder = getImage(placeholderVideoSmall);
+    videoPh = placeholderVideo.childImageSharp.gatsbyImageData.images.fallback.src
   }
-} */
+}
+
 
 
 
@@ -79,7 +79,7 @@ console.log(placeholderVideo.childImageSharp.gatsbyImageData.images.sources[0].s
 
 console.log(placeholderVideo.childImageSharp.gatsbyImageData.images.fallback.src)
 
-const videoPh = placeholderVideo.childImageSharp.gatsbyImageData.images.fallback.src
+
 
 const bgImage = convertToBgImage(image);
 
