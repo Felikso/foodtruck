@@ -16,14 +16,66 @@ export default function OpeningHoursBox({heading}) {
         });
     }, [])
 
+    const weekDaysPl = [
+        "niedziela",
+        "poniedziałek",
+        "wtorek",
+        "środa",
+        "czwartek",
+        "piątek",
+        "sobota"
+    ]
+
+    const date = new Date();
+    const todayHour = date.getHours()
+    const todayDay = date.getDay()
+
+    const plDay = weekDaysPl[todayDay]
+
+    console.log(todayHour)
+
     return (
         <>
         <OpeningHoursContainer>
             <h2>Godziny otwarcia</h2>
             {openingData.map((item, i)=> (
                 <OpeningHoursLine>
-                        <OpeningDay>{item.day}</OpeningDay>
-                        <OpeningHoursTime>{item.hours}</OpeningHoursTime>
+                        <OpeningDay 
+                        css={item.day == plDay ? `
+                        &:before {
+                            content: "Dziś";
+                            position: absolute;
+                            transform: translate(-120%, 0);
+                          }
+                        `: ""}>
+                            {item.day}
+                            </OpeningDay>
+                        <OpeningHoursTime                         
+                        css={item.day == plDay && item.open < todayHour  && item.close > todayHour ? `
+                        &:before {
+                            content: "${(item.day == plDay && item.open < todayHour  && item.close > todayHour ? "otwarte" : "zamknięte")}";
+                            position: absolute;
+                            transform: translate(-120%, 0);
+                          }
+                        `: ""}
+                        /* css={todayHour>= item.open && todayHour < item.close ? `
+                        background: blue !important;
+                        &:before {
+                            content: "otwarte";
+                            position: absolute;
+                            transform: translate(-120%, 0);
+                          }
+                        `: `
+                        background: blue !important;
+                        &:before {
+                            content: "zamknięte";
+                            position: absolute;
+                            transform: translate(-120%, 0);
+                          }
+                        `} */
+                        >
+                            {item.hours}
+                        </OpeningHoursTime>
                 </OpeningHoursLine>
 
             ))

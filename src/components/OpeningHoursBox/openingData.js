@@ -1,9 +1,9 @@
 export const openingData = [
-    {day: "poniedziałek", hours: "8:00-22:00"},
-    {day: "wtorek", hours: "8:00-22:00"},
-    {day: "środa", hours: "8:00-22:00"},
-    {day: "czwartek", hours: "8:00-22:00"},
-    {day: "piątek", hours: "8:00-22:00"},
-    {day: "sobota", hours: "10:00-20:00"},
-    {day: "niedziela", hours: "10:00-20:00"},
+    {day: "poniedziałek", hours: "10:00-20:00", open: 10, close: 20},
+    {day: "wtorek", hours: "10:00-20:00", open: 10, close: 20},
+    {day: "środa", hours: "10:00-20:00", open: 10, close: 20},
+    {day: "czwartek", hours: "10:00-20:00", open: 10, close: 20},
+    {day: "piątek", hours: "10:00-20:00", open: 10, close: 20},
+    {day: "sobota", hours: "12:00-18:00", open: 12, close: 18},
+    {day: "niedziela", hours: "12:00-18:00", open: 12, close: 18},
 ]
