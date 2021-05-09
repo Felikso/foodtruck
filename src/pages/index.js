@@ -60,7 +60,7 @@ placeholderVideoSmall: file(relativePath: {eq: "bg-poster-small.png"}) {
 );
 const image = getImage(placeholderImage);
 
-let videoPh = placeholderVideo.childImageSharp.gatsbyImageData.images.fallback.src
+let videoPh = placeholderVideoSmall.childImageSharp.gatsbyImageData.images.fallback.src
 
 if(typeof window !== 'undefined'){
   if(window.innerWidth <= 786){
