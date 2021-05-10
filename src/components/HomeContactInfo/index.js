@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
-import { ContactData } from './ContactData'
+import { HomeContactData } from './HomeContactData'
 
 
 //transitions
@@ -9,29 +9,29 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 
-function ContactInfo() {
+function HomeContactInfo() {
     useEffect(() => {
         Aos.init({
             duration: 1000
         });
     }, [])
     return (
-        <ContactContainer>
-            <ContactHeading
+        <HomeContactContainer>
+            <HomeContactHeading
                                data-aos="fade-in"   
                                data-aos-offset="100"
                                data-aos-delay="100"
-            >Serdecznie zapraszamy do kontaktu</ContactHeading>
-            <ContactWrapper>
-                {ContactData.map((item, index) => (
-                <ContactBox 
+            >Dane kontaktowe</HomeContactHeading>
+            <HomeContactWrapper>
+                {HomeContactData.map((item, index) => (
+                <HomeContactBox 
                 key={index}
                 data-aos="fade-in"   
                 data-aos-offset="200"
                 data-aos-delay={200 * item.id}
                 >
-                    <ContactIcon>{item.icon}</ContactIcon>
-                    <ContactTitle>{item.title}</ContactTitle>
+                    <HomeContactIcon>{item.icon}</HomeContactIcon>
+                    <HomeContactTitle>{item.title}</HomeContactTitle>
 
 
 
@@ -39,26 +39,26 @@ function ContactInfo() {
                     <AdressP>{item.p2}</AdressP>
                     <AdressP>{item.p3}</AdressP>
 
-                    <ContactHref href={item.href} target="_blank">
-                    <ContactTo>{item.to}</ContactTo>
-                    <ContactDesc>{item.desc}</ContactDesc>
+                    <HomeContactHref href={item.href} target="_blank">
+                    <HomeContactTo>{item.to}</HomeContactTo>
+                    <HomeContactDesc>{item.desc}</HomeContactDesc>
                     
-                    </ContactHref>
+                    </HomeContactHref>
                     {item.open}
-                </ContactBox>
+                </HomeContactBox>
 
 
                 ))}
-            </ContactWrapper>
-        </ContactContainer>
+            </HomeContactWrapper>
+        </HomeContactContainer>
     )
 }
 
-export default ContactInfo
+export default HomeContactInfo
 
-const ContactContainer = styled.div`
+const HomeContactContainer = styled.div`
     width: 100%;
-    background: var(--contact-container-stats-bg);
+    background: var(--HomeContact-container-stats-bg);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,12 +66,12 @@ const ContactContainer = styled.div`
  
 
 `
-const ContactHeading = styled.h2`
+const HomeContactHeading = styled.h2`
     text-align: start;
     font-size: clamp(1.5rem, 5vw, 2rem);
     margin-bottom: 3rem;
     padding: 0 2rem;
-    color: var(--contact-heading-color);
+    color: var(--HomeContact-heading-color);
     line-height: 1.5em;
 
     @media screen and (max-width: 768px){
@@ -79,7 +79,7 @@ const ContactHeading = styled.h2`
     }
 
 `
-const ContactWrapper = styled.div`
+const HomeContactWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
@@ -99,14 +99,14 @@ const ContactWrapper = styled.div`
 
 `
 
-const ContactBox = styled.div`
+const HomeContactBox = styled.div`
     height: 100%;
     width: 100%;
     padding: 2rem;
     text-align: center;
 `
 
-const ContactIcon = styled.div`
+const HomeContactIcon = styled.div`
     font-size: 3rem;
     margin-bottom: 1rem;
 
@@ -115,24 +115,24 @@ const ContactIcon = styled.div`
         margin-bottom: 0.8rem;
     }
 `
-const ContactTitle = styled.p`
+const HomeContactTitle = styled.p`
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     margin-bottom: 0.5rem; 
-    color: var(--contact-title-color);
+    color: var(--HomeContact-title-color);
     
     @media screen and (max-width: 768px){
         font-size: 1.2em;
     }
 `
 
-const ContactTo = styled.p`
+const HomeContactTo = styled.p`
     font-size: clamp(0.6rem, 2.2vw, 1.1rem);
     line-height: 3em;
-    color: var(--contact-to);
+    color: var(--HomeContact-to);
     transition: 1s;
 
     &:hover{
-        color: var(--contact-to-hover);  
+        color: var(--HomeContact-to-hover);  
          
     }
 
@@ -141,21 +141,21 @@ const ContactTo = styled.p`
     }
 `
 
-const ContactDesc = styled.p`
+const HomeContactDesc = styled.p`
     font-size: clamp(0.6rem, 2.2vw, 1.1rem);
     line-height: 3em;
-    color: var(--contact-p);
+    color: var(--HomeContact-p);
 
     @media screen and (max-width: 768px){
         font-size: 1.2em;
     }
 `
 
-const ContactHref = styled.a`
+const HomeContactHref = styled.a`
     font-size: clamp(0.6rem, 2.2vw, 1.1rem);
     line-height: 1em;
     text-decoration: none;
-    color: var(--contact-a);
+    color: var(--HomeContact-a);
 
     @media screen and (max-width: 768px){
         font-size: 1.2em;

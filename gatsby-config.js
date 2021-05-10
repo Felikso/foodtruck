@@ -91,7 +91,7 @@ module.exports = {
 				url: "https://blog.ventus-trade.pl/graphql",
 			},
 		},
-    {
+/*     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
@@ -99,7 +99,7 @@ module.exports = {
         ],
         display: 'swap'
       }
-    },
+    }, */
     {
       resolve: `gatsby-transformer-remark`,
       options: {

@@ -25,6 +25,12 @@ export const GlobalStyle = createGlobalStyle`
 
     --hero-motto-color: #fffb00;
 
+    /* Home */
+
+    --contact-icon-arrow-color: #ba1111;
+    
+    --contact-icon-arrow-color-hover: black;
+
     /* About Section */
 
     --about-us-container-bg: transparent;
@@ -200,9 +206,15 @@ export const GlobalStyle = createGlobalStyle`
 
   }
 
+  @font-face {
+    font-family: "Montserrat";
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,300&display=swap');
+    font-display: optional;
+  }
+
 
     * {
-        font-family: 'Ubuntu', sans-serif;
+  font-family: 'Montserrat', sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;

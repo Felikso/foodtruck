@@ -22,6 +22,8 @@ import VideoPosterSmall from '../assets/images/bg-poster-small.webp'
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 
+import HomeContactInfo from '../components/HomeContactInfo'
+
 
 
 function IndexPage() {
@@ -98,6 +100,8 @@ const bgImage = convertToBgImage(image);
              />
       {hasScrolled || isScrolling ? (
         <>
+
+        <HomeContactInfo />
 
       <MenuContent
         menuTitle="O naszym Menu"

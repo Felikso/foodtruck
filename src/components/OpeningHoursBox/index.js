@@ -32,8 +32,6 @@ export default function OpeningHoursBox({heading}) {
 
     const plDay = weekDaysPl[todayDay]
 
-    console.log(todayHour)
-
     return (
         <>
         <OpeningHoursContainer>

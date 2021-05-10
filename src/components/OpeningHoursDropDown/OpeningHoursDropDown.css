@@ -1,0 +1,50 @@
+.main-columns {
+  display: flex;
+  flex-direction: row;
+}
+
+.main-column {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  flex: 1 1 1em;
+}
+
+.main-toggle {
+  margin: 0.5em 3em;
+}
+
+.pure-menu-list {
+  margin: 0.2em;
+}
+
+.narrative {
+  margin: 0.3em 0;
+}
+
+.dropdown-slidedown {
+  border: 1px solid gray;
+  border-radius: 4px;
+  width: 10em;
+  max-height: 40em;
+  background: whitesmoke;
+  overflow-y: auto;
+  transition-duration: 0.8s;
+  transition-timing-function: ease-in-out;
+  width: 100%;
+}
+
+.dropdown-slidedown.overlay {
+  position: absolute;
+}
+
+
+.react-slidedown.my-dropdown-slidedown {
+  transition-duration: 1.2s;
+  transition-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
+}
+
+.react-slidedown {
+  transition-duration: .5s;
+  transition-timing-function: ease-in-out;
+}
