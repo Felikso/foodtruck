@@ -5,9 +5,6 @@ import { graphql, useStaticQuery } from 'gatsby'
 import {  GatsbyImage } from 'gatsby-plugin-image'
 
 import './MenuCard.scss'
-
-import wordpressDishesCoppy from './wordpressDishesCoppy.json'
-
 //transitions
 import Aos from 'aos';
 import 'aos/dist/aos.css';

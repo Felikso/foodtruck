@@ -38,6 +38,7 @@ function HomeOrderInfo() {
                     <HoverFillButton
                                 style={{
                                 width: '100%',
+                                background: 'linear-gradient(333deg, rgba(255,255,255,0) 0%, rgba(57,57,57,0.9) 100%)'
 
                             }}>
                         <HomeOrderTitle>{item.title}</HomeOrderTitle>

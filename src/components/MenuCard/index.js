@@ -6,8 +6,6 @@ import {  GatsbyImage } from 'gatsby-plugin-image'
 
 import './MenuCard.scss'
 
-import wordpressDishesCoppy from './wordpressDishesCoppy.json'
-
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
 
 //transitions

@@ -27,6 +27,8 @@ import HomeContactInfo from '../components/HomeContactInfo'
 
 import HoverFillButton from '../components/HoverFillButton'
 
+import HomeMenuCards from '../components/HomeMenuCards'
+
 
 
 function IndexPage() {
@@ -106,6 +108,8 @@ const bgImage = convertToBgImage(image);
         
         <HomeOrderInfo />
         <HomeContactInfo />
+
+        <HomeMenuCards />
 
       <MenuContent
         menuTitle="O naszym Menu"
