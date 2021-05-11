@@ -23,15 +23,15 @@
 }
 
 .dropdown-slidedown {
-  border: 1px solid gray;
   border-radius: 4px;
   width: 10em;
   max-height: 40em;
-  background: whitesmoke;
   overflow-y: auto;
   transition-duration: 0.8s;
   transition-timing-function: ease-in-out;
   width: 100%;
+
+
 }
 
 .dropdown-slidedown.overlay {
