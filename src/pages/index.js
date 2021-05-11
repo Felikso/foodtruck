@@ -22,7 +22,10 @@ import VideoPosterSmall from '../assets/images/bg-poster-small.webp'
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 
+import HomeOrderInfo from '../components/HomeOrderInfo'
 import HomeContactInfo from '../components/HomeContactInfo'
+
+import HoverFillButton from '../components/HoverFillButton'
 
 
 
@@ -100,7 +103,8 @@ const bgImage = convertToBgImage(image);
              />
       {hasScrolled || isScrolling ? (
         <>
-
+        
+        <HomeOrderInfo />
         <HomeContactInfo />
 
       <MenuContent

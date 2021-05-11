@@ -31,6 +31,20 @@ export const GlobalStyle = createGlobalStyle`
     
     --contact-icon-arrow-color-hover: black;
 
+    /* Button Fill Hover */
+
+    --btn-color: white;
+
+    --btn-hover: black;
+
+    --btn-fill-focus: var(--color-3);
+
+    --btn-fill-color: var(--color-3);
+
+    --btn-fill-color-hover: var(--color-1);
+
+
+
     /* About Section */
 
     --about-us-container-bg: transparent;

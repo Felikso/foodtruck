@@ -5,7 +5,7 @@ import BackgroundImage from 'gatsby-background-image'
 
 import { Button } from "../../Button/index"
 
-import DayOffer from '../../DayOffer'
+/* import DayOffer from '../../DayOffer' */
 
 import BgImgBridge from '../../BgImgBridge'
 
@@ -104,7 +104,7 @@ function StyledHero({
             </StyledHeroContent>
         </StyledHeroContainer>
 
-        <DayOffer />
+{/*         <DayOffer /> */}
         </StyledHeroBox>
 
 

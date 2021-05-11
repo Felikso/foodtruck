@@ -29,8 +29,7 @@ export default class Dropdown extends React.Component {
 
 
 
-  const toCloseHours = (todayObj[0].close - todayHour) > 0 ? todayHour - todayObj[0].close : todayObj[0].close - todayHour
-  const toCloseMinutes = 0 - todayMinutes
+  const toCloseHours = (todayObj[0].close - todayHour) > 0 ?  todayObj[0].close - todayHour : todayHour - todayObj[0].close
 
 
 
@@ -58,7 +57,7 @@ export default class Dropdown extends React.Component {
   console.log('timeToClose')
   console.log(toCloseHours)
     let className = "dropdown-slidedown";
-    let caption = this.props.open ? closeInfo : `dziś ${plDay} godzina: ${todayHour}:${todayMinutes < 10 ? '0'+todayMinutes : todayMinutes}`;
+    let caption = this.props.open ? "zwiń listę" : `dziś ${plDay} godzina: ${todayHour}:${todayMinutes < 10 ? '0'+todayMinutes : todayMinutes}`;
     let render = this.props.open;
     let closed = false;
 
@@ -99,9 +98,6 @@ export default class Dropdown extends React.Component {
   
       items.push(
         openingData.map((item, idx) => {
-
-          console.log("XDDDD")
-
           const hoursCloseList = item.open - todayHour
 
           const hoursOpenList = item.close - todayHour
@@ -154,8 +150,8 @@ export default class Dropdown extends React.Component {
           console.log(hoursCloseList)
           
           return(
-        <li key={idx} className={"pure-menu-item"}>
-          <span>{item.day} {item.hours}</span>
+        <OpeningLi key={idx} className={"pure-menu-item"}>
+          <OpeningP><OpeningDay>{item.day}</OpeningDay> <OpeningHours>{item.hours}</OpeningHours></OpeningP>
           {item.day == plDay ? item.day == plDay && (item.open == todayHour || item.open < todayHour)   && item.close > todayHour ?
           <StillOpen>zamknięcie za: {openHoursMore ? openHoursMore+""+closeMin : openHoursLess+""+openMin}</StillOpen> : 
           <NowClose>
@@ -163,7 +159,7 @@ export default class Dropdown extends React.Component {
             {/* {hoursCloseList==0 ? `otwarcie za: ${closeMin} min.` : "zamknięte" } */}
           </NowClose> : "" }
 
-        </li>
+        </OpeningLi>
         )}
         )
       );
@@ -182,4 +178,22 @@ const StillOpen = styled.p`
 `
 const NowClose = styled.p`
   color: red;
+`
+
+const OpeningLi = styled.li`
+  list-style: none;
+
+`
+
+const OpeningDay = styled.span`
+  font-weight: bold;
+`
+
+const OpeningHours = styled.span`
+`
+
+const OpeningP = styled.p`
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.5em;
 `

@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
 
-import { HomeContactData } from './HomeContactData'
+import { HomeOrderData } from './HomeOrderData'
+
+import HoverFillButton from '../HoverFillButton'
 
 
 //transitions
@@ -9,56 +11,53 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 
 
-function HomeContactInfo() {
+function HomeOrderInfo() {
     useEffect(() => {
         Aos.init({
             duration: 1000
         });
     }, [])
     return (
-        <HomeContactContainer>
-            <HomeContactHeading
+        <HomeOrderContainer>
+            <HomeOrderHeading
                                data-aos="fade-in"   
                                data-aos-offset="100"
                                data-aos-delay="100"
-            >Dane kontaktowe</HomeContactHeading>
-            <HomeContactWrapper>
-                {HomeContactData.map((item, index) => (
-                <HomeContactBox 
+            >Złóż zamówienie przez: </HomeOrderHeading>
+            <HomeOrderWrapper>
+                {HomeOrderData.map((item, index) => (
+                <HomeOrderBox 
                 key={index}
                 data-aos="fade-in"   
                 data-aos-offset="200"
                 data-aos-delay={200 * item.id}
                 >
-                    <HomeContactIcon>{item.icon}</HomeContactIcon>
-                    <HomeContactTitle>{item.title}</HomeContactTitle>
+                
+                
+                <HomeOrderHref href={item.href} target="_blank">
+                    <HoverFillButton
+                                style={{
+                                width: '100%',
 
-
-
-                    <AdressP>{item.p1}</AdressP>
-                    <AdressP>{item.p2}</AdressP>
-                    <AdressP>{item.p3}</AdressP>
-
-                    <HomeContactHref href={item.href} target="_blank">
-                    <HomeContactTo>{item.to}</HomeContactTo>
-                    <HomeContactDesc>{item.desc}</HomeContactDesc>
-                    
-                    </HomeContactHref>
-                    {item.open}
-                </HomeContactBox>
+                            }}>
+                        <HomeOrderTitle>{item.title}</HomeOrderTitle>
+                        <HomeOrderIcon>{item.icon}</HomeOrderIcon>
+                    </HoverFillButton>
+                </HomeOrderHref>
+                </HomeOrderBox>
 
 
                 ))}
-            </HomeContactWrapper>
-        </HomeContactContainer>
+            </HomeOrderWrapper>
+        </HomeOrderContainer>
     )
 }
 
-export default HomeContactInfo
+export default HomeOrderInfo
 
-const HomeContactContainer = styled.div`
+const HomeOrderContainer = styled.div`
     width: 100%;
-    background: var(--HomeContact-container-stats-bg);
+    background: var(--HomeOrder-container-stats-bg);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -66,12 +65,12 @@ const HomeContactContainer = styled.div`
  
 
 `
-const HomeContactHeading = styled.h2`
+const HomeOrderHeading = styled.h2`
     text-align: start;
     font-size: clamp(1.5rem, 5vw, 2rem);
     margin-bottom: 3rem;
     padding: 0 2rem;
-    color: var(--HomeContact-heading-color);
+    color: var(--HomeOrder-heading-color);
     line-height: 1.5em;
 
     @media screen and (max-width: 768px){
@@ -79,47 +78,32 @@ const HomeContactHeading = styled.h2`
     }
 
 `
-const HomeContactWrapper = styled.div`
+const HomeOrderWrapper = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    grid-gap: 10px;
     margin: 10px;
-
-    @media screen and (max-width: 1100px) {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
         font-size: 1.2em;
-    }
-
-    @media screen and (max-width: 500px) {
-        grid-template-columns: 1fr;
+        width: 80%;
+        margin: auto;
     }
 
 `
 
-const HomeContactBox = styled.div`
+const HomeOrderBox = styled.div`
     height: 100%;
     width: 100%;
     padding: 2rem;
     text-align: center;
-    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 
-    @media screen and (max-width: 1100px) {
-        width: 350px;
-        margin: auto;
-    }
-
-    @media screen and (max-width: 768px) {
-        width: 80%;
-    }
 
 `
 
-const HomeContactIcon = styled.div`
+const HomeOrderIcon = styled.div`
     font-size: 3rem;
     margin-bottom: 1rem;
 
@@ -128,24 +112,24 @@ const HomeContactIcon = styled.div`
         margin-bottom: 0.8rem;
     }
 `
-const HomeContactTitle = styled.p`
+const HomeOrderTitle = styled.p`
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     margin-bottom: 0.5rem; 
-    color: var(--HomeContact-title-color);
+    color: var(--HomeOrder-title-color);
     
     @media screen and (max-width: 768px){
         font-size: 1.2em;
     }
 `
 
-const HomeContactTo = styled.p`
+const HomeOrderTo = styled.p`
     font-size: clamp(0.6rem, 2.2vw, 1.1rem);
     line-height: 3em;
-    color: var(--HomeContact-to);
+    color: var(--HomeOrder-to);
     transition: 1s;
 
     &:hover{
-        color: var(--HomeContact-to-hover);  
+        color: var(--HomeOrder-to-hover);  
          
     }
 
@@ -154,21 +138,21 @@ const HomeContactTo = styled.p`
     }
 `
 
-const HomeContactDesc = styled.p`
+const HomeOrderDesc = styled.p`
     font-size: clamp(0.6rem, 2.2vw, 1.1rem);
     line-height: 3em;
-    color: var(--HomeContact-p);
+    color: var(--HomeOrder-p);
 
     @media screen and (max-width: 768px){
         font-size: 1.2em;
     }
 `
 
-const HomeContactHref = styled.a`
+const HomeOrderHref = styled.a`
     font-size: clamp(0.6rem, 2.2vw, 1.1rem);
     line-height: 1em;
     text-decoration: none;
-    color: var(--HomeContact-a);
+    color: var(--HomeOrder-a);
 
     @media screen and (max-width: 768px){
         font-size: 1.2em;
