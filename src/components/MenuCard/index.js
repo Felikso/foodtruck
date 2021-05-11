@@ -8,6 +8,8 @@ import './MenuCard.scss'
 
 import wordpressDishesCoppy from './wordpressDishesCoppy.json'
 
+import { IoIosArrowDropdownCircle } from 'react-icons/io'
+
 //transitions
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -187,6 +189,13 @@ if(dishCategory === "wszystkie"){
 {
   categories.map((item, i) => {
     const catItem = item
+
+    function preventClick(e) {  
+      e.stopPropagation();
+      e.currentTarget.parentNode.click()
+      
+
+     }
     return(
     <div>
         <MenuButtonsBox>
@@ -201,12 +210,16 @@ if(dishCategory === "wszystkie"){
                 >
                   {item}
                 </a>
+                <MenuButtonArrow
+                    value={item} onClick={((e) => handleClick(e, i, item))} 
+                    style={{ transform: item===listOpen ? dishOpen ? 'rotate(180deg)' : 'rotate(0deg)': "rotate(0deg)"}}
+            ><MenuArrowIcon
+            onClick={preventClick}
+            style={{
+              color: item===listOpen ? dishOpen ? 'var(--menu-card-arrow-hover)' : 'var(--menu-card-arrow)' : 'var(--menu-card-arrow)'
+            }}
+            /></MenuButtonArrow>
             </MenuButton>
-                <MenuArrow 
-                value={item} onClick={((e) => handleClick(e, i, item))} 
-                style={{ transform: item===listOpen ? dishOpen ? 'rotate(-45deg)' : 'rotate(135deg)': "rotate(135deg)"}}
-                >
-                </MenuArrow>
       </MenuButtonsBox>
               {dishOpen ? filteredDishes.filter(item => item.dishes.category === catItem).map((item, i) => {
 
@@ -250,6 +263,8 @@ if(dishCategory === "wszystkie"){
 
 
 export default MenuCard;
+
+
 
 
 const MenuBox = styled.div`
@@ -353,11 +368,6 @@ const MenuButton = styled.button`
   width: 100vw;
   transition: 1s;
 
-/* 
-  &:focus {
-    color: var(--color-4);
-  } */
-
   a {
     font-size: 1.5em;
     background: 
@@ -376,13 +386,12 @@ const MenuButton = styled.button`
  
 `
 
-const MenuButtonBox = styled.div`
-
-  display: grid;
-  grid-template-columns: repeat( auto-fit, minmax(150px, 1fr) );
-  margin: 20px 0;
-
+const MenuArrowIcon = styled(IoIosArrowDropdownCircle)`
+  cursor: pointer;
+  color: var(--menu-card-arrow);
+  transition:.2s ease;
 `
+
 
 const MenuArrow = styled.button`
 width: 3vh;
@@ -444,3 +453,18 @@ const DishText = styled.div`
   align-items: flex-end;
   justify-content: inherit;
 `
+
+const MenuButtonArrow = styled.button`
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 3em;
+  transition: 1s;
+  transform: translate(-10px, 0);
+`
+
+

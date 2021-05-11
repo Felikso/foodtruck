@@ -187,6 +187,10 @@ export const GlobalStyle = createGlobalStyle`
 
     --menu-card-color-close: #1d1d1d;
 
+    --menu-card-arrow: black;
+
+    --menu-card-arrow-hover: white;
+
     /* Info Top Box */
 
     --info-top-box-bg: black;
