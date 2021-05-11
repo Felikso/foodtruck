@@ -106,7 +106,7 @@ export default class Dropdown extends React.Component {
 
           const hoursOpenList = item.close - todayHour
 
-          const hoursOpenListPrev = item.prevClose - todayHour
+          const hoursOpenListPrev = todayHour > item.prevClose ? item.prevClose - todayHour : todayHour - item.prevClose
 
           const closeMin = 
           todayMinutes>0 ? 
@@ -145,13 +145,13 @@ export default class Dropdown extends React.Component {
 
           const openHoursLessPrev = 
           hoursOpenListPrev<0 ?
-          `${(hoursOpenListPrev*(-1))-1 == 0 ? "" : hoursOpenListPrev-1+" godz."}`  :
-          ""
+          ""  :
+          `${(hoursOpenListPrev*(-1))-1 == 0 ? "" : hoursOpenListPrev-1+" godz."}`
 
           console.log(closeMin)
 
-          console.log(closeHoursMore)
-          console.log(closeHoursLess)
+          console.log(hoursOpenListPrev)
+          console.log(hoursCloseList)
           
           return(
         <li key={idx} className={"pure-menu-item"}>
@@ -159,7 +159,8 @@ export default class Dropdown extends React.Component {
           {item.day == plDay ? item.day == plDay && (item.open == todayHour || item.open < todayHour)   && item.close > todayHour ?
           <StillOpen>zamknięcie za: {openHoursMore ? openHoursMore+""+closeMin : openHoursLess+""+openMin}</StillOpen> : 
           <NowClose>
-            otwarcie za: {openHoursMorePrev ? openHoursMorePrev+""+closeMin : openHoursLessPrev+""+closeMin}
+            zamknięte
+            {/* {hoursCloseList==0 ? `otwarcie za: ${closeMin} min.` : "zamknięte" } */}
           </NowClose> : "" }
 
         </li>
