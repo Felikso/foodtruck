@@ -107,6 +107,12 @@ const HomeContactBox = styled.div`
     text-align: center;
     -webkit-box-shadow: var(--customed-box-shadow); 
     box-shadow: var(--customed-box-shadow);
+    transition: 0.3s !important;
+
+    &:hover{
+        transform: scale(1.4);
+        
+    }
 
     @media screen and (max-width: 1100px) {
         width: 350px;

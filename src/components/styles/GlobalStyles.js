@@ -87,6 +87,12 @@ export const GlobalStyle = createGlobalStyle`
 
     /* menuCard */
 
+    /* home */
+
+    --fill-button-menu: none;
+
+    --fill-button-menu-hover: none;
+
     --menu-box-bg: transparent;
 
     --menu-box-bg-hover: transparent;
@@ -193,7 +199,7 @@ export const GlobalStyle = createGlobalStyle`
 
     --menu-card-arrow: black;
 
-    --menu-card-arrow-hover: white;
+    --menu-card-arrow-hover: var(--color-1);
 
     /* Info Top Box */
 

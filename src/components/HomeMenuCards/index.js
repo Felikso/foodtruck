@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 import {  GatsbyImage } from 'gatsby-plugin-image'
 
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
@@ -71,8 +71,8 @@ const chooseRandom = (arr, num = 1) => {
 
     return (
         <HomeMenuCardSection>
-                    <HomeCardButtonBox>
-                        <HomeMenuCardFillButton>Sprawdź całe menu</HomeMenuCardFillButton>
+                    <HomeCardButtonBox to="/menu">
+                        <HomeMenuCardFillButton><FillButtonLink to="/menu">Sprawdź całe menu</FillButtonLink></HomeMenuCardFillButton>
                     </HomeCardButtonBox>
         <HomeMenuCardMenuSection>
 
@@ -81,7 +81,10 @@ const chooseRandom = (arr, num = 1) => {
         console.log(item)
 
         return(
-            <HomeMenuCardBox>
+            <HomeMenuCardBox
+            data-aos="fade-in"   
+            data-aos-offset="200"
+            data-aos-delay="0">
             <HomeMenuDishImg
                       className="image-hover-capition__img"
                       key={i}
@@ -115,7 +118,16 @@ const chooseRandom = (arr, num = 1) => {
 
 export default HomeMenuCard;
 
-const HomeCardButtonBox = styled.div`
+const FillButtonLink = styled(Link)`
+    color: var(--fill-button-menu);
+    transition: 1s;
+
+    &:hover{
+      color: var(--fill-button-menu-hover);
+    }
+`
+
+const HomeCardButtonBox = styled(Link)`
 display: grid;
 margin: 10px;
 width: 50%;
