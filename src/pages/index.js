@@ -1,31 +1,24 @@
 import React, { useRef } from 'react';
 
 import { useHasBeenVisible } from '../hooks/useVisibility';
+import { useHasBeenPartlyVisible } from '../hooks/useVisibility';
+
 import Layout from "../components/Layout/index.js"
 import Seo from "../components/SEO/index"
 
-/* import MenuCard from '../components/MenuCard'
-import MenuContent from '../components/MenuContent' */
-
-import Testimonials from "../components/Testimonials/index"
 import Stats from "../components/Stats/index"
 import Email from "../components/Email/index"
 import FullWidthSection from '../components/FullWidthSection';
-import FeaturedProductsBox from '../containers/FeaturedProductsBox';
 
 import { graphql, useStaticQuery } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
 
-import VideoPoster from '../assets/images/bg-poster.webp'
-import VideoPosterSmall from '../assets/images/bg-poster-small.webp'
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 
 import HomeOrderInfo from '../components/HomeOrderInfo'
 import HomeContactInfo from '../components/HomeContactInfo'
-
-import HoverFillButton from '../components/HoverFillButton'
 
 import HomeMenuCards from '../components/HomeMenuCards'
 
@@ -69,24 +62,13 @@ const image = getImage(placeholderImage);
 
 let videoPh = placeholderVideoSmall.childImageSharp.gatsbyImageData.images.fallback.src
 
-/* if(typeof window !== 'undefined'){
-  if(window.innerWidth <= 786){
-    videoPh = placeholderVideoSmall.childImageSharp.gatsbyImageData.images.fallback.src
-  }else{
-    videoPh = placeholderVideo.childImageSharp.gatsbyImageData.images.fallback.src
-  }
-} */
-
-
-
-
 const bgImage = convertToBgImage(image);
-
 
   const halfPage = useRef();
   const preload = useRef();
-  const hasScrolled = useHasBeenVisible(halfPage);
+  const hasScrolled = useHasBeenPartlyVisible(halfPage, 0.3);
   const isScrolling = useHasBeenVisible(preload);
+
   return(
     <Layout>
       <Seo title="Home" />
@@ -103,21 +85,16 @@ const bgImage = convertToBgImage(image);
             HeroHeightMedia="95vh"
 
              />
-      {hasScrolled || isScrolling ? (
+             <HomeOrderInfo ref={halfPage} />
+      {hasScrolled ? (
         <>
-        
-        <HomeOrderInfo />
         <HomeContactInfo />
-
         <HomeMenuCards />
-
-      <FeaturedProductsBox heading="Serdecznie polecamy" />
-      <Testimonials />
-      <Stats />
-      <Email />
+        <Stats />
+        <Email />
         </>
       ) : (
-        <FullWidthSection ref={halfPage} height='2286px' minHeight='3448px' />
+        <FullWidthSection height='2286px' minHeight='3448px' />
       )}
 
     </Layout>

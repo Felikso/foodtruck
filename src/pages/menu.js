@@ -11,8 +11,7 @@ import MenuCard from '../components/MenuCard'
 import MenuContent from '../components/MenuContent'
 //
 import FullWidthSection from '../components/FullWidthSection';
-import VideoPoster from '../assets/images/bg-poster.png'
-import VideoPosterSmall from '../assets/images/bg-poster-small.png'
+import FeaturedProductsBox from '../containers/FeaturedProductsBox'
 import Video from '../assets/videos/pierogi1.mp4'
 import StyledHero from '../components/HeroSections/StyledHero'
 
@@ -51,18 +50,7 @@ placeholderVideoSmall: file(relativePath: {eq: "bg-poster-small.png"}) {
 `
 );
 
-/* let videoPlaceHolder = getImage(placeholderVideo);
-
-if(typeof window !== 'undefined'){
-  if(window.innerWidth <= 786){
-    videoPlaceHolder = getImage(placeholderVideo);
-  }else{
-    videoPlaceHolder = getImage(placeholderVideoSmall);
-  }
-}
- */
-
-const videoPh = placeholderVideo.childImageSharp.gatsbyImageData.images.fallback.src
+let videoPh = placeholderVideoSmall.childImageSharp.gatsbyImageData.images.fallback.src
 
 
 const image = getImage(placeholderImage);
@@ -93,6 +81,9 @@ const bgImage = convertToBgImage(image);
       
       
       />
+
+      <FeaturedProductsBox heading="Serdecznie polecamy" />
+
       <MenuContent
       menuTitle="O naszym Menu"
       menuDesc='Dokładamy wszelkich starań, aby potrawy przez nas serwowane trafiały w gusta najwybredniejszych Konsumentów. Naszą dewizą jest serwowanie posiłków przede wszystkim smacznych oraz "po domowemu". Zależy nam przede wszystkim na tym, żeby spójnie móc łączyć ze sobą słowiańskie smaki, do których zakwalifikowaliśmy kuchnię polską oraz ukraińską. Dania, które mogą Państwo u nas skosztować nie są tworzone z byle jakich przepisów, które można znaleźć w Internecie. Nasi kucharze do doświadczeni smakosze, którzy od lat skrupulatnie zajmują się tworzeniem rozmaitych potraw.'
