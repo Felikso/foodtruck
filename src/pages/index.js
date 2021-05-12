@@ -66,7 +66,7 @@ const bgImage = convertToBgImage(image);
 
   const halfPage = useRef();
   const preload = useRef();
-  const hasScrolled = useHasBeenPartlyVisible(halfPage, 0.3);
+  const hasScrolled = useHasBeenPartlyVisible(halfPage, 0.1);
   const isScrolling = useHasBeenVisible(preload);
 
   return(
@@ -85,10 +85,11 @@ const bgImage = convertToBgImage(image);
             HeroHeightMedia="95vh"
 
              />
-             <HomeOrderInfo ref={halfPage} />
+             <HomeOrderInfo />
+             <HomeContactInfo ref={halfPage} />
       {hasScrolled ? (
         <>
-        <HomeContactInfo />
+        
         <HomeMenuCards />
         <Stats />
         <Email />

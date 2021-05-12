@@ -2,7 +2,10 @@ import React, { useRef } from 'react';
 import { graphql, useStaticQuery } from 'gatsby'
 import { getImage } from 'gatsby-plugin-image';
 import { convertToBgImage } from 'gbimage-bridge';
+
 import { useHasBeenVisible } from '../hooks/useVisibility';
+import { useHasBeenPartlyVisible } from '../hooks/useVisibility';
+
 import Layout from "../components/Layout/index.js"
 import Seo from "../components/SEO/index"
 
@@ -58,7 +61,7 @@ const bgImage = convertToBgImage(image);
 
   const halfPage = useRef();
   const preload = useRef();
-  const hasScrolled = useHasBeenVisible(halfPage);
+  const hasScrolled = useHasBeenPartlyVisible(halfPage, 0.3);
   const isScrolling = useHasBeenVisible(preload);
 
 
@@ -82,19 +85,19 @@ const bgImage = convertToBgImage(image);
       
       />
 
-      <FeaturedProductsBox heading="Serdecznie polecamy" />
+      <FeaturedProductsBox heading="Serdecznie polecamy" ref={halfPage} />
 
       <MenuContent
       menuTitle="O naszym Menu"
       menuDesc='Dokładamy wszelkich starań, aby potrawy przez nas serwowane trafiały w gusta najwybredniejszych Konsumentów. Naszą dewizą jest serwowanie posiłków przede wszystkim smacznych oraz "po domowemu". Zależy nam przede wszystkim na tym, żeby spójnie móc łączyć ze sobą słowiańskie smaki, do których zakwalifikowaliśmy kuchnię polską oraz ukraińską. Dania, które mogą Państwo u nas skosztować nie są tworzone z byle jakich przepisów, które można znaleźć w Internecie. Nasi kucharze do doświadczeni smakosze, którzy od lat skrupulatnie zajmują się tworzeniem rozmaitych potraw.'
       menuInvitation="Serdecznie zapraszamy do zapoznania się z naszą ofertą:" />
 
-      {hasScrolled || isScrolling ? (
+      {hasScrolled ? (
         <>
       <MenuCard/>
         </>
       ) : (
-        <FullWidthSection ref={halfPage} height='2286px' minHeight='3448px' />
+        <FullWidthSection height='2286px' minHeight='3448px' />
       )}
 
     </Layout>
