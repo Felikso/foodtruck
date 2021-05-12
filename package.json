@@ -31,6 +31,7 @@
     "gatsby-plugin-styled-components": "^4.2.0",
     "gatsby-plugin-transition-link": "^1.20.5",
     "gatsby-plugin-transitions": "^2.1.7",
+    "gatsby-plugin-webfonts": "^2.1.0",
     "gatsby-remark-video-poster": "0.0.1-alpha.1",
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-source-graphql": "^2.14.0",

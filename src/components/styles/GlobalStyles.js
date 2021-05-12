@@ -224,15 +224,10 @@ export const GlobalStyle = createGlobalStyle`
 
   }
 
-  @font-face {
-    font-family: "Montserrat";
-    src: url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,300&display=swap');
-    font-display: optional;
-  }
 
 
     * {
-  font-family: 'Montserrat', sans-serif;
+        font-family: 'Ubuntu', sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
