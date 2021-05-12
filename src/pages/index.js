@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 
 import { useHasBeenVisible } from '../hooks/useVisibility';
 import { useHasBeenPartlyVisible } from '../hooks/useVisibility';
-
 import Layout from "../components/Layout/index.js"
 import Seo from "../components/SEO/index"
 
@@ -66,7 +65,7 @@ const bgImage = convertToBgImage(image);
 
   const halfPage = useRef();
   const preload = useRef();
-  const hasScrolled = useHasBeenPartlyVisible(halfPage, 0.1);
+  const hasScrolled = useHasBeenPartlyVisible(halfPage, 0.3);
   const isScrolling = useHasBeenVisible(preload);
 
   return(
@@ -85,17 +84,16 @@ const bgImage = convertToBgImage(image);
             HeroHeightMedia="95vh"
 
              />
-             <HomeOrderInfo />
-             <HomeContactInfo ref={halfPage} />
+             <HomeOrderInfo ref={halfPage} />
       {hasScrolled ? (
         <>
-        
+        <HomeContactInfo />
         <HomeMenuCards />
         <Stats />
         <Email />
         </>
       ) : (
-        <FullWidthSection height='2286px' minHeight='3448px' />
+        <FullWidthSection ref={halfPage} height='2286px' minHeight='3448px' />
       )}
 
     </Layout>
