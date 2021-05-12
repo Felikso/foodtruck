@@ -198,12 +198,13 @@ module.exports = {
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-minify`,
-    {
+    'gatsby-plugin-loadable-components-ssr',
+/*     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true,
       },
-    },
+    }, */
 /*     {
       resolve: `gatsby-plugin-scroll-reveal`,
       options: {
