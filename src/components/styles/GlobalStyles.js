@@ -17,6 +17,10 @@ export const GlobalStyle = createGlobalStyle`
 
     --body-color: black;
 
+    /* Customed BoxShadows */
+
+    --customed-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+
     /* Hero */
 
     --hero-styled-bg: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.5046218316428134) 4%, rgba(255,255,255,0.25252099130667893) 7%, rgba(0,0,0,1) 100%);

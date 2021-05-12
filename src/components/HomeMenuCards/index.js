@@ -120,8 +120,8 @@ display: grid;
 margin: 10px;
 width: 50%;
 margin: auto;
--webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+-webkit-box-shadow: var(--customed-box-shadow); 
+box-shadow: var(--customed-box-shadow);
 
 @media screen and (max-width: 1000px){
 width: 80%;
@@ -153,8 +153,8 @@ const HomeMenuCardMenuSection = styled.div`
 const HomeMenuCardBox = styled.div`
     display: grid;
     grid-template-columns: 1fr 1.5fr;
-    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    -webkit-box-shadow: var(--customed-box-shadow); 
+    box-shadow: var(--customed-box-shadow);
 
     @media screen and (max-width: 1000px) {
         width: 80%;

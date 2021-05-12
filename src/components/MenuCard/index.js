@@ -8,6 +8,8 @@ import './MenuCard.scss'
 
 import { IoIosArrowDropdownCircle } from 'react-icons/io'
 
+import HoverFillButton from '../HoverFillButton'
+
 //transitions
 import Aos from 'aos';
 import 'aos/dist/aos.css';
@@ -100,13 +102,18 @@ if(dishCategory === "wszystkie"){
 
   window.addEventListener(`scroll`, winOffset) */
 
+/*   e.currentTarget.scrollIntoView({behavior: "smooth", block: "start", inline: "start"}); */
+
   const handleClick = (e, i, item) => {
     setListOpen(item);
     const pageOffset = window.pageYOffset
-    const menuBtn = document.getElementById(`menu-btn-${i}`);
+/*     const menuBtn = document.getElementById(`menu-btn-${i}`); */
+const target = e.currentTarget
+console.log(e.target.value)
+console.log(e.currentTarget.textContent)
 
     const scrollToBtn = (callback) => {
-      menuBtn.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
+      target.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
 
       callback();
 /*       console.log('menuBtn.scrollTop')
@@ -126,7 +133,7 @@ if(dishCategory === "wszystkie"){
 
    }
 
-    if(listOpen === e.target.value){
+    if(listOpen === e.target.value || e.currentTarget.textContent){
       setDishOpen(!dishOpen)
       const pageOffset = window.pageYOffset
 /*       console.log(e.target.getBoundingClientRect())
@@ -141,11 +148,11 @@ if(dishCategory === "wszystkie"){
       setTimeout(() => {
         scrollToBtn(scrollWin);
  /*        scrollWin(); */
-        console.log(menuBtn.offsetTop)
+/*         console.log(menuBtn.offsetTop)
         console.log('menuBtn.offsetTop')
         console.log(menuBtn.getBoundingClientRect())
         console.log(window.scrollY)
-        console.log('window.scrollY')
+        console.log('window.scrollY') */
 /*         window.scrollBy({top: window.scrollY, left: 0, behavior: 'smooth'}) */
 /*         window[`scrollTo`]({ top: (window.scrollY-160), behavior: `smooth` }); */
 
@@ -165,9 +172,9 @@ if(dishCategory === "wszystkie"){
       setTimeout(() => {
         scrollToBtn(scrollWin);
 /*         scrollWin(); */
-        console.log(menuBtn.offsetTop)
+/*         console.log(menuBtn.offsetTop)
         console.log(menuBtn.getBoundingClientRect())
-        console.log(window.scrollY)
+        console.log(window.scrollY) */
 /*         window.scrollBy({top: window.scrollY, left: 0, behavior: 'smooth'}) */
 /*         window[`scrollTo`]({ top: (window.scrollY-160), behavior: `smooth` }); */
 }, 100);
@@ -180,7 +187,6 @@ if(dishCategory === "wszystkie"){
 
 
 }
-
     return (
         <>
 
@@ -189,6 +195,7 @@ if(dishCategory === "wszystkie"){
     const catItem = item
 
     function preventClick(e) {  
+/*       e.preventDefault(); */
       e.stopPropagation();
       e.currentTarget.parentNode.click()
       
@@ -196,28 +203,34 @@ if(dishCategory === "wszystkie"){
      }
     return(
     <div>
-        <MenuButtonsBox>
-            <MenuButton 
+        <MenuButtonsBox
+        value={item}
+/*         onClick={e => console.log(e.currentTarget)} */
+        onClick={((e) => handleClick(e, i, item))}>
+            <HoverFillButton 
                 key={i}
                 value={item} 
-                id={`menu-btn-${i}`} 
-                onClick={((e) => handleClick(e, i, item))}  
-                style={{ background: item===listOpen ? dishOpen ? 'var(--menu-card-color-open)' : 'var(--menu-card-color-close)' : 'var(--menu-card-color-close)'}}>
-                <a
-                style={{ backgroundSize: item===listOpen ? dishOpen ? '0 .2em, 100% .2em' : '100% .1em, 0 .1em': "100% .1em, 0 .1em"}}
-                >
-                  {item}
-                </a>
+                id={`menu-btn-${i}`}
+                onClick={((e) => handleClick(e, i, item))}
+  /*               onClick={((e)=> console.log(e.target.value))}  */
+                /* onClick={((e) => handleClick(e, i, item))}  */ 
+                style={{ 
+                  background: item===listOpen ? dishOpen ? 'var(--menu-card-color-open)' : 'var(--menu-card-color-close)' : 'var(--menu-card-color-close)',
+                  width: '95vw',
+                  margin: 'auto'}}> {item}
                 <MenuButtonArrow
-                    value={item} onClick={((e) => handleClick(e, i, item))} 
-                    style={{ transform: item===listOpen ? dishOpen ? 'rotate(180deg)' : 'rotate(0deg)': "rotate(0deg)"}}
+                    value={item}  
+/*                     style={{ 
+                      transformOrigin: 'center',
+                      transform: item===listOpen ? dishOpen ? 'rotate(180deg)' : 'rotate(0deg)': "rotate(0deg)"}} */
             ><MenuArrowIcon
             onClick={preventClick}
             style={{
-              color: item===listOpen ? dishOpen ? 'var(--menu-card-arrow-hover)' : 'var(--menu-card-arrow)' : 'var(--menu-card-arrow)'
+              color: item===listOpen ? dishOpen ? 'var(--menu-card-arrow-hover)' : 'var(--menu-card-arrow)' : 'var(--menu-card-arrow)',
+              transform: item===listOpen ? dishOpen ? 'rotate(180deg)' : 'rotate(0deg)': "rotate(0deg)"
             }}
             /></MenuButtonArrow>
-            </MenuButton>
+            </HoverFillButton>
       </MenuButtonsBox>
               {dishOpen ? filteredDishes.filter(item => item.dishes.category === catItem).map((item, i) => {
 

@@ -105,8 +105,8 @@ const HomeContactBox = styled.div`
     width: 100%;
     padding: 2rem;
     text-align: center;
-    -webkit-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    -webkit-box-shadow: var(--customed-box-shadow); 
+    box-shadow: var(--customed-box-shadow);
 
     @media screen and (max-width: 1100px) {
         width: 350px;

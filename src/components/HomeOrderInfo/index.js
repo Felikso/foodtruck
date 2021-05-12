@@ -97,9 +97,21 @@ const HomeOrderWrapper = styled.div`
 
 const HomeOrderBox = styled.div`
     height: 100%;
-    width: 100%;
-    padding: 2rem;
+    width: 25vw;
     text-align: center;
+    -webkit-box-shadow: var(--customed-box-shadow); 
+    box-shadow: var(--customed-box-shadow);
+    transition: 1s;
+
+    @media screen and (max-width: 1000px) {
+        width: 30vw;
+
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 80vw;
+
+    }
 
 
 `
