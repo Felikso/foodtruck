@@ -64,13 +64,12 @@ function Stats() {
 export default Stats
 
 const StatsContainer = styled.div`
-    width: 90vw;
-    margin: 2em auto;
     background: var(--stats-container-bg);
     color: var(--stats-container-color);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: 2em auto;
 
 `
 const Heading = styled.h1`
@@ -84,6 +83,7 @@ const Wrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-row-gap: 3rem;
+    justify-items: center;
 
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
@@ -105,6 +105,9 @@ const Icon = styled.div`
     height: 80px;
     border-radius: 50%;
     background: transparent;
+
+    -webkit-filter: var(--stats-icon-dropshadow);
+    filter: var(--stats-icon-dropshadow);
 `
 
 const StatsBox = styled.div`
@@ -115,6 +118,8 @@ const StatsBox = styled.div`
     background: var(--stats-box-bg);
     border: solid var(--stats-border-color);
     margin: auto 2rem;
+    -webkit-box-shadow: var(--customed-box-shadow); 
+    box-shadow: var(--customed-box-shadow);
 
     &:hover {
         background: var(--stats-box-bg-hover);

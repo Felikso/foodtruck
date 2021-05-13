@@ -62,7 +62,8 @@ const HomeOrderContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4rem calc((100vw - 1300px) /2);
+/*     padding: 4rem calc((100vw - 1300px) /2); */
+    margin: 2em auto;
  
 
 `
@@ -84,7 +85,7 @@ const HomeOrderWrapper = styled.div`
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
     grid-gap: 10px;
-    margin: 10px;
+    justify-items: center;
 
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;

@@ -65,23 +65,6 @@ function Email() {
 
 export default Email
 
-/* const EmailContainer = styled.div`
-    background: linear-gradient(
-        180deg, 
-        rgba(0,0,0,0.5) 0%, 
-        rgba(0,0,0,0.5) 35%,
-        rgba(0,0,0,1) 100% 
-        );
-        background-size: cover;
-    height: 450px;
-    width: 100%;
-    padding: 5rem calc((100vw - 1300px) /2);
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-` */
-
 const EmailContent = styled.div`
     height: 100%;
     width: 100vw;

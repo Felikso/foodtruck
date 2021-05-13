@@ -62,8 +62,8 @@ const HomeContactContainer = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 4rem calc((100vw - 1300px) /2);
- 
+/*     padding: 4rem calc((100vw - 1300px) /2); */
+    margin: 2em auto;
 
 `
 const HomeContactHeading = styled.h2`
@@ -83,7 +83,7 @@ const HomeContactWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;
-    margin: 10px;
+    justify-items: center;
 
     @media screen and (max-width: 1100px) {
         grid-template-columns: repeat(2, 1fr);
@@ -122,6 +122,8 @@ const HomeContactBox = styled.div`
 const HomeContactIcon = styled.div`
     font-size: 3rem;
     margin-bottom: 1rem;
+    -webkit-filter: var(--contact-icons-dropshadow);
+    filter: var(--contact-icons-dropshadow);
 
     @media screen and (max-width: 768px){
         font-size: 4.5rem;

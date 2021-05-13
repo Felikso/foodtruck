@@ -32,7 +32,7 @@ const ScrollBtn = ({
         <div>
             {show &&
                 <ScrollButton onClick={handleClick}  aria-label="to top">
-                    <IoIosArrowDropupCircle />
+                    <ScrollIcon />
                 </ScrollButton>
             }
         </div>
@@ -69,4 +69,9 @@ const ScrollButton = styled.button`
             transition: 0.5s;
             color: var(--scroll-top-btn-color-hover);
         }
+`
+
+const ScrollIcon = styled(IoIosArrowDropupCircle)`
+            -webkit-filter: var(--scroll-icon-dropshadow);
+            filter: var(--scroll-icon-dropshadow);
 `

@@ -35,13 +35,15 @@ export const GlobalStyle = createGlobalStyle`
     
     --contact-icon-arrow-color-hover: black;
 
+    --contact-icons-dropshadow: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+
     /* Button Fill Hover */
 
     --btn-color: white;
 
     --btn-hover: black;
 
-    --btn-fill-focus: var(--color-3);
+    --btn-fill-focus: var(--color-1);
 
     --btn-fill-color: var(--color-3);
 
@@ -173,6 +175,8 @@ export const GlobalStyle = createGlobalStyle`
 
     --stats-question-color: red;
 
+    --stats-icon-dropshadow: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+
     --contact-container-stats-bg: transparent;
 
     /* Scroll btn */
@@ -181,19 +185,23 @@ export const GlobalStyle = createGlobalStyle`
     
     --scroll-top-btn-color-hover: var(--color-2);
 
+    --scroll-icon-dropshadow: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+
     /* Menu Cards */
 
     --underline-item-bg: linear-gradient(to right, rgba(100, 200, 200, 1), rgba(100, 200, 200, 1));
 
     --underline-item-bg-active: linear-gradient(to right, rgba(255, 0, 0, 1), rgba(255, 0, 180, 1), rgba(0, 100, 200, 1));
 
-    --menu-card-color-open: #ab0000;
+    --menu-card-color-open: #cfcfcf82;
 
-    --menu-card-color-close: #1d1d1d;
+    --menu-card-color-close: #2e2e2e82;
 
-    --menu-card-arrow: black;
+    --menu-card-arrow: #9b9b9b;
 
-    --menu-card-arrow-hover: white;
+    --menu-card-arrow-hover: #cfcfcf;
+
+    --menu-card-arrow-bg: var(--color-1);
 
     /* Info Top Box */
 

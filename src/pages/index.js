@@ -4,6 +4,7 @@ import { useHasBeenVisible } from '../hooks/useVisibility';
 import { useHasBeenPartlyVisible } from '../hooks/useVisibility';
 import Layout from "../components/Layout/index.js"
 import Seo from "../components/SEO/index"
+import MainSection from '../components/Layout/MainSection'
 
 import Stats from "../components/Stats/index"
 import Email from "../components/Email/index"
@@ -84,12 +85,16 @@ const bgImage = convertToBgImage(image);
             HeroHeightMedia="95vh"
 
              />
+      <MainSection>
              <HomeOrderInfo ref={halfPage} />
+      </MainSection>
       {hasScrolled ? (
         <>
+        <MainSection>
         <HomeContactInfo />
         <HomeMenuCards />
         <Stats />
+        </MainSection>
         <Email />
         </>
       ) : (

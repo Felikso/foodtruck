@@ -74,7 +74,7 @@ const FooterContainer = styled.div`
     color: var(--footer-color);
     background: var(--footer-bg);
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: 1000px) {
         grid-template-columns: 1fr;
         justify-items: center;
         padding: 0;
@@ -249,6 +249,7 @@ const FooterBrandBox = styled.div`
     grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
     @media screen and (max-width: 768px){
         grid-template-rows: 1fr;
@@ -259,14 +260,22 @@ const FooterOpeningContainer = styled.div`
     height: 100%;
     width: 100%;
     display: flex;
+
+    @media screen and (max-width: 1200px) {
+        width: 400px;
+        margin: auto;
+    }
+
+    @media screen and (max-width: 768px){
+        width: 70vw;
+    }
 `
 
 const FooterInfoWrapper = styled.div`
     display: flex;
     padding: 0 10px;
 
-    @media screen and (max-width: 768px) {
-        width: 80vw;
+    @media screen and (max-width: 1200px) {
         flex-direction: column-reverse;
         justify-content: center;
         align-items: center;

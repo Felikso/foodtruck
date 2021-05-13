@@ -18,52 +18,44 @@ function MenuCard() {
 
   const [dishCategory, setDishCategory] = useState("")
 
-  const [dishOpen, setDishOpen] = useState(true)
+  const [dishOpen, setDishOpen] = useState(false)
 
   const [listOpen, setListOpen] = useState(0)
 
-
-
-/*   const toggle = () => setDishOpen(!dishOpen); */
-
-/*   console.log(dishOpen)
-
-  console.log(listOpen)
- */
   
 
   useEffect(() => {
     Aos.init({
-        duration: 1000
+        duration: 800
     });
 }, [])
 
 const data = useStaticQuery(
-  graphql`
-    query {
-      allWpDish {
-    nodes {
-      featuredImage {
-        node {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
+    graphql`
+        query {
+              allWpDish {
+            nodes {
+              featuredImage {
+                node {
+                  localFile {
+                    childImageSharp {
+                      gatsbyImageData
+                    }
+                  }
+                }
+              }
+              dishes {
+                category
+                desc
+                fieldGroupName
+                name
+                price
+                quantity
+              }
             }
           }
         }
-      }
-      dishes {
-        category
-        desc
-        fieldGroupName
-        name
-        price
-        quantity
-      }
-    }
-  }
-    }
-  `
+    `
 )
 
 
@@ -95,94 +87,34 @@ if(dishCategory === "wszystkie"){
 
   let categories = getUnique(nodeDish, "category").reverse();
 
-/*   const winOffset = () => {
-    console.log(window.pageYOffset)
-
-  }
-
-  window.addEventListener(`scroll`, winOffset) */
-
-/*   e.currentTarget.scrollIntoView({behavior: "smooth", block: "start", inline: "start"}); */
-
-  const handleClick = (e, i, item) => {
+  const handleClick = (e,item) => {
     setListOpen(item);
-    const pageOffset = window.pageYOffset
-/*     const menuBtn = document.getElementById(`menu-btn-${i}`); */
-const target = e.currentTarget
-console.log(e.target.value)
-console.log(e.currentTarget.textContent)
+    const target = e.currentTarget
 
     const scrollToBtn = (callback) => {
       target.scrollIntoView({behavior: "smooth", block: "start", inline: "start"});
-
       callback();
-/*       console.log('menuBtn.scrollTop')
-      console.log(window.scrollTop)
-      console.log('window.pageYOffset')
-      console.log(window.pageYOffset) */
-
    }
 
    const scrollWin = () => {
     setTimeout(() => {
       window.scrollTo({ top: window.pageYOffset-80, behavior: 'smooth' })
-      console.log('window.pageYOffset2')
-      console.log(window.pageYOffset)
 
 }, 500);
 
    }
-
-    if(listOpen === e.target.value || e.currentTarget.textContent){
+    if(listOpen == e.currentTarget.textContent.trim() || e.target.value ){
       setDishOpen(!dishOpen)
-      const pageOffset = window.pageYOffset
-/*       console.log(e.target.getBoundingClientRect())
-      console.log("if") */
-      const buttonY = e.target.getBoundingClientRect().y
-      const scrollWinTo = (pageOffset+buttonY)
-      console.log(buttonY)
-      console.log(pageOffset)
 
-
-      
       setTimeout(() => {
         scrollToBtn(scrollWin);
- /*        scrollWin(); */
-/*         console.log(menuBtn.offsetTop)
-        console.log('menuBtn.offsetTop')
-        console.log(menuBtn.getBoundingClientRect())
-        console.log(window.scrollY)
-        console.log('window.scrollY') */
-/*         window.scrollBy({top: window.scrollY, left: 0, behavior: 'smooth'}) */
-/*         window[`scrollTo`]({ top: (window.scrollY-160), behavior: `smooth` }); */
+      }, 100);
 
-}, 100);
-/* setTimeout(() => {
-  window[`scrollTo`]({ top: (pageOffset-80), behavior: `smooth` })
-}, 200); */
     }else{
-      setDishOpen(true)
-      
-/*       console.log(e.target.getBoundingClientRect())
-      console.log("else") */
-      const buttonY = e.target.getBoundingClientRect().y
-      const scrollWinTo = (pageOffset+buttonY)
-      console.log(buttonY)
-      console.log(pageOffset)
-      setTimeout(() => {
-        scrollToBtn(scrollWin);
-/*         scrollWin(); */
-/*         console.log(menuBtn.offsetTop)
-        console.log(menuBtn.getBoundingClientRect())
-        console.log(window.scrollY) */
-/*         window.scrollBy({top: window.scrollY, left: 0, behavior: 'smooth'}) */
-/*         window[`scrollTo`]({ top: (window.scrollY-160), behavior: `smooth` }); */
-}, 100);
-
-/* setTimeout(() => {
-  window[`scrollTo`]({ top: (pageOffset-80), behavior: `smooth` })
-}, 200); */
-
+          setDishOpen(true)
+          setTimeout(() => {
+          scrollToBtn(scrollWin);
+          }, 100);
     }
 
 
@@ -195,37 +127,31 @@ console.log(e.currentTarget.textContent)
     const catItem = item
 
     function preventClick(e) {  
-/*       e.preventDefault(); */
       e.stopPropagation();
       e.currentTarget.parentNode.click()
       
 
      }
     return(
-    <div>
+    <MenuContentBox>
         <MenuButtonsBox
         value={item}
-/*         onClick={e => console.log(e.currentTarget)} */
-        onClick={((e) => handleClick(e, i, item))}>
+        onClick={((e) => handleClick(e, item))}>
             <HoverFillButton 
                 key={i}
                 value={item} 
-                id={`menu-btn-${i}`}
-                onClick={((e) => handleClick(e, i, item))}
-  /*               onClick={((e)=> console.log(e.target.value))}  */
-                /* onClick={((e) => handleClick(e, i, item))}  */ 
+                onClick={preventClick}
                 style={{ 
                   background: item===listOpen ? dishOpen ? 'var(--menu-card-color-open)' : 'var(--menu-card-color-close)' : 'var(--menu-card-color-close)',
                   width: '95vw',
                   margin: 'auto'}}> {item}
                 <MenuButtonArrow
-                    value={item}  
-/*                     style={{ 
-                      transformOrigin: 'center',
-                      transform: item===listOpen ? dishOpen ? 'rotate(180deg)' : 'rotate(0deg)': "rotate(0deg)"}} */
+                    value={item}
+                    onClick={preventClick}  
             ><MenuArrowIcon
             onClick={preventClick}
             style={{
+              background: item===listOpen ? dishOpen ? 'var(--btn-fill-color-hover)' : 'var(--btn-fill-color)' : 'var(--btn-fill-color)',
               color: item===listOpen ? dishOpen ? 'var(--menu-card-arrow-hover)' : 'var(--menu-card-arrow)' : 'var(--menu-card-arrow)',
               transform: item===listOpen ? dishOpen ? 'rotate(180deg)' : 'rotate(0deg)': "rotate(0deg)"
             }}
@@ -265,7 +191,7 @@ console.log(e.currentTarget.textContent)
                   </>
                 )}): <div></div>}
     
-    </div>)})
+    </MenuContentBox>)})
 }
 
         </>
@@ -275,7 +201,10 @@ console.log(e.currentTarget.textContent)
 
 export default MenuCard;
 
-
+const MenuContentBox = styled.div`
+  display: grid;
+  grid-gap: 30px;
+`
 
 
 const MenuBox = styled.div`
@@ -401,57 +330,20 @@ const MenuArrowIcon = styled(IoIosArrowDropdownCircle)`
   cursor: pointer;
   color: var(--menu-card-arrow);
   transition:.2s ease;
+  background: var(--menu-card-arrow-bg);
+  border-radius: 50%;
+  filter: var(--contact-icons-dropshadow);
 `
 
-
-const MenuArrow = styled.button`
-width: 3vh;
-height: 3vh;
-background: transparent;
-outline: none;
-border: none;
-box-sizing: border-box;
-position: absolute;
-cursor: pointer;
-top: 30%;
-left: 5%;
-
-transition:.2s ease;
-
-&::before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  border-width: .8vmin .8vmin 0 0;
-  border-style: solid;
-  border-color: #fafafa;
-  transition: .2s ease;
-  display: block;
-  transform-origin: 100% 0;
-}
-
-
-&:after {
-  content: '';
-  float: left;
-  position: relative;
-  top: -100%;
-  width: 100%;
-  height: 100%;
-  border-width: 0 .8vmin 0 0;
-  border-style: solid;
-  border-color: #fafafa;
-  transform-origin: 100% 0;
-  transition:.2s ease;
-}
-
-`
 
 const MenuButtonsBox = styled.div`
-width: 100vw;
-height: 10vh;
-position: relative;
-display: flex;
+
+width: 95vw;
+margin: 1em auto;
+
+
+-webkit-box-shadow: var(--customed-box-shadow); 
+box-shadow: var(--customed-box-shadow);
 
 &:hover {
 /*   background: ${({ primary }) => (primary ? 'var(--color-2)' : 'var(--color-1)')}; */
@@ -467,15 +359,17 @@ const DishText = styled.div`
 
 const MenuButtonArrow = styled.button`
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
 
   background: transparent;
   border: none;
   outline: none;
   font-size: 3em;
   transition: 1s;
-  transform: translate(-10px, 0);
+  transform: translate(-50%,15%);
+  font-size: 2.5em;
+
 `
 
 
