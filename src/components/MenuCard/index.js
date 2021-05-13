@@ -26,7 +26,7 @@ function MenuCard() {
 
   useEffect(() => {
     Aos.init({
-        duration: 1000
+        duration: 800
     });
 }, [])
 
