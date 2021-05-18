@@ -194,11 +194,12 @@ module.exports = {
 
     `gatsby-transformer-ffmpeg`,
     `gatsby-plugin-smoothscroll`,
-    `gatsby-plugin-transition-link`,
+/*     `gatsby-plugin-transition-link`, */
     `gatsby-plugin-scroll-reveal`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-minify`,
     'gatsby-plugin-loadable-components-ssr',
+    'gatsby-plugin-webpack-bundle-analyser-v2',
 /*     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
