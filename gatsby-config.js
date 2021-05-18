@@ -219,6 +219,7 @@ module.exports = {
     `gatsby-plugin-minify`,
     'gatsby-plugin-loadable-components-ssr',
     'gatsby-plugin-webpack-bundle-analyser-v2',
+    'gatsby-plugin-offline'
 /*     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
