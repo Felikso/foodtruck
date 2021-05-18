@@ -7,7 +7,7 @@ import { Link } from 'gatsby'
 import { Button } from '../Button/index'
 import SvgLSLogo from './SvgLSLogo'
 
-import AniLink from "gatsby-plugin-transition-link/AniLink";
+/* import AniLink from "gatsby-plugin-transition-link/AniLink"; */
 
 import background from "../../assets/images/lwowskie-smaki.png";
 
@@ -29,7 +29,7 @@ width: 100%;
   }
 `
 
-const NavLink = styled(AniLink)`
+/* const NavLink = styled(AniLink)`
   color: #fff;
   display: flex;
   align-items: center;
@@ -37,7 +37,7 @@ const NavLink = styled(AniLink)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-`
+` */
 
 const NavBtn = styled.div`
   display: flex;
