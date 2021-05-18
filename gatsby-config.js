@@ -91,7 +91,26 @@ module.exports = {
 				url: "https://blog.ventus-trade.pl/graphql",
 			},
 		},
-     {
+    {
+      resolve: `@el7cosmos/gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: 'Ubuntu',
+            variants: [
+              '400',
+              '400i',
+              '700',
+              '700i',
+            ],
+            subsets: [
+              'latin-ext',
+            ],
+          },
+        ],
+      },
+    },
+/*      {
       resolve: `gatsby-plugin-webfonts`,
       options: {
         fonts: {
@@ -112,7 +131,7 @@ module.exports = {
         usePreload: true,
         usePreconnect: false,
       },
-    }, 
+    }, */ 
 /*     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
